@@ -1,0 +1,19 @@
+@media #{$small-only} { 
+	h1 { font-size: rem-calc(36); }
+	h2 { font-size: rem-calc(24); }
+	h3 { font-size: rem-calc(18); }
+	.m-menu-trigger { 
+		position: absolute;
+	}
+}
+
+@media #{$medium-only} { 
+	h1 { font-size: rem-calc(80); }
+	.m-menu-trigger { 
+		position: absolute;
+	}
+}
+
+@media #{$large-only} { 
+	h1 { font-size: rem-calc(120); }
+}

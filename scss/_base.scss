@@ -1,0 +1,156 @@
+$og_green: rgba(35, 84, 102, 1);
+$white: rgba(255,255,255,1);
+$gray_80: rgba(0,0,0,0.8);
+$gray_70: rgba(0,0,0,0.7);
+$gray_20: rgba(0,0,0,0.2);
+$gray_10: rgba(0,0,0,0.1);
+$gray_3: rgba(0,0,0,0.03);
+
+// Z-index Variables
+
+$z-modal: 1000;
+$z-overlay: 999;
+
+// Mixins
+
+@mixin slide {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+// Type
+
+a {
+	color: $og_green;
+	text-decoration: none;
+	padding: 0 1px;
+}
+
+a:hover {
+	background-color: $og_green;
+	color: $white;
+}
+
+h1, 
+h2 {
+	text-align: center;
+	color: $og_green;
+	font-family: "HelveticaNeue-Thin", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+h3 {
+	font-weight: 600;
+	text-transform: uppercase;
+	text-align: left;
+	color: $gray_70;
+}
+
+// Video Module
+
+video {
+	width: 100%;
+}
+
+.m-video-answer {
+	text-align: center;
+	margin-top: 40px;
+	padding: 0;
+
+	video {
+		max-width: 420px;
+		border-bottom: 1px solid $gray_10;
+	}
+}
+
+
+
+.l-module {
+	padding: 10px 0 50px;
+	background-color: $gray_3;
+	border-bottom: 1px solid $gray_20;
+}
+
+.row {
+	position: relative;
+	padding: 0 20px;
+	left: 0;
+	@include slide;
+}
+
+// Menu Module
+
+.m-menu-trigger {
+	cursor: pointer;
+	position: fixed;
+	top: 15px;
+	left: 15px;
+	z-index: 1;	
+	@include slide;
+}
+
+.m-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: $gray_80;
+	-webkit-box-shadow: inset -3px -8px 8px rgba(0,0,0,0.2);
+	-moz-box-shadow: inset -3px -8px 8px rgba(0,0,0,0.2);
+	box-shadow: inset -3px -8px 8px rgba(0,0,0,0.2);
+	width: 240px;
+	max-width: 0;
+	overflow: hidden;
+	z-index: $z-modal;
+	@include slide;
+	height: 100%;
+
+	nav {
+		padding: 20px;
+		width: 200px;
+		
+		a {
+			color: $white;
+			margin: 0 20px;
+			padding: 7px;
+			display: block;
+		}
+	}
+}
+
+// Overlay Modal
+#overlay {
+	background-color: transparent;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: $z-overlay;
+	display: none;
+	cursor: pointer;
+}
+
+// Footer Module
+footer {
+	background-color: $og_green;
+	color: $white;
+	padding: 20px 0;
+}
+
+// States for the Menu
+.m-menu.s-active {
+	max-width: 300px;
+	@include slide;
+}
+
+.row.s-active {
+	left: 300px;
+	@include slide;
+}
+
+.m-menu-trigger.s-active {
+	left: 255px;
+	@include slide;
+}

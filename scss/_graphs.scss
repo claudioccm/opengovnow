@@ -1,0 +1,40 @@
+.m-graph-container {
+	text-align: center;
+
+	.m-pie-chart {
+		width: 210px;
+		height: 210px;
+
+		.m-pie-chart-number {
+			fill:$og_green; 
+			font-family: "HelveticaNeue-Thin", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;; 
+			font-size: 82px;
+		}
+
+		.m-pie-chart-percentage {
+			fill:$og_green;
+			font-family: "HelveticaNeue-Thin", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+			font-size: 50px;
+		}
+
+		.m-pie-chart-transparent-slice {
+			fill: transparent;
+			stroke: $og_green;
+			stroke-miterlimit:10;
+		}
+
+		.m-pie-chart-colored-slice {
+			fill: transparent; //$og_green
+			stroke: $og_green;
+			stroke-miterlimit:10;
+		}
+		
+		.m-pie-chart-circle {
+			fill: $gray_3_solid;
+			stroke:$og_green;
+			stroke-miterlimit:10;
+		}
+		
+	}
+
+}

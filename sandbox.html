@@ -1,0 +1,41 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sandbox</title>
+    <link rel="stylesheet" href="css/app.css" />
+    <script src="bower_components/modernizr/modernizr.js"></script>
+</head>
+<body>
+    <div class="m-menu-trigger">Menu</div>
+    <aside class="m-menu">
+      <nav>
+        <a href="#c-1">Big Video</a>
+        <a href="#c-2">Chart</a>
+        <a href="#c-3">Video Answer</a>
+        <a href="#c-last">Extra Content</a>
+      </nav>
+    </aside>
+    <div id="sandbox" class="l-module">
+      <section class="row">
+        <h2>Graph Animated</h2>
+        <div class="m-graph-container">
+            <svg class="m-pie-chart" xmlns="http://www.w3.org/2000/svg" viewBox="381.1 210.6 210 210">
+                <path class="m-pie-chart-transparent-slice" d="M486.7,317.1L385,331.4c-7.9-56.1,31.2-108,87.3-115.9 c4.5-0.6,9.7-1,14.3-1v102.6H486.7z"/>
+                <path class="m-pie-chart-colored-slice" d="M486.7,317.1V214.5c56.7,0,102.6,45.9,102.6,102.6 c0,56.7-45.9,102.6-102.6,102.6c-52.1,0-94.4-36.7-101.6-88.3L486.7,317.1z"/>
+                <path class="m-pie-chart-circle" cx="486.7" cy="317.1" r="86.7"/>
+                <!-- <text transform="matrix(1 0 0 1 427.1514 339.0967)" class="m-pie-chart-number">73</text> -->
+                <!-- <text transform="matrix(1 0 0 1 512.6514 339.0967)" class="m-pie-chart-percentage">%</text> -->
+            </svg>
+        </div>
+      </section>
+    </div>
+    <div id="overlay"></div>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/foundation/js/foundation.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/svganimations.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

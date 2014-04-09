@@ -1,0 +1,24 @@
+.wordcloud-container {
+  text-align: center;
+  margin: 0 auto;
+
+  .wordcloud-item {
+    font-size: 1.5rem;
+    display: inline-block;
+    margin: 5px;
+    opacity: .3;
+  }
+
+  #big {
+    font-size: 5rem;
+    font-weight: bold;
+  }
+
+  .wordcloud-item:hover, 
+  .hovered {
+    opacity: 1;
+  }
+
+
+}
+

@@ -4,7 +4,7 @@ $(document).ready(function() {
 	
 	var totalHeight = $('html').css('height');
 	// $('.m-menu').css('height', totalHeight);
-	console.log(totalHeight);
+	// console.log(totalHeight);
 
 	// Triggers the menu
 	$('.m-menu-trigger').click(function(){
@@ -46,6 +46,92 @@ $(document).ready(function() {
 				}
 			}
 		});
+	});
+
+	// Word Cloud Functions
+
+	$('.wordcloud-item').hover( 
+		function () {
+			var e = $(this).attr('class').slice(15);
+			console.log(e);
+			$(this).siblings('.' + e).addClass('hovered');
+		}, function () {
+			var e = $(this).attr('class').slice(15);
+			$(this).siblings('.' + e).removeClass('hovered');
+			
+		}
+	);
+
+	// Counter
+
+	(function($) {
+    $.fn.countTo = function(options) {
+        // merge the default plugin settings with the custom options
+        options = $.extend({}, $.fn.countTo.defaults, options || {});
+
+        // how many times to update the value, and how much to increment the value on each update
+        var loops = Math.ceil(options.speed / options.refreshInterval),
+            increment = (options.to - options.from) / loops;
+
+        return $(this).each(function() {
+            var _this = this,
+                loopCount = 0,
+                value = options.from,
+                interval = setInterval(updateTimer, options.refreshInterval);
+
+            function updateTimer() {
+                value += increment;
+                loopCount++;
+                $(_this).html(value.toFixed(options.decimals));
+
+                if (typeof(options.onUpdate) == 'function') {
+                    options.onUpdate.call(_this, value);
+                }
+
+                if (loopCount >= loops) {
+                    clearInterval(interval);
+                    value = options.to;
+
+                    if (typeof(options.onComplete) == 'function') {
+                        options.onComplete.call(_this, value);
+                    }
+                }
+            }
+        });
+    };
+
+    $.fn.countTo.defaults = {
+        from: 0,  // the number the element should start at
+        to: 100,  // the number the element should end at
+        speed: 1000,  // how long it should take to count between the target numbers
+        refreshInterval: 100,  // how often the element should be updated
+        decimals: 0,  // the number of decimal places to show
+        onUpdate: null,  // callback method for every time the element is updated,
+        onComplete: null,  // callback method for when the element finishes updating
+    };
+	})(jQuery);
+
+	jQuery(function($) {
+        $('.timer').countTo({
+            from: 0,
+            to: 54765,
+            speed: 10000,
+            refreshInterval: 1,
+            onComplete: function(value) {
+                console.debug(this);
+            }
+        });
+    });
+
+    // Loads the Map
+	$(function(){
+	  $("#map-container").load("images/map.svg"); 
+	});
+
+	// Switcher Functions
+
+	$('.m-switcher-handle').click(function() {
+		$('.m-switcher').toggleClass('active');
 	});
 });
 

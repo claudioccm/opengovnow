@@ -6,6 +6,7 @@ $gray_40: rgba(0,0,0,0.4);
 $gray_20: rgba(0,0,0,0.2);
 $gray_10: rgba(0,0,0,0.1);
 $gray_3: rgba(0,0,0,0.03);
+$gray_3_solid: #f7f7f7;
 
 // Z-index Variables
 
@@ -78,21 +79,6 @@ video {
 	width: 70%;
 	margin: 0 auto 20px;
 	color: $gray_40;
-}
-
-
-// Graphs
-
-.m-chart-container {
-	text-align: center;
-
-	img {
-		width: 200px;
-	}
-
-	p {
-
-	}
 }
 
 // Layout

@@ -1,5 +1,6 @@
 $og_green: rgba(35, 84, 102, 1);
 $white: rgba(255,255,255,1);
+$gray_85: rgba(0,0,0,0.85);
 $gray_80: rgba(0,0,0,0.8);
 $gray_70: rgba(0,0,0,0.7);
 $gray_40: rgba(0,0,0,0.4);
@@ -149,7 +150,7 @@ video {
 
 // Footer Module
 footer {
-	background-color: $og_green;
+	background-color: $gray_85;
 	color: $white;
 	padding: 20px 0;
 }

@@ -142,28 +142,30 @@ $(document).ready(function() {
 });
 
 function drawPieChart (container, min, max) {
-    var w = $(container).width(),
-        h = $(container).height(),
-        colors = ['#246', '#fff'];
+    if ($(container).length) {
+        var w = $(container).width(),
+            h = $(container).height(),
+            colors = ['#246', '#fff'];
 
-    var svg = d3.select($(container)[0])
-        .append('svg')
-        .attr('width', w)
-        .attr('height', h)
-        .append('g')
-        .attr('transform', 'translate(' + w / 2 + ',' + h / 2 + ')');
+        var svg = d3.select($(container)[0])
+            .append('svg')
+            .attr('width', w)
+            .attr('height', h)
+            .append('g')
+            .attr('transform', 'translate(' + w / 2 + ',' + h / 2 + ')');
 
-    var g = svg.selectAll('.arc')
-        .data(d3.layout.pie().sort(null)([max, min]))
-        .enter()
-        .append('g')
-        .attr('class', 'arc');
+        var g = svg.selectAll('.arc')
+            .data(d3.layout.pie().sort(null)([max, min]))
+            .enter()
+            .append('g')
+            .attr('class', 'arc');
 
-    g.append('path')
-        .style('fill', function(d, i) { return colors[i]; } )
-        .attr('d', d3.svg.arc().outerRadius((Math.min(w, h) / 2) - 2));
+        g.append('path')
+            .style('fill', function(d, i) { return colors[i]; } )
+            .attr('d', d3.svg.arc().outerRadius((Math.min(w, h) / 2) - 2));
 
-    $(container).find('svg').addClass('m-pie-chart');
+        $(container).find('svg').addClass('m-pie-chart');
 
-    return svg;
+        return svg;
+    }
 }

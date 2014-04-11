@@ -1,7 +1,7 @@
 $(document).foundation();
 
 $(document).ready(function() {
-	
+
 	var totalHeight = $('html').css('height');
 	// $('.m-menu').css('height', totalHeight);
 	// console.log(totalHeight);
@@ -29,11 +29,11 @@ $(document).ready(function() {
 		$('.m-menu-trigger').removeClass('s-active');
 		$('#overlay').hide();
 	});
-	
+
 	// Smooth Scrolling Function
 	$(function() {
 		$('a[href*=#]:not([href=#])').click(function() {
-			if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+			if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
 				|| location.hostname == this.hostname) {
 
 			var target = $(this.hash);
@@ -50,7 +50,7 @@ $(document).ready(function() {
 
 	// Word Cloud Functions
 
-	$('.wordcloud-item').hover( 
+	$('.wordcloud-item').hover(
 		function () {
 			var e = $(this).attr('class').slice(15);
 			console.log(e);
@@ -58,7 +58,7 @@ $(document).ready(function() {
 		}, function () {
 			var e = $(this).attr('class').slice(15);
 			$(this).siblings('.' + e).removeClass('hovered');
-			
+
 		}
 	);
 
@@ -125,7 +125,7 @@ $(document).ready(function() {
 
     // Loads the Map
 	$(function(){
-	  $("#map-container").load("images/map.svg"); 
+	  $("#map-container").load("images/map.svg");
 	});
 
 	// Switcher Functions
@@ -133,16 +133,37 @@ $(document).ready(function() {
 	$('.m-switcher-handle').click(function() {
 		$('.m-switcher').toggleClass('active');
 	});
+
+    // Test pie charts.
+    drawPieChart($('#pie1'), 23, 77);
+    drawPieChart($('#pie2'), 38, 62);
+    drawPieChart($('#pie3'), 50, 50);
+    drawPieChart($('#pie4'), 20, 80);
 });
 
+function drawPieChart (container, min, max) {
+    var w = $(container).width(),
+        h = $(container).height(),
+        colors = ['#246', '#fff'];
 
+    var svg = d3.select($(container)[0])
+        .append('svg')
+        .attr('width', w)
+        .attr('height', h)
+        .append('g')
+        .attr('transform', 'translate(' + w / 2 + ',' + h / 2 + ')');
 
+    var g = svg.selectAll('.arc')
+        .data(d3.layout.pie().sort(null)([max, min]))
+        .enter()
+        .append('g')
+        .attr('class', 'arc');
 
+    g.append('path')
+        .style('fill', function(d, i) { return colors[i]; } )
+        .attr('d', d3.svg.arc().outerRadius((Math.min(w, h) / 2) - 2));
 
+    $(container).find('svg').addClass('m-pie-chart');
 
-
-
-
-
-
-
+    return svg;
+}

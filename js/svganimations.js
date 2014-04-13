@@ -6,11 +6,11 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * Copyright 2013, Codrops
  * http://www.codrops.com
  */
-(function() {
+function animateSVGs() {
 
 	'use strict';
 
@@ -18,11 +18,11 @@
 
 	window.requestAnimFrame = function(){
 		return (
-			window.requestAnimationFrame       || 
-			window.webkitRequestAnimationFrame || 
-			window.mozRequestAnimationFrame    || 
-			window.oRequestAnimationFrame      || 
-			window.msRequestAnimationFrame     || 
+			window.requestAnimationFrame       ||
+			window.webkitRequestAnimationFrame ||
+			window.mozRequestAnimationFrame    ||
+			window.oRequestAnimationFrame      ||
+			window.msRequestAnimationFrame     ||
 			function(/* function */ callback){
 				window.setTimeout(callback, 1000 / 60);
 			}
@@ -31,11 +31,11 @@
 
 	window.cancelAnimFrame = function(){
 		return (
-			window.cancelAnimationFrame       || 
-			window.webkitCancelAnimationFrame || 
-			window.mozCancelAnimationFrame    || 
-			window.oCancelAnimationFrame      || 
-			window.msCancelAnimationFrame     || 
+			window.cancelAnimationFrame       ||
+			window.webkitCancelAnimationFrame ||
+			window.mozCancelAnimationFrame    ||
+			window.oCancelAnimationFrame      ||
+			window.msCancelAnimationFrame     ||
 			function(id){
 				window.clearTimeout(id);
 			}
@@ -60,7 +60,7 @@
 			self.path[i] = path;
 			var l = self.path[i].getTotalLength();
 			self.length[i] = l;
-			self.path[i].style.strokeDasharray = l + ' ' + l; 
+			self.path[i].style.strokeDasharray = l + ' ' + l;
 			self.path[i].style.strokeDashoffset = l;
 		} );
 	};
@@ -94,17 +94,17 @@
 	function getViewportH() {
 		var client = docElem['clientHeight'],
 			inner = window['innerHeight'];
-		 
+
 		if( client < inner )
 			return inner;
 		else
 			return client;
 	}
- 
+
 	function scrollY() {
 		return window.pageYOffset || docElem.scrollTop;
 	}
- 
+
 	// http://stackoverflow.com/a/5598797/989439
 	function getOffset( el ) {
 		var offsetTop = 0, offsetLeft = 0;
@@ -116,13 +116,13 @@
 				offsetLeft += el.offsetLeft;
 			}
 		} while( el = el.offsetParent )
- 
+
 		return {
 			top : offsetTop,
 			left : offsetLeft
 		};
 	}
- 
+
 	function inViewport( el, h ) {
 		var elH = el.offsetHeight,
 			scrolled = scrollY(),
@@ -133,10 +133,10 @@
 			// if 1, the element is considered in the viewport only when it's fully inside
 			// value in percentage (1 >= h >= 0)
 			h = h || 0;
- 
+
 		return (elTop + elH * h) <= viewed && (elBottom) >= scrolled;
 	}
-	
+
 	function init() {
 		// Below is where you select the svg element
 		var svgs = Array.prototype.slice.call( document.querySelectorAll( '.m-graph-container svg' ) ),
@@ -154,7 +154,7 @@
 						svg.render();
 					}
 				};
-			}( el ), 250 ); 
+			}( el ), 250 );
 		} );
 
 		var scrollHandler = function() {
@@ -188,4 +188,4 @@
 
 	init();
 
-})();
+};

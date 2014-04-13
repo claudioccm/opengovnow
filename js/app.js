@@ -1,7 +1,6 @@
 $(document).foundation();
 
 $(document).ready(function() {
-
 	var totalHeight = $('html').css('height');
 	// $('.m-menu').css('height', totalHeight);
 	// console.log(totalHeight);
@@ -138,41 +137,50 @@ $(document).ready(function() {
     plotDonutChart($('#donut1'), 77);
     plotDonutChart($('#donut2'), 62);
     plotDonutChart($('#donut3'), 50);
-    plotDonutChart($('#donut4'), 80);
+    plotDonutChart($('#donut4'), 20);
+    plotDonutChart($('#donut5'), 20);
+    plotDonutChart($('#donut6'), 20);
+    plotDonutChart($('#donut7'), 20);
+    plotDonutChart($('#donut8'), 20);
+    plotDonutChart($('#donut9'), 20);
+
+    // Must be called after all the D3 charts were plotted, otherwise, they
+    // won't be animated.
+    animateSVGs();
 });
 
 function plotDonutChart(container, percentage) {
     if ($(container).length) {
-        var col = '#224466',            // Set the chart's color.
+        var col = '#224466',              // Set the chart's color.
             wid = $(container).width(),
             hei = $(container).height(),
-            min = Math.min(wid, hei),
-            siz = (0.018 * min) + 'em', // The decimal adjusts the font size.
-            rad = 0.77 * (min / 2),     // The decimal adjusts the thickness.
+            rad = Math.min(wid, hei) / 2,
+            inn = 0.77 * rad,             // The decimal adjusts the thickness.
+            siz = (0.036 * rad) + 'em',   // The decimal adjusts the font size.
+            arc = null,
             svg = null;
 
+        arc = d3.svg.arc().startAngle(0).innerRadius(inn).outerRadius(rad - 2);
+
         svg = d3.select($(container)[0])
-            .append('svg')
-            .attr('width', wid)
-            .attr('height', hei)
+            .append('svg').attr({'width': '100%', 'height': '100%'})
+            .attr('viewBox', '0 0 ' + wid + ' ' + hei)
+            .attr('preserveAspectRatio', 'xMidYMid meet')
             .append('g')
             .attr('transform', 'translate(' + wid / 2 + ',' + hei / 2 + ')');
 
-        svg.selectAll()
-            .data(d3.layout.pie().sort(null)([percentage, 100 - percentage]))
-            .enter()
-            .append('path')
-            .attr('d', d3.svg.arc().outerRadius(min/2 - 2).innerRadius(rad))
-            .style('stroke', col)
-            .style('fill', function(d, i) { return [col, 'transparent'][i]; });
+        svg.append('path')
+            .attr('class', 'meter')
+            .attr('d', arc.endAngle(2 * Math.PI * (percentage / 100)))
+            .style({'fill': col, 'stroke': 'transparent'});
 
-        svg.append("text")
-            .attr("dy", ".3em")
+        svg.append('path')
+            .attr('d', arc.endAngle(2 * Math.PI))
+            .style({'fill': 'transparent', 'stroke': col});
+
+        svg.append('text')
+            .attr('dy', '.3em')
             .text(percentage + '%')
-            .style("fill", col)
-            .style("font-size", siz)
-            .style("text-anchor", "middle");
-
-        return svg;
+            .style({'fill': col, 'font-size': siz, 'text-anchor': 'middle'});
     }
 }

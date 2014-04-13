@@ -135,36 +135,43 @@ $(document).ready(function() {
 	});
 
     // Test pie charts.
-    drawPieChart($('#pie1'), 23, 77);
-    drawPieChart($('#pie2'), 38, 62);
-    drawPieChart($('#pie3'), 50, 50);
-    drawPieChart($('#pie4'), 20, 80);
+    plotDonutChart($('#donut1'), 77);
+    plotDonutChart($('#donut2'), 62);
+    plotDonutChart($('#donut3'), 50);
+    plotDonutChart($('#donut4'), 80);
 });
 
-function drawPieChart (container, min, max) {
+function plotDonutChart(container, percentage) {
     if ($(container).length) {
-        var w = $(container).width(),
-            h = $(container).height(),
-            colors = ['#246', '#fff'];
+        var col = '#224466',            // Set the chart's color.
+            wid = $(container).width(),
+            hei = $(container).height(),
+            min = Math.min(wid, hei),
+            siz = (0.018 * min) + 'em', // The decimal adjusts the font size.
+            rad = 0.77 * (min / 2),     // The decimal adjusts the thickness.
+            svg = null;
 
-        var svg = d3.select($(container)[0])
+        svg = d3.select($(container)[0])
             .append('svg')
-            .attr('width', w)
-            .attr('height', h)
+            .attr('width', wid)
+            .attr('height', hei)
             .append('g')
-            .attr('transform', 'translate(' + w / 2 + ',' + h / 2 + ')');
+            .attr('transform', 'translate(' + wid / 2 + ',' + hei / 2 + ')');
 
-        var g = svg.selectAll('.arc')
-            .data(d3.layout.pie().sort(null)([max, min]))
+        svg.selectAll()
+            .data(d3.layout.pie().sort(null)([percentage, 100 - percentage]))
             .enter()
-            .append('g')
-            .attr('class', 'arc');
+            .append('path')
+            .attr('d', d3.svg.arc().outerRadius(min/2 - 2).innerRadius(rad))
+            .style('stroke', col)
+            .style('fill', function(d, i) { return [col, 'transparent'][i]; });
 
-        g.append('path')
-            .style('fill', function(d, i) { return colors[i]; } )
-            .attr('d', d3.svg.arc().outerRadius((Math.min(w, h) / 2) - 2));
-
-        $(container).find('svg').addClass('m-pie-chart');
+        svg.append("text")
+            .attr("dy", ".3em")
+            .text(percentage + '%')
+            .style("fill", col)
+            .style("font-size", siz)
+            .style("text-anchor", "middle");
 
         return svg;
     }

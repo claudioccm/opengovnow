@@ -157,10 +157,9 @@ function plotDonutChart(container, percentage) {
             rad = Math.min(wid, hei) / 2,
             inn = 0.77 * rad,             // The decimal adjusts the thickness.
             siz = (0.036 * rad) + 'em',   // The decimal adjusts the font size.
-            arc = null,
+            end = 2 * Math.PI * (percentage / 100),
+            arc = d3.svg.arc().innerRadius(inn).outerRadius(rad - 2),
             svg = null;
-
-        arc = d3.svg.arc().startAngle(0).innerRadius(inn).outerRadius(rad - 2);
 
         svg = d3.select($(container)[0])
             .append('svg').attr({'width': '100%', 'height': '100%'})
@@ -171,16 +170,20 @@ function plotDonutChart(container, percentage) {
 
         svg.append('path')
             .attr('class', 'meter')
-            .attr('d', arc.endAngle(2 * Math.PI * (percentage / 100)))
+            .attr('d', arc.startAngle(0).endAngle(end))
             .style({'fill': col, 'stroke': 'transparent'});
 
         svg.append('path')
-            .attr('d', arc.endAngle(2 * Math.PI))
+            .attr('d', arc.startAngle(0).endAngle(2 * Math.PI))
             .style({'fill': 'transparent', 'stroke': col});
 
         svg.append('text')
             .attr('dy', '.3em')
             .text(percentage + '%')
             .style({'fill': col, 'font-size': siz, 'text-anchor': 'middle'});
+
+        $(container).find('.meter').data('inner', inn);
+        $(container).find('.meter').data('outer', rad - 2);
+        $(container).find('.meter').data('endangle', end);
     }
 }

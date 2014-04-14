@@ -62,6 +62,16 @@ function animateSVGs() {
 			self.length[i] = l;
 			self.path[i].style.strokeDasharray = l + ' ' + l;
 			self.path[i].style.strokeDashoffset = l;
+
+			if (path.classList.contains('meter')) {
+				var inn = $(path).data('inner'),
+				    out = $(path).data('outer'),
+					arc = d3.svg.arc().innerRadius(inn).outerRadius(out);
+
+				d3.select(path)
+					.datum({endAngle: 0})
+					.attr('d', arc.startAngle(0).endAngle(0));
+			}
 		} );
 	};
 
@@ -74,15 +84,52 @@ function animateSVGs() {
 	SVGEl.prototype.draw = function() {
 		var self = this,
 			progress = this.current_frame/this.total_frames;
+
 		if (progress > 1) {
 			window.cancelAnimFrame(this.handle);
 			this.showImage();
-		} else {
+
+			for(var j = 0; j < this.path.length; j++) {
+				if (this.path[j].classList.contains('meter')) {
+					var inn = $(path).data('inner'),
+					    out = $(path).data('outer'),
+					    end = $(path).data('endangle'),
+						arc = d3.svg.arc().innerRadius(inn).outerRadius(out);
+
+					d3.select(path)
+						.datum({endAngle: end})
+						.attr('d', arc.endAngle(end));
+				}
+			}
+
+		} else if (progress < 1) {
 			this.current_frame++;
 			for(var j=0, len = this.path.length; j<len;j++){
 				this.path[j].style.strokeDashoffset = Math.floor(this.length[j] * (1 - progress));
 			}
+
 			this.handle = window.requestAnimFrame(function() { self.draw(); });
+
+		} else {
+			for(var j = 0; j < this.path.length; j++) {
+				if (this.path[j].classList.contains('meter')) {
+					var inn = $(this.path[j]).data('inner'),
+					    out = $(this.path[j]).data('outer'),
+						end = $(this.path[j]).data('endangle'),
+						arc = d3.svg.arc().innerRadius(inn).outerRadius(out);
+
+					d3.select(this.path[j])
+						.transition()
+						.duration(450)
+						.attrTween('d', function(d) {
+							return function(t) {
+								d.endAngle = d3.interpolate(d.endAngle, end)(t);
+
+								return arc.startAngle(0)(d);
+							};
+						});
+				}
+			}
 		}
 	};
 

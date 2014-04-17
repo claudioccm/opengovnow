@@ -133,6 +133,14 @@ $(document).ready(function() {
 		$('.m-switcher').toggleClass('active');
 	});
 
+    // Calling Donut Chart in Index2.html
+    plotDonutChart($('#nuggets-1'), 80);
+    plotDonutChart($('#nuggets-2'), 82);
+    plotDonutChart($('#nuggets-3'), 83);
+
+
+
+
     // Test pie charts.
     plotDonutChart($('#donut1'), 77);
     plotDonutChart($('#donut2'), 62);
@@ -155,7 +163,7 @@ function plotDonutChart(container, percentage) {
             wid = $(container).width(),
             hei = $(container).height(),
             rad = Math.min(wid, hei) / 2,
-            inn = 0.77 * rad,             // The decimal adjusts the thickness.
+            inn = 0.85 * rad,             // The decimal adjusts the thickness.
             siz = (0.036 * rad) + 'em',   // The decimal adjusts the font size.
             end = 2 * Math.PI * (percentage / 100),
             arc = d3.svg.arc().innerRadius(inn).outerRadius(rad - 2),

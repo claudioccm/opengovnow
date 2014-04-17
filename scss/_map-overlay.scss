@@ -1,7 +1,18 @@
-.timer {
-	font-size: 6rem;
-	position: absolute;
-	right: 40%;
-	top: 30%;
-	text-align: right;
+
+.m-ticker {
+	position: relative;
+		
+	#map-container {
+		max-height: 400px;
+		overflow: hidden;
+	}
+
+	.timer {
+		font-size: 6rem;
+		position: absolute;
+		right: 40%;
+		top: 22%;
+		text-align: right;
+	}
 }
+

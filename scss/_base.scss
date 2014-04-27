@@ -1,5 +1,7 @@
 $og_green: rgba(35, 84, 102, 1);
 $white: rgba(255,255,255,1);
+$white_60: rgba(255,255,255,.6);
+$white_6: rgba(255,255,255,.06);
 $gray_85: rgba(0,0,0,0.85);
 $gray_80: rgba(0,0,0,0.8);
 $gray_70: rgba(0,0,0,0.7);
@@ -64,11 +66,20 @@ video {
 		max-width: 420px;
 		border-bottom: 1px solid $gray_10;
 	}
+	
+	.m-video-caption {
+		max-width: 420px;
+	}
+
 }
 
 .m-video-answer.big {
 	margin: 10px auto 40px;
 	video {
+		max-width: 960px;
+	}
+
+	.m-video-caption {
 		max-width: 960px;
 	}
 }
@@ -126,13 +137,23 @@ video {
 
 	nav {
 		padding: 20px;
-		width: 260px;
+		width: 280px;
 		
 		a {
-			color: $white;
+			color: $white_60;
 			margin: 0 20px;
-			padding: 7px;
+			padding: 12px 7px;
 			display: block;
+			border-top: 1px solid $white_6;
+			border-bottom: 1px solid $gray_20;
+		}
+
+		a:first-child {
+			border-top: 0;
+		}
+
+		a:last-child {
+			border-bottom: 0;
 		}
 	}
 }

@@ -25,11 +25,11 @@
 		width: 0;
 		height: 0;
 		position: absolute;
-		left: 15px;
-		top: 5px;
-		border-top: 14px solid transparent;
-		border-bottom: 14px solid transparent;
-		border-left: 14px solid $white;
+		left: 16px;
+		top: 7px;
+		border-top: 12px solid transparent;
+		border-bottom: 12px solid transparent;
+		border-left: 12px solid $white;
 	}
 
 	.m-switcher-container {
@@ -72,9 +72,9 @@
 
 	.m-switcher-handle:after {
 		border-left: 0;
-		border-right: 14px solid $white;
+		border-right: 12px solid $white;
 		left: none;
-		left: 10px;
+		left: 11px;
 	}
 
 	.m-switcher-container {

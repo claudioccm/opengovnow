@@ -31,62 +31,89 @@ video {
 	}
 }
 
-
 .m-video-answer.full-interview {
-	position: relative;
-	
 	.controls {
-		width: 100%;
+		// border-bottom: 1px solid $gray_10;
+		// width: 90%;
+		// display: inline-block;
+		// padding: 5px;
 		position: absolute;
-		top: 60px;
-		left: 0;
-		vertical-align: middle;
-		opacity: 0;
-		@include slide;
-
-		span {
-			@include circle;
-			width: 60px;
-			height: 60px;
-			padding: 10px;
-			background-color: $gray_40;
-			display: inline-block;
-			cursor: pointer;
-
-			i {
-				font-size: 32px;
-				position: relative;
-				color: $gray_70;
-			}
-
-		}
+		left: 5%;
+		top: 50%;
 		
+		span {
+			display: block;
+			font-size: 18px;
+			margin: 0 0 10px;
+			color: $gray_40;
+			cursor: pointer;
+		}
+
 		span:hover {
-			background-color: $og_green;
-
-			i {
-				color: $white;
-			}
+			color: $og_green;
 		}
 
-		.play-pause i {
-			top: 3px;
-		}
-
-		.download i {
-			left: -2px;
-			top: 1px;
-		}
+		
 	}
 }
 
-.m-video-answer.full-interview:hover {
+
+
+// .m-video-answer.full-interview {
+// 	position: relative;
 	
-	.controls {
-		opacity: 1;
-		@include slide;
-	}		
-}
+// 	.controls {
+// 		width: 100%;
+// 		position: absolute;
+// 		top: 60px;
+// 		left: 0;
+// 		vertical-align: middle;
+// 		opacity: 0;
+// 		@include slide;
+
+// 		span {
+// 			@include circle;
+// 			width: 60px;
+// 			height: 60px;
+// 			padding: 10px;
+// 			background-color: $gray_40;
+// 			display: inline-block;
+// 			cursor: pointer;
+
+// 			i {
+// 				font-size: 32px;
+// 				position: relative;
+// 				color: $gray_70;
+// 			}
+
+// 		}
+		
+// 		span:hover {
+// 			background-color: $og_green;
+
+// 			i {
+// 				color: $white;
+// 			}
+// 		}
+
+// 		.play-pause i {
+// 			top: 3px;
+// 		}
+
+// 		.download i {
+// 			left: -2px;
+// 			top: 1px;
+// 		}
+// 	}
+// }
+
+// .m-video-answer.full-interview:hover {
+	
+// 	.controls {
+// 		opacity: 1;
+// 		@include slide;
+// 	}		
+// }
 
 .m-video-caption {
 	text-align: center;

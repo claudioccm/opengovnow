@@ -1,11 +1,13 @@
 $og_green: rgba(35, 84, 102, 1);
 $white: rgba(255,255,255,1);
+$white_20: rgba(255,255,255,.2);
 $white_60: rgba(255,255,255,.6);
 $white_6: rgba(255,255,255,.06);
 $gray_85: rgba(0,0,0,0.85);
 $gray_80: rgba(0,0,0,0.8);
 $gray_70: rgba(0,0,0,0.7);
 $gray_40: rgba(0,0,0,0.4);
+$gray_30: rgba(0,0,0,0.3);
 $gray_20: rgba(0,0,0,0.2);
 $gray_10: rgba(0,0,0,0.1);
 $gray_3: rgba(0,0,0,0.03);
@@ -104,6 +106,14 @@ h3 {
 	@include slide;
 	height: 100%;
 	font-size: .8rem;
+	
+	h2 {
+		color: $white_20;
+		font-size: 1.8rem;
+		text-align: left;
+		margin-left: 42px;
+		letter-spacing: 1px;
+	}
 
 	nav {
 		padding: 20px;

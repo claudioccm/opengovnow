@@ -29,6 +29,24 @@ $(document).ready(function() {
 		$('#overlay').hide();
 	});
 
+    $('.play-pause').click(function() {
+
+        var state = $(this).attr('class');
+
+        if (state === 'play-pause') {
+            $(this).addClass('s-active');
+            $(this).children().attr('class', 'icon-pause-1');    
+        } else {
+            $(this).removeClass('s-active');
+            $(this).children().attr('class', 'icon-play');    
+        }
+
+        
+    });
+
+
+    // .icon-pause-1
+
 	// Smooth Scrolling Function
 	$(function() {
 		$('a[href*=#]:not([href=#])').click(function() {
@@ -187,6 +205,7 @@ function plotDonutChart(container, percentage) {
 
         svg.append('text')
             .attr('dy', '.3em')
+            .attr('class', 'pie-chart-text')
             .text(percentage + '%')
             .style({'fill': col, 'font-size': siz, 'text-anchor': 'middle'});
 

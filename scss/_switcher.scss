@@ -11,13 +11,17 @@
 		-webkit-border-radius: 50%;
 		-moz-border-radius: 50%;
 		border-radius: 50%;
-		background-color: $og_green;
+		background-color: $gray_40;
 		color: $white;
 		position: absolute;
 		top: 50%;
 		right: 0;
 		cursor: pointer;
 		z-index: 1;
+	}
+
+	.m-switcher-handle:hover {
+		background-color: $og_green;
 	}
 
 	.m-switcher-handle:after {

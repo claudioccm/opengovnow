@@ -31,11 +31,11 @@ video {
 	}
 }
 
-.m-video-answer.full-interview {
+.m-video-answer {
 	.controls {
 		position: absolute;
 		left: 5%;
-		top: 50%;
+		bottom: 22%;
 		
 		span {
 			display: block;
@@ -51,9 +51,11 @@ video {
 	}
 }
 
-.m-video-answer.full-interview:hover {
-	span {
-		color: $gray_40;
+.m-video-answer:hover {
+	.controls {
+		span {
+			color: $gray_40;
+		}	
 	}
 }
 .m-video-caption {

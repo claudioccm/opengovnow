@@ -1,52 +1,149 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<style>
+<html>
+  <head>
+    <title>Bar Chart</title>
+    <script type="text/javascript" src="d3.v2.min.js"></script>
+    <style type="text/css">
+ 
+    .chart {
+     
+      margin: 10px;
+      padding-top: 10px; 
+    }
+    
+    .chart .right {
+      stroke: white;
+      fill: green; 
+    }
+ 
+    .chart .left {
+      stroke: white;
+      fill: steelblue; 
+    }
+ 
+    .chart rect:hover {
+      fill: #64707d; 
+    }
+    
+    .chart text {
+      fill: white; 
+    }
+    
+    .chart text.name {
+      fill: black; 
+    }
+ 
+    </style>
+  </head>
+  <body>
+ 
+    <script type="text/javascript">
+ 
+      var randomNumbers = function() { 
+       // var numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+       var numbers = [];
+        for (var i = 0; i < 20; i++) {
+          numbers.push(parseInt(Math.random() * 19) + 1);
+        }
+        return numbers;
+      };
+ 
+      var randomNames = function() { 
+      //  var names = ['a','b','c','d','e','f', 'g', 'h','i','j','k','l','m','n','o','p','q','r','s','t'];
+      var names = [];
+        for (var i = 0; i < 20; i++) {
+          names.push(String.fromCharCode(65 + Math.random() * 25) + String.fromCharCode(65 + Math.random() * 25) + String.fromCharCode(65 + Math.random() * 25));
+        }
 
-.chart {
-  float: right;
-}
-.chart rect {
-  fill: steelblue;
-}
-
-.chart text {
-  fill: white;
-  font: 10px sans-serif;
-  text-anchor: end;
-}
-
-</style>
-<svg class="chart"></svg>
-
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script>
-
-var data = [4, 8, 15, 16, 23, 42];
-
-var width = 420,
-    barHeight = 20;
-
-var x = d3.scale.linear()
-    .domain([0, d3.max(data)])
-    .range([0, width]);
-
-var chart = d3.select(".chart")
-    .attr("width", width)
-    .attr("height", barHeight * data.length);
-
-var bar = chart.selectAll("g")
-    .data(data)
-  .enter().append("g")
-    .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
-
-bar.append("rect")
-    .attr("width", x)
-    .attr("height", barHeight - 1);
-
-bar.append("text")
-    .attr("x", function(d) { return x(d) - 3; })
-    .attr("y", barHeight / 2)
-    .attr("dy", ".35em")
-    .text(function(d) { return d; });
-
-</script>
+        return names;
+      };
+ 
+      var names = randomNames();
+      var leftData = randomNumbers();  
+      var rightData = randomNumbers();
+ 
+      for (var i= 0; i< names.length; i++) {
+        console.log(names[i] + " from: " + leftData[i] + " to: " + rightData[i]);  
+      }
+ 
+      var labelArea = 160;
+ 
+      var chart,
+          width = 400,
+          bar_height = 20,
+          height = bar_height * (names.length);
+ 
+      var rightOffset = width + labelArea;
+ 
+      var chart = d3.select("body")
+        .append('svg')
+        .attr('class', 'chart')
+        .attr('width', labelArea + width + width)
+        .attr('height', height);
+      
+      var xFrom = d3.scale.linear()
+         .domain([0, d3.max(leftData)])
+         .range([0, width]);
+ 
+      var y = d3.scale.ordinal()
+         .domain(names)
+         .rangeBands([10, height]);
+ 
+      var yPosByIndex = function(d, index){ return y(index); } 
+ 
+      chart.selectAll("rect.left")
+        .data(leftData)
+        .enter().append("rect")
+        .attr("x", function(pos) { return width - xFrom(pos); })
+        .attr("y", yPosByIndex)
+        .attr("class", "left")
+        .attr("width", xFrom)
+        .attr("height", y.rangeBand()); 
+ 
+      chart.selectAll("text.leftscore")
+        .data(leftData)
+        .enter().append("text")
+        .attr("x", function(d) { return width - xFrom(d); })
+        .attr("y", function(d, z){ return y(z) + y.rangeBand()/2; } )
+        .attr("dx", "20")
+        .attr("dy", ".36em")
+        .attr("text-anchor", "end")
+        .attr('class', 'leftscore')
+        .text(String);
+ 
+      chart.selectAll("text.name")
+        .data(names)
+        .enter().append("text")
+        .attr("x", (labelArea / 2) + width)
+        .attr("y", function(d){ return y(d) + y.rangeBand()/2; } )
+        .attr("dy", ".20em")
+        .attr("text-anchor", "middle")
+        .attr('class', 'name')
+        .text(String);
+ 
+      var xTo = d3.scale.linear()
+         .domain([0, d3.max(rightData)])
+         .range([0, width]);
+ 
+      chart.selectAll("rect.right")
+        .data(rightData)
+        .enter().append("rect")
+        .attr("x", rightOffset)
+        .attr("y", yPosByIndex)
+        .attr("class", "right")
+        .attr("width", xTo)
+        .attr("height", y.rangeBand()); 
+ 
+      chart.selectAll("text.score")
+        .data(rightData)
+        .enter().append("text")
+        .attr("x", function(d) { return xTo(d) +  rightOffset; })
+        .attr("y", function(d,z){ return y(z) + y.rangeBand()/2; } )
+        .attr("dx", -5)
+        .attr("dy", ".36em")
+        .attr("text-anchor", "end")
+        .attr('class', 'score')
+        .text(String);
+    </script>
+  </body>
+</html>

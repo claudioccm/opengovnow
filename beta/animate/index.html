@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  
+</head>
+<body>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"
+            type="text/javascript"></script>
+
+ 
+<script type="text/javascript">
+$(document).ready(function() {
+
+
+setInterval(function() {
+      // Do something after 5 seconds
+       $('#arrow').animate({
+        'marginLeft' : "+=30px" //moves right
+        });
+
+        $('#arrow').animate({
+        'marginLeft' : "-=30px" //moves right
+        });
+
+}, 2000);
+   
+});
+
+
+</script>
+
+ 
+<div id="arrow" style="position:absolute;padding:10px;width:300px;">
+    <img src = "arrow1.png" />
+</div>
+
+
+</body>
+</html>

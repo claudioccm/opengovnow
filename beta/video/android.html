@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<title></title>
+<style>
+button {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+</style>
+</head>
+<body>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<video id="video" src="http://video-js.zencoder.com/oceans-clip.mp4" width=300 height=150></video>
+<button>Play!</button>
+<script>
+(function(){
+var
+  video = document.getElementById('video'),
+  button = document.getElementById('button'),
+  togglePlay = function() {
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  };
+// this doesn't work. Android ~4.2 seems to want some sort of user interaction
+  // before playing a video
+setTimeout(function() { video.play(); }, 2000);
+ 
+document.addEventListener('click', function(e){
+  // this works. Android lets you trigger playback after a single timeout,
+  // unlike iOS
+  setTimeout(togglePlay,1);
+ 
+  /*
+  // ... but there is a limit. After a second timeout, videos can't be
+  // programmatically triggered anymore
+  setTimeout(function(){
+    setTimeout(togglePlay,1);
+  },1);
+  */
+});
+})();
+</script>
+</body>
+</html>

@@ -26,6 +26,12 @@ $z-overlay: 999;
 	transition: all 0.3s ease;
 }
 
+@mixin circle {
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+
 // Type
 
 a {
@@ -49,48 +55,6 @@ h2 {
 h3 {
 	text-align: center;
 	color: $gray_70;
-}
-
-// Video Module
-
-video {
-	width: 100%;
-}
-
-.m-video-answer {
-	text-align: center;
-	margin-top: 40px;
-	padding: 0;
-
-	video {
-		max-width: 420px;
-		border-bottom: 1px solid $gray_10;
-	}
-	
-	.m-video-caption {
-		max-width: 420px;
-	}
-
-}
-
-.m-video-answer.big {
-	margin: 10px auto 40px;
-	video {
-		max-width: 960px;
-	}
-
-	.m-video-caption {
-		max-width: 960px;
-	}
-}
-
-.m-video-caption {
-	text-align: center;
-	font-size: .8rem;
-	font-style: italic;
-	width: 70%;
-	margin: 0 auto 20px;
-	color: $gray_40;
 }
 
 // Layout

@@ -145,11 +145,21 @@ $(document).ready(function() {
 	  $("#map-container").load("images/map.svg");
 	});
 
-	// Switcher Functions
+    // Switcher Functions
 
-	$('.m-switcher-handle').click(function() {
-		$('.m-switcher').toggleClass('active');
-	});
+    $(window).load(function() {
+        $('#open-closed-gov').imageReveal({
+            barWidth: 6,
+            touchBarWidth: 40,
+            paddingLeft: 0,
+            paddingRight: 0,
+            showCaption: false,
+            startPosition: 0.5,
+            captionChange: 0.5,
+            width: 800,
+            height: 350
+        });
+    });
 
     // Calling Donut Chart in Index2.html
     plotDonutChart($('#nuggets-1'), 80);

@@ -10,3 +10,22 @@
 		margin: 90px 0 40px;
 	}
 }
+
+.m-infographic-caption {
+	text-align: center;
+	font-size: .8rem;
+	font-style: italic;
+	width: 70%;
+	margin: 0 auto 20px;
+	color: $gray_40;
+}
+
+#open-closed-gov {
+	border-bottom: 1px solid $gray_20;
+
+	.imageReveal-drag {
+		background-color: $og_green;
+		@include drop-shadow;
+	}	
+}
+

@@ -34,6 +34,12 @@ $z-overlay: 999;
 	border-radius: 50%;
 }
 
+@mixin drop-shadow {
+	-webkit-box-shadow: 0 0 6px $gray_40;
+	-moz-box-shadow: 0 0 6px $gray_40;
+	box-shadow: 0 0 6px $gray_40;
+}
+
 // Type
 
 a {

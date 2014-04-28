@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>#OpenGovNow - Alpha</title>
     <link rel="stylesheet" href="bower_components/fontello-icons/css/fontello.css" />
+    <link rel="stylesheet" href="bower_components/imagereveal/css/jquery.imageReveal.css" />
     <link rel="stylesheet" href="css/app.css" />
     <script src="bower_components/modernizr/modernizr.js"></script>
 </head>
@@ -58,6 +59,7 @@
 
         <div id="infographic-two-way-communication" class="m-infographic">
           <img src="images/two-way-graph.svg" alt="">
+          <p class="m-infographic-caption">Interview clip from Chris Underwood</p>
         </div>
 
         <div class="m-video-answer">
@@ -83,9 +85,12 @@
       <section class="row">
         <h2>Why should I Care?</h2>
         <h3>Transition from old governance to new governance</h3>
-        <div class="m-switcher">
-            
+        <div id="open-closed-gov" class="imageReveal m-switcher show-for-large-only">
+          <img src="images/good-news.png" title="Open Gov">
+          <img src="images/bad-news.png" title="Closed Gov">
         </div>
+
+        <!-- <p>Infographic on stakeholders about shared benefits (Phase 2)</p> -->
 
         <div class="m-video-answer">
           <video>
@@ -111,6 +116,17 @@
           </video>
           <p class="m-video-caption">Ellen Miller</p>
         </div>
+
+        <div class="m-video-answer big">
+          <video>
+            <source src="videos/animation-sample-2.webm" type="video/ogg"></source>
+          </video>
+          <p>Animation delineating benefits of open government</p>
+        </div>
+
+
+
+        <!-- <p>Beneficiary stories (Phase 2)</p> -->
       </section>
     </div>
     
@@ -160,9 +176,10 @@
           <p class="m-video-caption">Felipe Estefan</p>
         </div>
 
-        <p>The Global Opening Government Survey was conducted as a response to the growing demand to better understand citizens’ views on the current state and the potential impact of openness. Using the innovative “random domain intercept” technology, the survey is based on a brief questionnaire and has collected complete responses from over 65,000 individuals in the first 61 OGP member countries plus India.*</p>
-        <p><em>*It is important to note that all respondents had Internet access, which, especially in developing nations, is typically a more urban and general public. The survey team is fully aware of the constraints of the methodology and potential biases of the data collected, as it might not have reached communities where internet access is limited. We acknowledge the limitations of this new online survey methodology, and we look forward to collaborating with more organizations to conduct more in-depth and targeted analysis and supplement our findings.</em></p>
+        <p>The Global Opening Government Survey was conducted as a response to the growing demand to better understand citizens’ views on the current state and the potential impact of openness. Using the innovative “random domain intercept” technology, the survey is based on a brief questionnaire and has collected complete responses from over 65,000 individuals in the first 61 OGP member countries plus India.<span data-tooltip class="has-tip" title="It is important to note that all respondents had Internet access, which, especially in developing nations, is typically a more urban and general public. The survey team is fully aware of the constraints of the methodology and potential biases of the data collected, as it might not have reached communities where internet access is limited. We acknowledge the limitations of this new online survey methodology, and we look forward to collaborating with more organizations to conduct more in-depth and targeted analysis and supplement our findings.">*</span></p>
         
+
+
         <h3>The Survey</h3>
         <div class="m-video-answer">
           <video>
@@ -393,6 +410,7 @@
     </footer>
     <div id="overlay"></div>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/imagereveal/js/jquery.imageReveal.js"></script>
     <script src="bower_components/foundation/js/foundation.min.js"></script>
     <script src="bower_components/d3/d3.js"></script>
     <script src="js/app.js"></script>

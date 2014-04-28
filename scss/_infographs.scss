@@ -1,5 +1,12 @@
 .m-infographic {
 	width: 100%;
-	height: 400px;
-	background-color: $gray_10;
+}
+
+#infographic-two-way-communication {
+	text-align: center;
+
+	img {
+		max-width: 600px;
+		margin: 90px 0 40px;
+	}
 }

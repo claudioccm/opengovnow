@@ -72,6 +72,7 @@ h3 {
 	padding: 0 20px;
 	left: 0;
 	@include slide;
+	max-width: 800px;
 }
 
 // Menu Module
@@ -156,6 +157,13 @@ footer {
 	background-color: $gray_85;
 	color: $white;
 	padding: 20px 0;
+	color: $white_60;
+
+	p {
+		font-size: 12px;
+		text-align: center;
+		letter-spacing: 1px;
+	}
 }
 
 // States for the Menu

@@ -138,8 +138,7 @@ $(document).ready(function() {
     plotDonutChart($('#nuggets-2'), 82);
     plotDonutChart($('#nuggets-3'), 83);
 
-
-
+    // Adding class countr
 
     // Test pie charts.
     plotDonutChart($('#donut1'), 77);
@@ -194,4 +193,18 @@ function plotDonutChart(container, percentage) {
         $(container).find('.meter').data('outer', rad - 2);
         $(container).find('.meter').data('endangle', end);
     }
+}
+
+function addClassToCountries(svg, countries, cls) {
+    countries.forEach(function(country) {
+        var elem = $(svg).find('#' + country);
+
+        if ($(elem).length && !elem[0].classList.contains(cls)) {
+            elem[0].classList.add(cls);
+        }
+    });
+}
+
+function addClassToAllCountries(svg, cls) {
+    $(svg).children('path, g').each(function() { this.classList.add(cls); });
 }

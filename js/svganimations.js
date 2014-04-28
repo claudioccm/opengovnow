@@ -120,7 +120,7 @@ function animateSVGs() {
 
 					d3.select(this.path[j])
 						.transition()
-						.duration(450)
+						.duration(1000)
 						.attrTween('d', function(d) {
 							return function(t) {
 								d.endAngle = d3.interpolate(d.endAngle, end)(t);

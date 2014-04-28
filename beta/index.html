@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Image Reveal</title>
+        <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+        <script src="js/jquery.imageReveal.js"></script>
+        <link rel="stylesheet" href="css/jquery.imageReveal.css" />
+    </head>
+    <body>
+
+            <div id="example3" class="imageReveal">
+                <img src="images/3-before.jpg" title="Gov is Cute">
+                <img src="images/3-after.jpg" title="Gov is Evil">
+            </div>
+  
+
+        <script>
+            $(window).load(function() {
+
+                $('#example3').imageReveal({
+                    barWidth: 20,
+                    touchBarWidth: 40,
+                    paddingLeft: 0,
+                    paddingRight: 0,
+                    showCaption: true,
+                    startPosition: 0.5,
+                    captionChange: 0.5,
+                    width: 250,
+                    height: 250
+                });
+
+               
+            });
+        </script>
+
+    </body>
+</html>

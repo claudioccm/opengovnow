@@ -46,35 +46,41 @@ video {
 
 		span {
 			@include circle;
-			width: 80px;
-			height: 80px;
+			width: 60px;
+			height: 60px;
+			padding: 10px;
 			background-color: $gray_40;
 			display: inline-block;
 			cursor: pointer;
+
+			i {
+				font-size: 32px;
+				position: relative;
+				color: $gray_70;
+			}
+
 		}
 		
 		span:hover {
 			background-color: $og_green;
 
+			i {
+				color: $white;
+			}
 		}
 
+		.play-pause i {
+			top: 3px;
+		}
 
-		.play-pause:after {
-			width: 0;
-			height: 0;
-			content:"";
-			position: absolute;
-			border-top: 20px solid transparent;
-			border-bottom: 20px solid transparent;
-			border-left: 24px solid $white;
-			top: 20px;
-			left: 109px;
+		.download i {
+			left: -2px;
+			top: 1px;
 		}
 	}
 }
 
 .m-video-answer.full-interview:hover {
-	position: relative;
 	
 	.controls {
 		opacity: 1;

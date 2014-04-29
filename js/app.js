@@ -237,3 +237,43 @@ function addClassToCountries(svg, countries, cls) {
 function addClassToAllCountries(svg, cls) {
     $(svg).children('path, g').each(function() { this.classList.add(cls); });
 }
+
+ $(function() {
+     $('#OGDef-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+             document.getElementById('OGDef').play();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('OGDef').pause();
+         }
+     });
+     $('#ellen-miller-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+             document.getElementById('ellen-miller').play();
+             document.getElementById('OGDef').pause();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('ellen-miller').pause();
+         }
+     });
+     $('#chris-underwood-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+             document.getElementById('chris-underwood').play();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('chris-underwood').pause();
+         }
+     });
+     $('#florencio-abad-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+             document.getElementById('florencio-abad').play();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('florencio-abad').pause();
+         }
+     });
+ });

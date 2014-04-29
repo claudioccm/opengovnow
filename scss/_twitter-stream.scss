@@ -1,0 +1,43 @@
+.m-twitter-stream {
+	
+	.m-twitter-stream-item {
+		margin-bottom: 30px;
+		padding-left: 30px;
+	}
+
+	.m-twitter-stream-item:nth-child(odd) {
+		text-align: right;
+		padding-right:30px;
+
+		.twitter-pic {
+		}
+	}
+	
+	.twitter-pic {
+		max-width: 75px;
+		max-height: 75px;
+		border: 2px solid $og_green;
+		@include circle;
+	}
+	
+	.tweet-text {
+		font-style: italic;
+		font-weight: 300;
+		margin: 10px 0;
+		color: $gray_70;
+	}
+
+	.twitter-name {
+	}
+
+	i {
+		color: $gray_20;
+		cursor: pointer;
+	}
+	
+	.m-twitter-stream-item:hover {
+		i {
+			color: $og_green;
+		}
+	}
+}

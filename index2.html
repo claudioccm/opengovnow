@@ -44,9 +44,9 @@
     <div id="c-what-is-opengov" class="l-module">
       <section class="row">
         <h2>What is Open Government?</h2>
-        <div class="m-video-answer big">
-          <video autoplay>
-            <source data-src="videos/animation-sample-2.webm" type="video/ogg"></source>
+        <div id="OGDef-container" class="m-video-answer big inview">
+          <video id="OGDef"  >
+            <source data-src="videos/open-government.webm" type="video/ogg"></source>
           </video>
         </div>
         <p>Open Government benefits us all. With increased government transparency and citizen participation, public services are more efficient and actually serve the citizens who need them most. </p>
@@ -583,7 +583,7 @@
     </section>
   </footer>
   <div id="overlay"></div>
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.min.js"  type="text/javascript"></script>
   <script src="bower_components/imagereveal/js/jquery.imageReveal.js"></script>
   <script src="bower_components/foundation/js/foundation.min.js"></script>
   <script src="bower_components/d3/d3.js"></script>
@@ -591,6 +591,24 @@
   <script src="js/svganimations.js"></script>
   <script src="js/classie.js"></script>
   <script src="js/jquery.lazyloadxt.extra.min.js"></script>
+  <script src="js/jquery.inview.js"></script>
+
+   <script type="text/javascript">
+    $(function () {
+        $('#OGDef-container.inview').bind('inview', function (event, visible) {
+          if (visible == true) {
+            // element is now visible in the viewport
+            document.getElementById('OGDef').play();
+          } else {
+            // element has gone out of viewport
+              document.getElementById('OGDef').pause();
+          }
+        });
+ 
+  });
+
+   </script>
+
 
 </body>
 </html>

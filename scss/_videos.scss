@@ -7,10 +7,10 @@ video {
 .m-video-answer {
 	margin: 40px auto;
 	padding: 0;
-	max-width: 520px;
+	max-width: 620px;
 
 	video {
-		max-width: 520px;
+		max-width: 620px;
 		border-bottom: 1px solid $gray_10;
 	}
 
@@ -62,7 +62,7 @@ video {
 
 .m-video-caption {
 	text-align: center;
-	max-width: 460px;
+	max-width: 640px;
 	margin: 0 auto;
 	font-style: italic;
 	color: $gray_40;
@@ -75,7 +75,7 @@ video {
 	bottom: 10px;
 	text-align: right;
 	right: 0;
-	width: 27%;
+	width: 20%;
 
 	.m-lower-third-name {
 		font-size: .8rem;

@@ -67,6 +67,23 @@ h3 {
 	color: $gray_70;
 }
 
+p {
+	font-size: 1.2rem;
+}
+
+.drop-cap:first-letter {
+	font-size: 7rem;
+	line-height: 100%;
+	float: left;
+	margin: 0 16px 0 0;
+	font-weight: 100;
+}
+
+.drop-cap:first-line {
+	font-size: 2rem;
+	color: $og_green;
+}
+
 // Layout
 .l-module {
 	padding: 10px 0 50px;
@@ -80,7 +97,7 @@ h3 {
 	padding: 0 20px;
 	left: 0;
 	@include slide;
-	max-width: 800px;
+	max-width: 960px;
 }
 
 // Menu Module

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="bower_components/imagereveal/css/jquery.imageReveal.css" />
     <link rel="stylesheet" href="css/app.css" />
     <script src="bower_components/modernizr/modernizr.js"></script>
+ 
 </head>
 <body>
     <div class="m-menu-trigger"><i class="icon-menu"></i></div>
@@ -43,8 +44,9 @@
     <!-- Section 1 - What is Open Gov? -->
     <div id="c-what-is-opengov" class="l-module">
       <section class="row">
+
         <h2>What is Open Government?</h2>
-        <div id="OGDef-container" class="m-video-answer big inview">
+         <div id="OGDef-container" class="m-video-answer big inview">
           <video id="OGDef"  >
             <source data-src="videos/open-government.webm" type="video/ogg"></source>
           </video>
@@ -52,8 +54,8 @@
         <p>Open Government benefits us all. With increased government transparency and citizen participation, public services are more efficient and actually serve the citizens who need them most. </p>
 
         <div class="m-video-answer">
-          <div class="m-video-container">
-            <video>
+          <div id ="ellen-miller-container" class="m-video-container inview">
+            <video id="ellen-miller">
               <source data-src="videos/ellen-miller.webm" type="video/ogg"></source>
             </video>
             <div class="controls hide-for-large-only">
@@ -77,8 +79,8 @@
         </div>
 
         <div class="m-video-answer">
-          <div class="m-video-container">
-            <video>
+          <div id="chris-underwood-container" class="m-video-container inview">
+            <video id="chris-underwood">
               <source data-src="videos/chris-underwood-pt-1.webm" type="video/ogg"></source>
             </video>
             <div class="controls hide-for-large-only">
@@ -95,8 +97,8 @@
         <p>Just as there are old and new ways of doing things, Open Government is a new and efficient way of doing governance. It is a movement that is centered around making sure that governments and citizens actually work together to achieve better outcomes for all. No one group of people has the solutions to the most pressing governance challenges, and that’s why openness and collaboration are essential. If citizens and governments work together, we can all co-create practical solutions to long-standing problems.</p>
 
         <div class="m-video-answer">
-          <div class="m-video-container">
-            <video>
+          <div id="florencio-abad-container" class="m-video-container inview">
+            <video id="florencio-abad">
               <source data-src="videos/florencio-abad.webm" type="video/ogg"></source>
             </video>
             <div class="controls hide-for-large-only">
@@ -143,8 +145,8 @@
         <p>The water that you drink, the public school that children go to, the roads that you use every day: governments use public money to make these a reality. In the process, money was exchanged, contracts were signed. It’s estimated that 9.5 trillion US dollars are spent by governments all over the world on contracts alone -- therefore you have a role to play in making sure that your share in that money is not exchanged in shady contracts, resulting in substandard and faulty infracture.</p>
 
         <div class="m-video-answer">
-          <div class="m-video-container">
-            <video>
+          <div id = "stella-dawson-container" class="m-video-container inview">
+            <video id="stella-dawson">
               <source data-src="videos/stella-dawson-pt-1.webm" type="video/ogg"></source>
             </video>
             <div class="controls hide-for-large-only">
@@ -604,6 +606,44 @@
               document.getElementById('OGDef').pause();
           }
         });
+
+        
+        $('#ellen-miller-container.inview').bind('inview', function (event, visible) {
+          if (visible == true) {
+            // element is now visible in the viewport
+            document.getElementById('ellen-miller').play();
+            document.getElementById('OGDef').pause();
+          } else {
+            // element has gone out of viewport
+              document.getElementById('ellen-miller').pause();
+          }
+        });
+
+          $('#chris-underwood-container.inview').bind('inview', function (event, visible) {
+          if (visible == true) {
+            // element is now visible in the viewport
+            document.getElementById('chris-underwood').play();
+            
+          } else {
+            // element has gone out of viewport
+              document.getElementById('chris-underwood').pause();
+          }
+        });
+
+
+           $('#florencio-abad-container.inview').bind('inview', function (event, visible) {
+          if (visible == true) {
+            // element is now visible in the viewport
+            document.getElementById('florencio-abad').play();
+            
+          } else {
+            // element has gone out of viewport
+              document.getElementById('florencio-abad').pause();
+          }
+        });
+
+
+
  
   });
 

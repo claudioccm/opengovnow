@@ -35,29 +35,30 @@ video {
 
 	.controls {
 		position: absolute;
-		top: 50%;
-		left: 50%;
+		top: 42%;
+		left: 45%;
 		
 		span {
 			display: block;
-			font-size: 36px;
-			color: $gray_20;
+			width: 5rem;
+			height: 5rem;
+			font-size: 3.5rem;
+			color: $og_green_70;
 			cursor: pointer;
-		}
+			@include circle;
+			@include drop-shadow;
+			background-color: $white_60;
 
-		span:hover {
-			color: $og_green;
+			i {
+				position:relative;
+				left: 7px;
+				top: 10px;
+			}
 		}
 	}
 }
 
-.m-video-answer:hover {
-	.controls {
-		span {
-			color: $gray_40;
-		}	
-	}
-}
+
 
 .m-video-caption {
 	text-align: center;
@@ -92,7 +93,7 @@ video {
 	}
 }
 #c-full-interviews {
-	.controls {
+	.full-controls {
 		position: absolute;
 		left: 5%;
 		bottom: 22%;

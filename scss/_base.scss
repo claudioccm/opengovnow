@@ -1,3 +1,5 @@
+// Color Variables
+
 $og_green: rgba(35, 84, 102, 1);
 $og_green_70: rgba(35, 84, 102, .7);
 $white: rgba(255,255,255,1);
@@ -14,6 +16,14 @@ $gray_20: rgba(0,0,0,0.2);
 $gray_10: rgba(0,0,0,0.1);
 $gray_3: rgba(0,0,0,0.03);
 $gray_3_solid: #f7f7f7;
+$red: rgba(184, 25, 39, 1);
+// $red: #a7091a;
+
+
+
+// Type Variables
+$sans-serif: "Raleway", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$serif: "Merriweather", "Minion Pro", Georgia, "Times New Roman", sans-serif;
 
 // Z-index Variables
 
@@ -55,9 +65,14 @@ a:hover {
 	color: $white;
 }
 
-h1, h2, h3, h4, h5, p {
-	font-family: "Raleway", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+h1, h2, h3, h4, h5 {
+	font-family: $sans-serif;
 	font-weight: 200;
+}
+
+p {
+	font-family: $serif;
+	color: $gray_85;
 }
 
 h1, 
@@ -65,10 +80,9 @@ h2 {
 	text-align: center;
 	color: $og_green;
 	// font-family: "HelveticaNeue-Thin", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	
 }
 
-h3 {
+h3, h4 {
 	text-align: center;
 	color: $gray_70;
 }
@@ -77,28 +91,21 @@ p {
 	font-size: 1.2rem;
 }
 
-.drop-cap:first-letter {
-	font-size: 7rem;
-	line-height: 100%;
-	float: left;
-	margin: 0 16px 0 0;
-	font-weight: 600;
-	color: $og_green;
+.m-video-caption {
+	font-family: $sans-serif;
 }
-
-.drop-cap:first-line {
-	font-size: 2rem;
-	font-weight: 600;
-	
-	
+.m-lower-third-name {
+	font-family: $serif;
+}
+.m-lower-third-job {
+	font-family: $sans-serif;
 }
 
 // Layout
 .l-module {
 	padding: 10px 0 50px;
-	background-color: $white;
+	// background-color: $white;
 	// background-color: $gray_3;
-	border-bottom: 1px solid $gray_20;
 }
 
 .row {

@@ -44,9 +44,6 @@ $(document).ready(function() {
         
     });
 
-
-    // .icon-pause-1
-
 	// Smooth Scrolling Function
 	$(function() {
 		$('a[href*=#]:not([href=#])').click(function() {
@@ -146,9 +143,8 @@ $(document).ready(function() {
 	});
 
     // Switcher Functions
-
     $(window).load(function() {
-        $('#open-closed-gov').imageReveal({
+        $('#c-open-closed-gov').imageReveal({
             barWidth: 6,
             touchBarWidth: 40,
             paddingLeft: 0,
@@ -157,7 +153,7 @@ $(document).ready(function() {
             startPosition: 0.5,
             captionChange: 0.5,
             width: 800,
-            height: 350
+            height: 600
         });
     });
 

@@ -1,7 +1,7 @@
 // @media #{$small-up} { }
 // @media #{$small-only} { }
 
-// @media #{$medium-up} { }
+// 
 // @media #{$medium-only} { }
 
 // @media #{$large-up} { }
@@ -36,7 +36,7 @@
 
 }
 
-@media #{$medium-only} { 
+@media #{$medium-up} { 
 	h1 { font-size: rem-calc(80); }
 	
 	.m-menu-trigger { 
@@ -47,7 +47,7 @@
 		font-size: 7rem;
 		line-height: 100%;
 		float: left;
-		margin: 0 16px 0 0;
+		margin: 10px 16px 0 0;
 		font-weight: 600;
 		color: $red;
 	}

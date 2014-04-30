@@ -82,5 +82,10 @@
 	}
 }
 
+.imageReveal-drag {
+	background-color: $og_green;
+	@include drop-shadow;
+}
+
 
 

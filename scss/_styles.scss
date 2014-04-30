@@ -26,6 +26,7 @@
 }
 
 .m-section-header {
-	border-top: 1px solid $gray_20;
+	border-top: 1px solid $og_green_70;
 	background: url(../images/splash-1.png) no-repeat center -100px;
+	@include inner-shadow-section-header;
 }

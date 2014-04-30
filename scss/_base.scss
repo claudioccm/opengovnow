@@ -14,6 +14,7 @@ $gray_40: rgba(0,0,0,0.4);
 $gray_30: rgba(0,0,0,0.3);
 $gray_20: rgba(0,0,0,0.2);
 $gray_10: rgba(0,0,0,0.1);
+$gray_10_solid: #eee;
 $gray_3: rgba(0,0,0,0.03);
 $gray_3_solid: #f7f7f7;
 $red: rgba(184, 25, 39, 1);
@@ -50,6 +51,12 @@ $z-overlay: 999;
 	-webkit-box-shadow: 0 0 6px $gray_40;
 	-moz-box-shadow: 0 0 6px $gray_40;
 	box-shadow: 0 0 6px $gray_40;
+}
+
+@mixin inner-shadow-section-header {
+	-webkit-box-shadow: inset 0 6px 12px rgba(0,0,0,0.2);
+	-moz-box-shadow: inset 0 6px 12px rgba(0,0,0,0.2);
+	box-shadow: inset 0 6px 12px rgba(0,0,0,0.2);
 }
 
 // Type
@@ -137,7 +144,8 @@ p {
 	position: fixed;
 	top: 0;
 	left: 0;
-	background-color: $gray_80;
+	background-color: $gray_10_solid;
+	border-right: 1px solid $og_green;
 	-webkit-box-shadow: inset -3px -8px 8px rgba(0,0,0,0.2);
 	-moz-box-shadow: inset -3px -8px 8px rgba(0,0,0,0.2);
 	box-shadow: inset -3px -8px 8px rgba(0,0,0,0.2);
@@ -150,7 +158,7 @@ p {
 	font-size: .8rem;
 	
 	h2 {
-		color: $white_20;
+		color: $gray_70;
 		font-size: 1.8rem;
 		text-align: left;
 		margin-left: 42px;
@@ -162,20 +170,25 @@ p {
 		width: 280px;
 		
 		a {
-			color: $white_60;
+			color: $gray_85;
 			margin: 0 20px;
 			padding: 12px 7px;
 			display: block;
-			border-top: 1px solid $white_6;
+			border-top: 1px solid $white;
 			border-bottom: 1px solid $gray_20;
 		}
 
 		a:first-child {
-			border-top: 0;
+			border-top: 0 !important;
 		}
 
 		a:last-child {
 			border-bottom: 0;
+		}
+
+		a:hover {
+			border-top: 1px solid $og_green;
+			color: $white_60;
 		}
 	}
 }

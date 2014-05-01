@@ -18,8 +18,9 @@ video {
 
 .m-video-answer.big {
 	margin: 10px auto 40px;
+	
 	video {
-		max-width: 960px;
+		max-width: 960px !important;
 	}
 
 	.m-video-caption {

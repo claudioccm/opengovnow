@@ -263,13 +263,113 @@ function addClassToAllCountries(svg, cls) {
              document.getElementById('chris-underwood').pause();
          }
      });
+     
      $('#florencio-abad-container.inview').bind('inview', function(event, visible) {
          if (visible == true) {
              // element is now visible in the viewport
              document.getElementById('florencio-abad').play();
+             document.getElementById('chris-underwood').pause();
          } else {
              // element has gone out of viewport
              document.getElementById('florencio-abad').pause();
          }
      });
+
+    $('#stella-dawson-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+             document.getElementById('stella-dawson').play();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('stella-dawson').pause();
+         }
+     });
+
+    
+
+     $('#ellen-miller-2-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+            document.getElementById('ellen-miller-2').play();
+            document.getElementById('stella-dawson').pause();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('ellen-miller-2').pause();
+         }
+     });
+
+     $('#felipe-estephan-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+            document.getElementById('felipe-estephan').play();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('felipe-estephan').pause();
+         }
+     });
+
+     $('#eric-meerkamper-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+            document.getElementById('eric-meerkamper').play();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('eric-meerkamper').pause();
+         }
+     });
+
+
+      $('#robert-hunja-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+            document.getElementById('robert-hunja').play();
+            document.getElementById('eric-meerkamper').pause();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('robert-hunja').pause();
+         }
+     });
+
+    $('#chris-underwood-2-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+            document.getElementById('chris-underwood-2').play();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('chris-underwood-2').pause();
+         }
+     });
+
+    $('#beauty-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+            document.getElementById('beauty').play();
+             document.getElementById('chris-underwood-2').pause();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('beauty').pause();
+         }
+     });
+
+    $('#florencio-abad-2-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+            document.getElementById('florencio-abad-2').play();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('florencio-abad-2').pause();
+         }
+     });
+
+    $('#stella-dawson-2-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+            document.getElementById('stella-dawson-2').play();
+            document.getElementById('florencio-abad-2').pause();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('stella-dawson-2').pause();
+         }
+     });
+
  });

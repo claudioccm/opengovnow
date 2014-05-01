@@ -125,7 +125,8 @@ $(document).ready(function() {
     };
 	})(jQuery);
 
-	 $('#m-ticker.inview').bind('inview', function(event, visible) {
+	
+    $('#m-ticker.inview').bind('inview', function(event, visible) {
         if (visible == true) {
             $('.timer').countTo({
                 from: 45000,
@@ -258,10 +259,24 @@ function addClassToAllCountries(svg, cls) {
 
  $(function() {
  
+
+    $('#OGDef-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+             document.getElementById('OGDef').play();
+          
+         } else {
+             // element has gone out of viewport
+             document.getElementById('OGDef').pause();
+         }
+     });
+
+
      $('#ellen-miller-container.inview').bind('inview', function(event, visible) {
          if (visible == true) {
              // element is now visible in the viewport
              document.getElementById('ellen-miller').play();
+            document.getElementById('OGDef').pause();
           
          } else {
              // element has gone out of viewport

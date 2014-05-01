@@ -303,6 +303,18 @@ function addClassToAllCountries(svg, cls) {
          }
      });
 
+      $('#mexico-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+            document.getElementById('mexico').play();
+            console.log("hey mexi");
+             
+         } else {
+             // element has gone out of viewport
+             document.getElementById('mexico').pause();
+         }
+     });
+
      $('#felipe-estephan-container.inview').bind('inview', function(event, visible) {
          if (visible == true) {
              // element is now visible in the viewport
@@ -376,6 +388,8 @@ function addClassToAllCountries(svg, cls) {
              document.getElementById('stella-dawson-2').pause();
          }
      });
+
+
 
  });
 

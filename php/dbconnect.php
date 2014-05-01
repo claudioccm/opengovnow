@@ -1,9 +1,8 @@
 <? 
  
   $host = "localhost";
-  $user = "mir";
-  $pass = "mirmir";
-
+  $user = "twtr";
+  $pass = "Mar7aba!";
   $databaseName = "twstream";
   $tableName = "tweets";
 

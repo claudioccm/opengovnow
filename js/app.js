@@ -9,7 +9,7 @@ $(document).ready(function() {
 	$('.m-menu-trigger').click(function(){
 		$('.m-menu').addClass('s-active');
 		$('.row').addClass('s-active');
-		$(this).addClass('s-active');
+		$('.m-fixed-menu').addClass('s-active');
 		$('#overlay').show();
 	});
 
@@ -17,7 +17,7 @@ $(document).ready(function() {
 	$('#overlay').click(function() {
 		$('.m-menu').removeClass('s-active');
 		$('.row').removeClass('s-active');
-		$('.m-menu-trigger').removeClass('s-active');
+		$('.m-fixed-menu').removeClass('s-active');
 		$('#overlay').hide();
 	});
 

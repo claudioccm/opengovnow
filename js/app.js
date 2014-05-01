@@ -160,6 +160,20 @@ $(document).ready(function() {
                 height: 600
             });
     }
+// =======
+//     $(window).load(function() {
+//         $('#c-open-closed-gov').imageReveal({
+//             barWidth: 6,
+//             touchBarWidth: 40,
+//             paddingLeft: 0,
+//             paddingRight: 0,
+//             showCaption: false,
+//             startPosition: 0.5,
+//             captionChange: 0.5,
+//             width: 800,
+//             height: 600
+//         });
+// >>>>>>> Stashed changes
     });
 
     // Calling Donut Chart in Index2.html

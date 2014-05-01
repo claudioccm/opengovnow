@@ -125,16 +125,18 @@ $(document).ready(function() {
     };
 	})(jQuery);
 
-	jQuery(function($) {
-        $('.timer').countTo({
-            from: 0,
-            to: 54765,
-            speed: 10000,
-            refreshInterval: 1,
-            onComplete: function(value) {
-                console.debug(this);
-            }
-        });
+	 $('#m-ticker.inview').bind('inview', function(event, visible) {
+        if (visible == true) {
+            $('.timer').countTo({
+                from: 0,
+                to: 54765,
+                speed: 10000,
+                refreshInterval: 1,
+                onComplete: function(value) {
+                    console.debug(this);
+                }
+            });
+         }
     });
 
     // Loads the Map

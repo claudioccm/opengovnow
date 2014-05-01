@@ -146,6 +146,7 @@ $(document).ready(function() {
  
 
     // Switcher Functions
+<<<<<<< Updated upstream
      $('#c-open-closed-gov.inview').bind('inview', function(event, visible) {
         if (visible == true) {
             $('#c-open-closed-gov').imageReveal({
@@ -159,8 +160,10 @@ $(document).ready(function() {
                 width: 800,
                 height: 600
             });
-    }
-// =======
+        }
+    });
+
+    // =======
 //     $(window).load(function() {
 //         $('#c-open-closed-gov').imageReveal({
 //             barWidth: 6,
@@ -174,7 +177,6 @@ $(document).ready(function() {
 //             height: 600
 //         });
 // >>>>>>> Stashed changes
-    });
 
     // Calling Donut Chart in Index2.html
     plotDonutChart($('#nuggets-1'), 80);

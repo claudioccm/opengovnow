@@ -125,36 +125,41 @@ $(document).ready(function() {
     };
 	})(jQuery);
 
-	jQuery(function($) {
-        $('.timer').countTo({
-            from: 0,
-            to: 54765,
-            speed: 10000,
-            refreshInterval: 1,
-            onComplete: function(value) {
-                console.debug(this);
-            }
-        });
+	 $('#m-ticker.inview').bind('inview', function(event, visible) {
+        if (visible == true) {
+            $('.timer').countTo({
+                from: 0,
+                to: 54765,
+                speed: 10000,
+                refreshInterval: 1,
+                onComplete: function(value) {
+                    console.debug(this);
+                }
+            });
+         }
     });
 
     // Loads the Map
 	$(function(){
 	  $("#map-container").load("images/map.svg");
 	});
+ 
 
     // Switcher Functions
-    $(window).load(function() {
-        $('#c-open-closed-gov').imageReveal({
-            barWidth: 6,
-            touchBarWidth: 40,
-            paddingLeft: 0,
-            paddingRight: 0,
-            showCaption: false,
-            startPosition: 0.5,
-            captionChange: 0.5,
-            width: 800,
-            height: 600
-        });
+     $('#c-open-closed-gov.inview').bind('inview', function(event, visible) {
+        if (visible == true) {
+            $('#c-open-closed-gov').imageReveal({
+                barWidth: 6,
+                touchBarWidth: 40,
+                paddingLeft: 0,
+                paddingRight: 0,
+                showCaption: false,
+                startPosition: 0.5,
+                captionChange: 0.5,
+                width: 800,
+                height: 600
+            });
+    }
     });
 
     // Calling Donut Chart in Index2.html
@@ -263,13 +268,114 @@ function addClassToAllCountries(svg, cls) {
              document.getElementById('chris-underwood').pause();
          }
      });
+     
      $('#florencio-abad-container.inview').bind('inview', function(event, visible) {
          if (visible == true) {
              // element is now visible in the viewport
              document.getElementById('florencio-abad').play();
+             document.getElementById('chris-underwood').pause();
          } else {
              // element has gone out of viewport
              document.getElementById('florencio-abad').pause();
          }
      });
+
+    $('#stella-dawson-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+             document.getElementById('stella-dawson').play();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('stella-dawson').pause();
+         }
+     });
+
+    
+
+     $('#ellen-miller-2-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+            document.getElementById('ellen-miller-2').play();
+            document.getElementById('stella-dawson').pause();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('ellen-miller-2').pause();
+         }
+     });
+
+     $('#felipe-estephan-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+            document.getElementById('felipe-estephan').play();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('felipe-estephan').pause();
+         }
+     });
+
+     $('#eric-meerkamper-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+            document.getElementById('eric-meerkamper').play();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('eric-meerkamper').pause();
+         }
+     });
+
+
+      $('#robert-hunja-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+            document.getElementById('robert-hunja').play();
+            document.getElementById('eric-meerkamper').pause();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('robert-hunja').pause();
+         }
+     });
+
+    $('#chris-underwood-2-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+            document.getElementById('chris-underwood-2').play();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('chris-underwood-2').pause();
+         }
+     });
+
+    $('#beauty-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+            document.getElementById('beauty').play();
+             document.getElementById('chris-underwood-2').pause();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('beauty').pause();
+         }
+     });
+
+    $('#florencio-abad-2-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+            document.getElementById('florencio-abad-2').play();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('florencio-abad-2').pause();
+         }
+     });
+
+    $('#stella-dawson-2-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+            document.getElementById('stella-dawson-2').play();
+            document.getElementById('florencio-abad-2').pause();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('stella-dawson-2').pause();
+         }
+     });
+
  });
+

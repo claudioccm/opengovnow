@@ -3,12 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <title>#OpenGovNow - Alpha</title>
+    
     <link rel="stylesheet" href="bower_components/fontello-icons/css/fontello.css" />
     <link rel="stylesheet" href="bower_components/imagereveal/css/jquery.imageReveal.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link href='http://fonts.googleapis.com/css?family=Merriweather:300,300italic,700,700italic|Raleway:400,200,600' rel='stylesheet' type='text/css'>
+    
     <script src="bower_components/modernizr/modernizr.js"></script>
+    
+     <meta property="og:image" content="http://openinggovernment.com/images/logo.png"/>
+     <meta name="description” content=”Open is better. Check out how Open Government benefits you." />
+     <meta name="title" content="Open Government"/>
  
 </head>
 <body>
@@ -35,10 +42,10 @@
   </div>
 ========================================-->
 
-    <div id="c-landing" class="l-module m-section-header">
+    <div id="c-landing" class="l-module">
       <section class="row">
-        <h1>#opengovnow</h1>
-        <h2>Open Government and How It Benefits You</h2>
+        <h1>Open Government</h1>
+        <h2>and How It Benefits You</h2>
         <img src="images/logo.png" alt="">
       </section>
     </div>
@@ -48,22 +55,23 @@
         <h2>What is Open Government?</h2>
          <div id="OGDef-container" class="m-video-answer big inview">
           <video id="OGDef">
-            <source data-src="videos/animation-1.webm" type="video/ogg"></source>
+            <source data-src="videos/open-government.webm" type="video/ogg"></source>
           </video>
         </div>
         <p>Open Government benefits us all. With increased government transparency and citizen participation, public services are more efficient and actually serve the citizens who need them most. </p>
 
         <div class="m-video-answer">
-          <div id="ellen-miller-container" class="m-video-container inview">
-            <video id="ellen-miller">
-              <source data-src="videos/ellen-miller-1.webmsd.webm" type="video/ogg"></source>
-            </video>
+          <div class="m-video-container">
+              <video id="ellen-miller">
+                <source data-src="videos/ellen-miller-1.webmsd.webm" type="video/ogg"></source>
+              </video>
+         
             <div class="controls hide-for-large-only">
               <span class="play-pause"><i class="icon-play"></i></span>
             </div>
-            <div class="m-lower-third">
+            <div id="ellen-miller-container" class="m-lower-third inview">
               <p class="m-lower-third-name">Ellen Miller</p>
-              <p class="m-lower-third-job">Co-Founder and Executive Director, Sunlight Foundation</p>
+              <p class="m-lower-third-job">Job Position with a few words a few more</p>
             </div>
           </div>
           <!-- <p class="m-video-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, asperiores, velit.</p> -->
@@ -74,21 +82,21 @@
         <p>The Open Government agenda makes sure that governments and citizens actually work together to achieve better outcomes for all. No one group of people has the solutions to the most pressing governance challenges, and that’s why openness and collaboration are essential. If citizens and governments work together, we can all co-create practical solutions to long-standing problems.</p>
 
         <div id="infographic-two-way-communication" class="m-infographic">
-          <img src="images/two-way-graph.png" alt="">
+          <img src="images/two-way-graph.gif" alt="">
           <!-- <p class="m-infographic-caption">Caption for the 2 way graph</p> -->
         </div>
 
         <div class="m-video-answer">
-          <div id="chris-underwood-container" class="m-video-container inview">
+          <div class="m-video-container">
             <video id="chris-underwood">
               <source data-src="videos/chris-underwood-1.webmsd.webm" type="video/ogg"></source>
             </video>
             <div class="controls hide-for-large-only">
               <span class="play-pause"><i class="icon-play"></i></span>
             </div>
-            <div class="m-lower-third">
+            <div  id="chris-underwood-container" class="m-lower-third inview">
               <p class="m-lower-third-name">Chris Underwood</p>
-              <p class="m-lower-third-job">Director, Global Action, Making All Voices Count</p>
+              <p class="m-lower-third-job">Job Position with a few words a few more</p>
             </div>
           </div>
           <!-- <p class="m-video-caption">Caption for Chris Underwood interview</p> -->
@@ -97,16 +105,16 @@
         <p>Just as there are old and new ways of doing things, Open Government is a new and efficient way of doing governance. It is a movement that is centered around making sure that governments and citizens actually work together to achieve better outcomes for all. No one group of people has the solutions to the most pressing governance challenges, and that’s why openness and collaboration are essential. If citizens and governments work together, we can all co-create practical solutions to long-standing problems.</p>
 
         <div class="m-video-answer">
-          <div id="florencio-abad-container" class="m-video-container inview">
+          <div class="m-video-container">
             <video id="florencio-abad">
               <source data-src="videos/florencio-abad-1.webmsd.webm" type="video/ogg"></source>
             </video>
             <div class="controls hide-for-large-only">
               <span class="play-pause"><i class="icon-play"></i></span>
             </div>
-            <div class="m-lower-third">
+            <div  id="florencio-abad-container" class="m-lower-third inview">
               <p class="m-lower-third-name">Florencio Abad</p>
-              <p class="m-lower-third-job">Secretary of Budget and Management, Government of the Philippines</p>
+              <p class="m-lower-third-job">Job Position with a few words a few more</p>
             </div>
           </div>
           <!-- <p class="m-video-caption">Caption for Florencio Abad</p> -->
@@ -119,24 +127,24 @@
       <section class="row">
           <h2>Why should I Care?</h2>
         <!-- <h3>Transition from old governance to new governance</h3> -->
-        <div id="c-open-closed-gov" class="imageReveal m-switcher show-for-large-only">
+        <div id="c-open-closed-gov" class="inview imageReveal m-switcher show-for-large-only">
           <img src="images/headlines-open.jpg" title="Open Gov">
           <img src="images/headlines-closed.jpg" title="Closed Gov">
         </div>
-        
+
         <!-- <p>Infographic on stakeholders about shared benefits (Phase 2)</p> -->
         
         <p class="drop-cap">The water that you drink, the public school that children go to, the roads that you use every day: governments use public money to make these a reality. In the process, money was exchanged, contracts were signed. It’s estimated that 9.5 trillion US dollars are spent by governments all over the world on contracts alone -- therefore you have a role to play in making sure that your share in that money is not exchanged in shady contracts, resulting in substandard and faulty infracture.</p>
 
         <div class="m-video-answer">
-          <div id = "stella-dawson-container" class="m-video-container inview">
+          <div class="m-video-container">
             <video id="stella-dawson">
               <source data-src="videos/stella-dawson-1.webmsd.webm" type="video/ogg"></source>
             </video>
             <div class="controls hide-for-large-only">
               <span class="play-pause"><i class="icon-play"></i></span>
             </div>
-            <div class="m-lower-third">
+            <div id = "stella-dawson-container"  class="m-lower-third inview">
               <p class="m-lower-third-name">Stella Dawson</p>
               <p class="m-lower-third-job">Job Position with a few words a few more</p>
             </div>
@@ -148,13 +156,13 @@
         
         <div class="m-video-answer">
           <div class="m-video-container">
-            <video>
+            <video id = "ellen-miller-2">
               <source data-src="videos/ellen-miller-2.webmsd.webm" type="video/ogg"></source>
             </video>
             <div class="controls hide-for-large-only">
               <span class="play-pause"><i class="icon-play"></i></span>
             </div>
-            <div class="m-lower-third">
+            <div id="ellen-miller-2-container" class="m-lower-third inview">
               <p class="m-lower-third-name">Ellen Miller</p>
               <p class="m-lower-third-job">Job Position with a few words a few more</p>
             </div>
@@ -179,7 +187,7 @@
       <section class="row show-for-medium-up">
         <h2>Who Wants It?</h2>
         <!-- <h3>The Demand</h3> -->
-        <div class="m-ticker">
+        <div id="m-ticker" class="m-ticker inview">
           <div id="map-container"></div>
           <h2 class="timer"></h2>
         </div>
@@ -188,13 +196,13 @@
       <section class="row">
         <div class="m-video-answer">
           <div class="m-video-container">
-            <video>
+            <video id="felipe-estephan">
               <source data-src="videos/felipe-estefan.webmsd.webm" type="video/ogg"></source>
             </video>
             <div class="controls hide-for-large-only">
               <span class="play-pause"><i class="icon-play"></i></span>
             </div>
-            <div class="m-lower-third">
+            <div id = "felipe-estephan-container" class="m-lower-third inview">
               <p class="m-lower-third-name">Felipe Estefan</p>
               <p class="m-lower-third-job">Job Position with a few words a few more</p>
             </div>
@@ -233,13 +241,13 @@
 
         <div class="m-video-answer">
           <div class="m-video-container">
-            <video>
+            <video id="eric-meerkamper">
               <source data-src="videos/eric-meerkamper.webmsd.webm" type="video/ogg"></source>
             </video>
             <div class="controls hide-for-large-only">
               <span class="play-pause"><i class="icon-play"></i></span>
             </div>
-            <div class="m-lower-third">
+            <div id = "eric-meerkamper-container" class="m-lower-third inview">
               <p class="m-lower-third-name">Eric Meerkamper</p>
               <p class="m-lower-third-job">Job Position with a few words a few more</p>
             </div>
@@ -253,13 +261,13 @@
 
         <div class="m-video-answer">
           <div class="m-video-container">
-            <video>
+            <video id="robert-hunja">
               <source data-src="videos/robert-hunja.webmsd.webm" type="video/ogg"></source>
             </video>
             <div class="controls hide-for-large-only">
               <span class="play-pause"><i class="icon-play"></i></span>
             </div>
-            <div class="m-lower-third">
+            <div id="robert-hunja-container" class="m-lower-third inview">
               <p class="m-lower-third-name">Robert Hunja</p>
               <p class="m-lower-third-job">Job Position with a few words a few more</p>
             </div>
@@ -278,13 +286,13 @@
 
         <div class="m-video-answer">
           <div class="m-video-container">
-            <video>
+            <video id="chris-underwood-2">
               <source data-src="videos/chris-underwood-2.webmsd.webm" type="video/ogg"></source>
             </video>
             <div class="controls hide-for-large-only">
                 <span class="play-pause"><i class="icon-play"></i></span>
               </div>
-            <div class="m-lower-third">
+            <div id="chris-underwood-2-container" class="m-lower-third inview">
               <p class="m-lower-third-name">Chris Underwood</p>
               <p class="m-lower-third-job">Job Position with a few words a few more</p>
             </div>
@@ -296,13 +304,13 @@
 
         <div class="m-video-answer">
           <div class="m-video-container">
-            <video>
+            <video id="beauty">
               <source data-src="videos/beauty.webmsd.webm" type="video/ogg"></source>
             </video>
             <div class="controls hide-for-large-only">
                 <span class="play-pause"><i class="icon-play"></i></span>
               </div>
-            <div class="m-lower-third">
+            <div id="beauty-container" class="m-lower-third inview">
               <p class="m-lower-third-name">Beauty</p>
               <p class="m-lower-third-job">Job Position with a few words a few more</p>
             </div>
@@ -314,13 +322,13 @@
 
         <div class="m-video-answer">
           <div class="m-video-container">
-            <video>
+            <video id="florencio-abad-2">
               <source data-src="videos/florencio-abad-2.webmsd.webm" type="video/ogg"></source>
             </video>
             <div class="controls hide-for-large-only">
                 <span class="play-pause"><i class="icon-play"></i></span>
               </div>
-            <div class="m-lower-third">
+            <div id="florencio-abad-2-container" class="m-lower-third inview">
               <p class="m-lower-third-name">Florencio Abad</p>
               <p class="m-lower-third-job">Job Position with a few words a few more</p>
             </div>
@@ -330,14 +338,30 @@
         </section>
 
         <section class="row m-social-media">
+         
           <div class="large-3 medium-3 small-6 column">
-            <i class="icon-facebook"></i>
+            <a
+               href="https://www.facebook.com/dialog/feed?
+               app_id=695646317144824
+               &picture=http://openinggovernment.com/logo.png
+               &caption=opengovnow
+               &link=http://openinggovernment.com/ogn/index2
+               &redirect_uri=http://openinggovernment.com/" target="_blank"> 
+
+                <i class="icon-facebook"></i>
+            </a>
           </div>
+
+
           <div class="large-3 medium-3 small-6 column">
-            <i class="icon-twitter"></i>
+              <a href="https://twitter.com/intent/tweet?text=Open is better. Check out how Open Government benefits you&hashtags=opengovnow&url=http://www.openinggovernment.com/&via=opening_gov&related=goxitweet, opening_gov,opencontracting" target="_blank" >
+            
+             <i class="icon-twitter"></i>
+            </a>   
           </div>
+         
           <div class="large-3 medium-3 small-6 column">
-            <i class="icon-youtube"></i>
+            <a href="https://www.youtube.com/user/opencontracting" target="_blank"><i class="icon-youtube"></i></a>
           </div>
           <div class="large-3 medium-3 small-6 column">
             <i class="icon-gplus"></i>
@@ -376,10 +400,10 @@
       <section class="row">
         <div class="m-video-answer">
           <div class="m-video-container">
-            <video>
+            <video id="stella-dawson-2">
               <source data-src="videos/stella-dawson-2.webmsd.webm" type="video/ogg"></source>
             </video>
-            <div class="m-lower-third">
+            <div id="stella-dawson-2-container" class="m-lower-third inview">
               <p class="m-lower-third-name">Stella Dawson</p>
               <p class="m-lower-third-job">Job Position with a few words a few more</p>
             </div>
@@ -473,95 +497,95 @@
     <div id="c-full-interviews" class="l-module s-disabled">
       <section class="row">
         <h3>Full Interviews</h3>
-        <h4>Coming Soon</h4>
-        <section class="row">    
-          <div class="large-4 medium-6 small-12 column full-interview">
-            <video>
-              <source data-src="videos/robert-hunja.webmsd.webm" type="video/ogg"></source>
-            </video>
-            <div class="full-controls">
-              <span class="play-pause"><i class="icon-play"></i></span>
-              <span class="download"><i class="icon-download-1"></i></span>
-            </div>
-            <p class="m-video-caption">Robert Hunja</p>
+        <h4>Coming Soon</h4>    
+        <div class="large-4 medium-6 small-12 column full-interview">
+          <video>
+            <source data-src="videos/robert-hunja.webmsd.webm" type="video/ogg"></source>
+          </video>
+          <div class="full-controls">
+            <span class="play-pause"><i class="icon-play"></i></span>
+            <span class="download"><i class="icon-download-1"></i></span>
           </div>
-          <div class="large-4 medium-6 small-12 column full-interview">
-            <video>
-              <source data-src="videos/ellen-miller-1.webmsd.webm" type="video/ogg"></source>
-            </video>
-            <div class="full-controls">
-              <span class="play-pause"><i class="icon-play"></i></span>
-              <span class="download"><i class="icon-download-1"></i></span>
-            </div>
-            <p class="m-video-caption">Ellen Miller</p>
+          <p class="m-video-caption">Robert Hunja</p>
+        </div>
+        <div class="large-4 medium-6 small-12 column full-interview">
+          <video>
+            <source data-src="videos/ellen-miller-1.webmsd.webm" type="video/ogg"></source>
+          </video>
+          <div class="full-controls">
+            <span class="play-pause"><i class="icon-play"></i></span>
+            <span class="download"><i class="icon-download-1"></i></span>
           </div>
-          <div class="large-4 medium-6 small-12 column full-interview">
-            <video>
-              <source data-src="videos/chris-underwood-1.webmsd.webm" type="video/ogg"></source>
-            </video>
-            <div class="full-controls">
-              <span class="play-pause"><i class="icon-play"></i></span>
-              <span class="download"><i class="icon-download-1"></i></span>
-            </div>
-            <p class="m-video-caption">Chris Underwood</p>
+          <p class="m-video-caption">Ellen Miller</p>
+        </div>
+        <div class="large-4 medium-6 small-12 column full-interview">
+          <video>
+            <source data-src="videos/chris-underwood-1.webmsd.webm" type="video/ogg"></source>
+          </video>
+          <div class="full-controls">
+            <span class="play-pause"><i class="icon-play"></i></span>
+            <span class="download"><i class="icon-download-1"></i></span>
           </div>
-        </section>  
-        <section class="row">
-          <div class="large-4 medium-6 small-12 column full-interview">
-            <video>
-              <source data-src="videos/felipe-estefan.webmsd.webm" type="video/ogg"></source>
-            </video>
-            <div class="full-controls">
-              <span class="play-pause"><i class="icon-play"></i></span>
-              <span class="download"><i class="icon-download-1"></i></span>
-            </div>
-            <p class="m-video-caption">Felipe Estefan</p>
-          </div>
-          <div class="large-4 medium-6 small-12 column full-interview">
-            <video>
-              <source data-src="videos/florencio-abad-1.webmsd.webm" type="video/ogg"></source>
-            </video>
-            <div class="full-controls">
-              <span class="play-pause"><i class="icon-play"></i></span>
-              <span class="download"><i class="icon-download-1"></i></span>
-            </div>
-            <p class="m-video-caption">Florencio Abad</p>
-          </div>
-          <div class="large-4 medium-6 small-12 column full-interview">
-            <video>
-              <source data-src="videos/stella-dawson-1.webmsd.webm" type="video/ogg"></source>
-            </video>
-            <div class="full-controls">
-              <span class="play-pause"><i class="icon-play"></i></span>
-              <span class="download"><i class="icon-download-1"></i></span>
-            </div>
-            <p class="m-video-caption">Stella Dawson</p>
-          </div>
-        </section>
+          <p class="m-video-caption">Chris Underwood</p>
+        </div>
       <section class="row">
         <div class="large-4 medium-6 small-12 column full-interview">
           <video>
-            <source data-src="videos/beauty.webmsd.webm" type="video/ogg"></source>
+            <source data-src="videos/felipe-estefan.webmsd.webm" type="video/ogg"></source>
           </video>
           <div class="full-controls">
             <span class="play-pause"><i class="icon-play"></i></span>
             <span class="download"><i class="icon-download-1"></i></span>
           </div>
-          <p class="m-video-caption">Beauty</p>
+          <p class="m-video-caption">Felipe Estefan</p>
         </div>
         <div class="large-4 medium-6 small-12 column full-interview">
           <video>
-            <source data-src="videos/eric-meerkamper.webmsd.webm" type="video/ogg"></source>
+            <source data-src="videos/florencio-abad-1.webmsd.webm" type="video/ogg"></source>
           </video>
           <div class="full-controls">
             <span class="play-pause"><i class="icon-play"></i></span>
             <span class="download"><i class="icon-download-1"></i></span>
           </div>
-          <p class="m-video-caption">Eric Meerkamper</p>
+          <p class="m-video-caption">Florencio Abad</p>
         </div>
-      </section>  
-    </section>
-      
+        <div class="large-4 medium-6 small-12 column full-interview">
+          <video>
+            <source data-src="videos/stella-dawson-1.webmsd.webm" type="video/ogg"></source>
+          </video>
+          <div class="full-controls">
+            <span class="play-pause"><i class="icon-play"></i></span>
+            <span class="download"><i class="icon-download-1"></i></span>
+          </div>
+          <p class="m-video-caption">Stella Dawson</p>
+        </div>
+      </section>
+      <section class="row">
+        
+      </section>
+      </section>
+      <div class="large-4 medium-6 small-12 column full-interview">
+          <video>
+            <source data-src="videos/stella-dawson-1.webmsd.webm" type="video/ogg"></source>
+          </video>
+          <div class="full-controls">
+            <span class="play-pause"><i class="icon-play"></i></span>
+            <span class="download"><i class="icon-download-1"></i></span>
+          </div>
+          <p class="m-video-caption">Stella Dawson</p>
+        </div>
+      </section>
+      <div class="large-4 medium-6 small-12 column full-interview">
+          <video>
+            <source data-src="videos/stella-dawson-1.webmsd.webm" type="video/ogg"></source>
+          </video>
+          <div class="full-controls">
+            <span class="play-pause"><i class="icon-play"></i></span>
+            <span class="download"><i class="icon-download-1"></i></span>
+          </div>
+          <p class="m-video-caption">Stella Dawson</p>
+        </div>
+      </section>
     </div>
   </div>
 

@@ -187,7 +187,8 @@ $(document).ready(function() {
 
 function plotDonutChart(container, percentage) {
     if ($(container).length) {
-        var col = '#224466',              // Set the chart's color.
+        var col = '#224466',               // Set the chart's color.
+            col2 = 'rgba(255, 105, 0, 1)', // Set the chart's color.
             wid = $(container).width(),
             hei = $(container).height(),
             rad = Math.min(wid, hei) / 2,
@@ -207,7 +208,7 @@ function plotDonutChart(container, percentage) {
         svg.append('path')
             .attr('class', 'meter')
             .attr('d', arc.startAngle(0).endAngle(end))
-            .style({'fill': col, 'stroke': 'transparent'});
+            .style({'fill': col2, 'stroke': 'transparent'});
 
         svg.append('path')
             .attr('d', arc.startAngle(0).endAngle(2 * Math.PI))

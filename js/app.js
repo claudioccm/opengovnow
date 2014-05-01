@@ -141,20 +141,23 @@ $(document).ready(function() {
 	$(function(){
 	  $("#map-container").load("images/map.svg");
 	});
+ 
 
     // Switcher Functions
-    $(window).load(function() {
-        $('#c-open-closed-gov').imageReveal({
-            barWidth: 6,
-            touchBarWidth: 40,
-            paddingLeft: 0,
-            paddingRight: 0,
-            showCaption: false,
-            startPosition: 0.5,
-            captionChange: 0.5,
-            width: 800,
-            height: 600
-        });
+     $('#c-open-closed-gov.inview').bind('inview', function(event, visible) {
+        if (visible == true) {
+            $('#c-open-closed-gov').imageReveal({
+                barWidth: 6,
+                touchBarWidth: 40,
+                paddingLeft: 0,
+                paddingRight: 0,
+                showCaption: false,
+                startPosition: 0.5,
+                captionChange: 0.5,
+                width: 800,
+                height: 600
+            });
+    }
     });
 
     // Calling Donut Chart in Index2.html
@@ -373,3 +376,4 @@ function addClassToAllCountries(svg, cls) {
      });
 
  });
+

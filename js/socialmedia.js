@@ -1,4 +1,6 @@
+
  setInterval(function() {
+
          $(function() {
              $.ajax({
                  url: 'php/select.php',
@@ -6,14 +8,22 @@
                  dataType: 'json',
                  //data format      
                  success: function(data) {
-                     $('#twitterstream').empty();
+                     $('#twstream').empty();
                      $.each(data, function(entryIndex, entry) {
+
+                        //pad all tweet texts to 150 chars to prevent moving
+                        var max = (150 - entry['tweet_text'].length);
+                            for (var i = 0; i < max; i++) {
+                                entry['tweet_text'] += " ";
+
+                            }
+                          
                          var html = '<div class="m-twitter-stream-item large-6 medium-12 small-12 column">';
                          html += '<img class="twitter-pic" src=' + entry['profile_image_url'] + ' />';
                          html += '<p class="tweet-text">' + entry['tweet_text'] + '</p>';
                          html += '<a href="#" class="twitter-name">' + entry['name'] + '</a>';
                          html += ' <i class="icon-share">';
-                         $('#twitterstream').append(html);
+                         $('#twstream').append(html);
                      });
                  }
              });

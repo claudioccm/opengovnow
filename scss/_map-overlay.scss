@@ -1,6 +1,7 @@
 
 .m-ticker {
 	position: relative;
+	margin-top: 60px;
 		
 	#map-container {
 		max-height: 400px;
@@ -10,9 +11,9 @@
 	.timer {
 		font-size: 6rem;
 		position: absolute;
-		right: 40%;
+		left: 31%;
 		top: 22%;
-		text-align: right;
+		text-align: left;
 	}
 }
 

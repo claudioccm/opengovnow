@@ -1,5 +1,15 @@
 .m-infographic {
 	width: 100%;
+	
+	h3 {
+		font-weight: bold;
+	}
+
+	h4 {
+		font-family: $serif;
+		font-size: 1rem;
+		margin-bottom: 30px;
+	}
 }
 
 #infographic-two-way-communication {

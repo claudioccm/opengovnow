@@ -75,8 +75,7 @@ a {
 }
 
 a:hover {
-	background-color: $og_green;
-	color: $white;
+	color: $orange;
 }
 
 h1, h2, h3, h4, h5 {
@@ -218,8 +217,9 @@ p {
 		}
 
 		a:hover {
-			border-top: 1px solid $og_green;
-			color: $white_60;
+			border-top: 1px solid $orange;
+			color: $white;
+			background-color: $orange;
 		}
 	}
 }

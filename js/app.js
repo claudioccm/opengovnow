@@ -128,10 +128,10 @@ $(document).ready(function() {
 	 $('#m-ticker.inview').bind('inview', function(event, visible) {
         if (visible == true) {
             $('.timer').countTo({
-                from: 0,
+                from: 45000,
                 to: 54765,
-                speed: 10000,
-                refreshInterval: 1,
+                speed: 700000,
+                refreshInterval: 40,
                 onComplete: function(value) {
                     console.debug(this);
                 }

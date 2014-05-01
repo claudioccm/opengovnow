@@ -20,7 +20,7 @@ video {
 	margin: 10px auto 40px;
 	
 	video {
-		max-width: 960px !important;
+		max-width: 960px;
 	}
 
 	.m-video-caption {
@@ -67,7 +67,6 @@ video {
 		}
 	}
 }
-
 
 .m-video-caption {
 	text-align: center;

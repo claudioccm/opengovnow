@@ -1,5 +1,5 @@
 
- setInterval(function() {
+ // setInterval(function() {
 
          $(function() {
              $.ajax({
@@ -8,7 +8,7 @@
                  dataType: 'json',
                  //data format      
                  success: function(data) {
-                    console.log("test");
+                   
                      $('#twstream').empty();
                      $.each(data, function(entryIndex, entry) {
 
@@ -22,7 +22,7 @@
                          //remote any quote at beginning or end to avoid breaking html
                          var tweets =   entry['tweet_text'].replace(/\"/g, "") ;
                          
-
+                        // console.log(tweets);
 
                          var html = '<div class="m-twitter-stream-item large-6 medium-12 small-12 column">';
                          html += '<img class="twitter-pic" src=' + entry['profile_image_url'] + ' />';
@@ -34,6 +34,6 @@
                  }
              });
          });
- }, 5000);
+ // }, 5000);
 
  

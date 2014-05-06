@@ -392,6 +392,17 @@ function addClassToAllCountries(svg, cls) {
          }
      });
 
+
+    $('#linda-frey-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+            document.getElementById('linda-frey').play();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('linda-frey').pause();
+         }
+     });
+
     $('#florencio-abad-2-container.inview').bind('inview', function(event, visible) {
          if (visible == true) {
              // element is now visible in the viewport

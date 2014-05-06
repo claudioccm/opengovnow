@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="bower_components/fontello-icons/css/fontello.css" />
     <link rel="stylesheet" href="bower_components/imagereveal/css/jquery.imageReveal.css" />
     <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" type="text/css" href="css/beta-dataoverlay.css" />
+
     <link href='http://fonts.googleapis.com/css?family=Merriweather:300,300italic,700,700italic|Raleway:400,200,600' rel='stylesheet' type='text/css'>
     <script src="bower_components/modernizr/modernizr.js"></script>
     
@@ -467,11 +469,11 @@
       <h2>Additional resources</h2>      
 
     <div id="c-datasets" class="l-module hide-for-small-only s-disabled">
-      <section class="row">
+      <section id="trigger-dataoverlay" class="row">
         <h3>Download the Datasets</h3>
-        <ul class="large-4 small-12 column">
+        <ul  class="large-4 small-12 column">
           <li><strong>All</strong><i class="icon-download-1"></i></li>
-          <li>Albania<i class="icon-download-1"></i></li>
+          <li>Albania<i  class="icon-download-1"></i></li>
           <li>Argentina<i class="icon-download-1"></i></li>
           <li>Armenia<i class="icon-download-1"></i></li>
           <li>Australia<i class="icon-download-1"></i></li>
@@ -540,6 +542,7 @@
         </ul>
       </section>
     </div>
+
 
     <section id="c-full-interviews" class="row">
         <h3>Full Interviews - Soon</h3>    
@@ -714,6 +717,12 @@
     </section>
   </footer>
   <div id="overlay"></div>
+  
+  <div class="dataoverlay dataoverlay-slidedown">
+      <button type="button" class="dataoverlay-close">Close</button>
+        <div class="chart"></div> 
+    </div>
+
   <script src="http://code.jquery.com/jquery-latest.min.js"  type="text/javascript"></script>
   <script src="bower_components/imagereveal/js/jquery.imageReveal.js"></script>
   <script src="bower_components/foundation/js/foundation.min.js"></script>
@@ -724,7 +733,28 @@
   <script src="js/jquery.lazyloadxt.extra.min.js"></script>
   <script src="js/jquery.inview.js"></script>
   <script src="js/socialmedia.js"></script>
+  <script src="js/beta-dataoverlay.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
 
+
+  <script>
+
+      var data = [40, 120, 150];
+
+      var x = d3.scale.linear().domain([0, d3.max(data)]).range(["0px", "200px"]);
+
+      d3.select(".chart")
+        .selectAll("div")
+        .data(data)
+        .enter()
+        .append('div')
+        .style('height', function(d) { return d * 2 + "px"; }) //function(d) { return d * 2 + "px"; })
+        .style("width", "30px") 
+        .append('div') 
+        .attr('class', 'legend')
+        .text(function(d) { return d; })
+ 
+  </script>
 
 </body>
 </html>

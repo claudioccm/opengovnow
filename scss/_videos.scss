@@ -29,6 +29,7 @@ video {
 }
 
 .m-video-answer {
+	background: url(../images/splash-1.png) no-repeat center;
 	
 	.m-video-container {
 		position: relative;	
@@ -55,10 +56,6 @@ video {
 				left: 10px;
 				top: 14px;
 			}
-		}
-
-		.play-pause.s-active {
-			opacity: 0;
 		}
 
 		.play-pause:hover {

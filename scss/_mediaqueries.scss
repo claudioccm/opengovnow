@@ -29,13 +29,6 @@
 		color: $orange;
 	}
 
-	.drop-cap:first-line {
-		font-size: 2rem;
-		font-weight: 200;
-	}
-
-	
-
 	.m-video-answer {
 	
 		.m-video-container {
@@ -75,7 +68,6 @@
 			}
 
 			.play-pause.s-active {
-				opacity: 0;
 				@include slide;
 
 				i {
@@ -84,13 +76,14 @@
 			}
 		}
 	}
-
 }
 
 @media #{$medium-up} { 
 	h1 { font-size: rem-calc(80); }
 	
-	
+	#c-landing h2 {
+		margin-top: -50px;
+	}
 
 	.drop-cap:first-letter {
 		font-size: 7rem;
@@ -100,18 +93,9 @@
 		font-weight: 600;
 		color: $orange;
 	}
-
-	.drop-cap:first-line {
-		font-size: 2rem;
-		font-weight: 200;
-	}
 }
 
 @media #{$medium-only} { 
-
-	.m-menu-trigger { 
-		position: absolute;
-	}
 
 	.m-video-answer:hover {
 			
@@ -124,48 +108,8 @@
 			}
 		}
 	}
-}
 
-@media #{$small-only} { 
-	h1 { font-size: rem-calc(36); }
-	h2 { font-size: rem-calc(24); }
-	h3 { font-size: rem-calc(18); }
-	
-	.m-menu-trigger { 
-		position: absolute;
-	}
-
-	.drop-cap:first-letter {
-		font-size: rem-calc(72);
-		line-height: 100%;
-		float: left;
-		margin: 0 16px 0 0;
-		font-weight: 600;
-		color: $orange;
-	}
-
-	.drop-cap:first-letter {
-		font-size: rem-calc(120);
-		line-height: 100%;
-		float: left;
-		margin: 0 16px 0 0;
-		font-weight: 600;
-		color: $orange;
-	}
-
-	.drop-cap:first-line {
-		font-size: 2rem;
-		font-weight: 200;
-	}
-
-}
-
-@media #{$medium-only} { 
 	h1 { font-size: rem-calc(80); }
-	
-	.m-menu-trigger { 
-		position: absolute;
-	}
 
 	.drop-cap:first-letter {
 		font-size: 7rem;
@@ -175,21 +119,13 @@
 		font-weight: 600;
 		color: $orange;
 	}
-
-	.drop-cap:first-line {
-		font-size: 2rem;
-		font-weight: 200;
-	}
 }
 
 @media #{$small-only} { 
 	h1 { font-size: rem-calc(36); }
 	h2 { font-size: rem-calc(24); }
 	h3 { font-size: rem-calc(18); }
-	
-	.m-menu-trigger { 
-		position: absolute;
-	}
+
 
 	.drop-cap:first-letter {
 		font-size: rem-calc(72);
@@ -202,6 +138,10 @@
 
 	#c-landing {
 		h1 { font-size: 2.3rem; }
-		h2 { font-size: 1.8rem; }
+		h2 { 
+			font-size: 1.8rem; 
+			margin-top: -30px;
+		}
+		h3 { font-size: rem-calc(18); }
 	}
 }

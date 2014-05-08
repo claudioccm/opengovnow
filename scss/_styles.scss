@@ -8,6 +8,11 @@
 #c-landing {
 	text-align: center;
 
+	section {
+		background: url(../images/map-bg.png) no-repeat center 80px;
+		background-size: 100%;
+	}
+
 	h1 {
 		font-size: 4rem;
 		margin-top: 1rem;
@@ -23,8 +28,7 @@
 	}
 
 	img {
-		margin-top: -50px;
-		width: 480px;
+		width: 50%;
 	}
 }
 

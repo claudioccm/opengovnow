@@ -1,3 +1,9 @@
+.infographic-wrapper {
+	background-color: $orange;
+	padding: 30px 0;
+	@include inner-shadow-disclaimer;
+}
+
 .m-infographic {
 	width: 100%;
 	
@@ -13,13 +19,16 @@
 }
 
 #infographic-two-way-communication {
-	text-align: center;
+	width: 100%;
+	max-height: 500px;
 
-	img {
-		max-width: 600px;
-		margin: 90px 0 40px;
+	path, polygon {
+		fill: $white;
 	}
 }
+
+
+
 
 .m-infographic-caption {
 	text-align: center;

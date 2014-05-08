@@ -12,8 +12,14 @@ video {
 	video {
 		max-width: 620px;
 		border-bottom: 1px solid $gray_10;
+		border-top: 1px solid $gray_10;
 	}
 
+}
+
+.animation-wrapper {
+	background-color: #074a5d;
+	padding: 20px 0;
 }
 
 .m-video-answer.big {

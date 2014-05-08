@@ -119,6 +119,17 @@ p {
 	font-family: $sans-serif;
 }
 
+.drop-cap:first-letter {
+	line-height: 100%;
+	float: left;
+	margin: 0 16px 0 0;
+	font-weight: 200;
+	background-color: $orange;
+	color: $white;
+	font-family: $sans-serif;
+	padding: 0 10px;
+}
+
 // Layout
 .l-module {
 	padding: 10px 0 50px;

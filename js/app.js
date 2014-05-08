@@ -142,8 +142,13 @@ $(document).ready(function() {
 
     // Loads the Map
 	$(function(){
-	  $("#map-container").load("images/map.svg");
+	  $("#map-container").load("graphs/map.svg");
 	});
+
+    // Loads the Two-way-communication Graph
+    $(function(){
+      $("#infographic-two-way-communication").load("graphs/two-way-graph.svg");
+    });
  
 
     // Switcher Functions

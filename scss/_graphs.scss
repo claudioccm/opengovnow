@@ -1,6 +1,9 @@
 .m-graph-container {
+	max-width: 960px;
+	min-height: 200px;
+	max-height: 250px;
+	overflow: hidden;
 	text-align: center;
-	
 
 	.m-pie-chart {
 		width: 210px;

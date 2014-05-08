@@ -1,0 +1,65 @@
+ 
+
+.chart {
+	height: 230px;
+	vertical-align: bottom;
+}
+
+.chart > div {
+	background-color: #ff6900;
+	text-align: center;
+	padding: 4px;
+	margin: 2px;
+	color: white;
+	display:inline-block;
+	width: 25px;
+	position: relative;
+	vertical-align: bottom;
+}
+
+
+
+/* dataoverlay style */
+.dataoverlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(35,84,102,0.95);
+}
+
+/* dataoverlay closing cross */
+.dataoverlay .dataoverlay-close {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	overflow: hidden;
+	border: none;
+	background: url(../images/cross.png) no-repeat center center;
+	text-indent: 200%;
+	color: transparent;
+	outline: none;
+	z-index: 100;
+}
+ 
+/* Effects */
+.dataoverlay-slidedown {
+	visibility: hidden;
+	-webkit-transform: translateY(-100%);
+	transform: translateY(-100%);
+	-webkit-transition: -webkit-transform 0.4s ease-in-out, visibility 0s 0.4s;
+	transition: transform 0.4s ease-in-out, visibility 0s 0.4s;
+}
+
+.dataoverlay-slidedown.open {
+	visibility: visible;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+	-webkit-transition: -webkit-transform 0.4s ease-in-out;
+	transition: transform 0.4s ease-in-out;
+}
+
+ 

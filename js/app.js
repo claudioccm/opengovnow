@@ -125,7 +125,8 @@ $(document).ready(function() {
     };
 	})(jQuery);
 
-	 $('#m-ticker.inview').bind('inview', function(event, visible) {
+	
+    $('#m-ticker.inview').bind('inview', function(event, visible) {
         if (visible == true) {
             $('.timer').countTo({
                 from: 45000,
@@ -146,7 +147,7 @@ $(document).ready(function() {
  
 
     // Switcher Functions
-<<<<<<< Updated upstream
+ 
      $('#c-open-closed-gov.inview').bind('inview', function(event, visible) {
         if (visible == true) {
             $('#c-open-closed-gov').imageReveal({
@@ -257,20 +258,26 @@ function addClassToAllCountries(svg, cls) {
 }
 
  $(function() {
-     $('#OGDef-container.inview').bind('inview', function(event, visible) {
+ 
+
+    $('#OGDef-container.inview').bind('inview', function(event, visible) {
          if (visible == true) {
              // element is now visible in the viewport
              document.getElementById('OGDef').play();
+          
          } else {
              // element has gone out of viewport
              document.getElementById('OGDef').pause();
          }
      });
+
+
      $('#ellen-miller-container.inview').bind('inview', function(event, visible) {
          if (visible == true) {
              // element is now visible in the viewport
              document.getElementById('ellen-miller').play();
-             document.getElementById('OGDef').pause();
+            document.getElementById('OGDef').pause();
+          
          } else {
              // element has gone out of viewport
              document.getElementById('ellen-miller').pause();
@@ -382,6 +389,17 @@ function addClassToAllCountries(svg, cls) {
          } else {
              // element has gone out of viewport
              document.getElementById('beauty').pause();
+         }
+     });
+
+
+    $('#linda-frey-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+            document.getElementById('linda-frey').play();
+         } else {
+             // element has gone out of viewport
+             document.getElementById('linda-frey').pause();
          }
      });
 

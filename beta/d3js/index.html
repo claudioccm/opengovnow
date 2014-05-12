@@ -3,6 +3,8 @@
   <head>
     <title>Bar Chart</title>
     <script type="text/javascript" src="d3.v2.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
     <style type="text/css">
  
     .chart {
@@ -31,11 +33,21 @@
     
     .chart text.name {
       fill: black; 
+    };
+
+    .chart .viewall { 
+      fill: steelblue; 
+    }
+
+    .chart .viewone {
+      fill : gray ;
     }
  
     </style>
   </head>
   <body>
+
+    <div id="mychart"> </div>
  
     <script type="text/javascript">
  
@@ -63,7 +75,7 @@
       var rightData = randomNumbers();
  
       for (var i= 0; i< names.length; i++) {
-        console.log(names[i] + " from: " + leftData[i] + " to: " + rightData[i]);  
+       // console.log(names[i] + " from: " + leftData[i] + " to: " + rightData[i]);  
       }
  
       var labelArea = 160;
@@ -75,7 +87,7 @@
  
       var rightOffset = width + labelArea;
  
-      var chart = d3.select("body")
+      var chart = d3.select("#mychart")
         .append('svg')
         .attr('class', 'chart')
         .attr('width', labelArea + width + width)
@@ -98,6 +110,7 @@
         .attr("y", yPosByIndex)
         .attr("class", "left")
         .attr("width", xFrom)
+        .attr('id', function(d){ return 'name' + d; })
         .attr("height", y.rangeBand()); 
  
       chart.selectAll("text.leftscore")
@@ -109,6 +122,7 @@
         .attr("dy", ".36em")
         .attr("text-anchor", "end")
         .attr('class', 'leftscore')
+
         .text(String);
  
       chart.selectAll("text.name")
@@ -132,6 +146,7 @@
         .attr("y", yPosByIndex)
         .attr("class", "right")
         .attr("width", xTo)
+        .attr ('id',  String)
         .attr("height", y.rangeBand()); 
  
       chart.selectAll("text.score")
@@ -144,6 +159,51 @@
         .attr("text-anchor", "end")
         .attr('class', 'score')
         .text(String);
+
+       chart.on("click", function () {   
+
+          // chart.selectAll('#name10').transition()
+          //  .duration(1000)
+          //  .attr('y', 10);
+
+            
+          var mi = (chart.selectAll('#name10').attr("y"));
+
+          // console.log(mi);
+          // var mini = '49';
+
+          chart.selectAll('#name10').each( function(d, i){
+           
+              if (d3.select(this).attr("y") < 900) {
+                 console.log ("tra");
+              }
+          });
+          // chart.select("[y='" + mini + "']").transition().duration(1000).attr('y', 10);
+
+      } );
+
+
+
     </script>
+
+
+<script>
+$( document ).ready(function() {
+   $('rect').click( function(){
+            // current = $(this).attr('val')  ;
+            // console.log(current);
+
+             // $(this).siblings().hide();
+             
+            // $("#chart").find("[y='" + current + "']").hide();
+
+        });
+
+});
+
+      
+
+</script>
+   
   </body>
 </html>

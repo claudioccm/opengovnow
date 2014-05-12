@@ -271,103 +271,257 @@ function addClassToAllCountries(svg, cls) {
  
 
     $('#OGDef-container.inview').bind('inview', function(event, visible) {
+        
          if (visible == true) {
              // element is now visible in the viewport
-             document.getElementById('OGDef').play();
+            document.getElementById('OGDef').play();
+            $('#OGDef-controls.play-pause').addClass('s-active');
+            $('#OGDef-controls.play-pause').children().attr('class', 'icon-pause-1'); 
+              
           
          } else {
              // element has gone out of viewport
-             document.getElementById('OGDef').pause();
+            document.getElementById('OGDef').pause();
+            $('#OGDef-controls.play-pause').removeClass('s-active');
+            $('#OGDef-controls.play-pause').children().attr('class', 'icon-play'); 
+
+             
          }
+
      });
+
+     $('#OGDef-controls.play-pause').click(function() {
+
+        var state = $('#OGDef-controls.play-pause').attr('class');
+        if (state === 'play-pause') {
+            $('#OGDef-controls.play-pause').removeClass('s-active');
+            $('#OGDef-controls.play-pause').children().attr('class', 'icon-play');   
+            document.getElementById('OGDef').pause(); 
+        } else {
+            $('#OGDef-controls.play-pause').addClass('s-active');
+            $('#OGDef-controls.play-pause').children().attr('class', 'icon-pause-1');
+             document.getElementById('OGDef').play();   
+        }
+    });
 
 
      $('#ellen-miller-container.inview').bind('inview', function(event, visible) {
          if (visible == true) {
              // element is now visible in the viewport
-             document.getElementById('ellen-miller').play();
+            document.getElementById('ellen-miller').play();
             document.getElementById('OGDef').pause();
+            $('#ellen-miller-controls.play-pause').addClass('s-active');
+            $('#ellen-miller-controls.play-pause').children().attr('class', 'icon-pause-1'); 
           
          } else {
              // element has gone out of viewport
              document.getElementById('ellen-miller').pause();
+             $('#ellen-miller-controls.play-pause').removeClass('s-active');
+             $('#ellen-miller-controls.play-pause').children().attr('class', 'icon-play'); 
          }
      });
+
+     $('#ellen-miller-controls.play-pause').click(function() {
+
+        var state = $('#ellen-miller-controls.play-pause').attr('class');
+        if (state === 'play-pause') {
+            $('#ellen-miller-controls.play-pause').removeClass('s-active');
+            $('#ellen-miller-controls.play-pause').children().attr('class', 'icon-play');   
+            document.getElementById('ellen-miller').pause(); 
+        } else {
+            $('#ellen-miller-controls.play-pause').addClass('s-active');
+            $('#ellen-miller-controls.play-pause').children().attr('class', 'icon-pause-1');
+             document.getElementById('ellen-miller').play();   
+        }
+    });
+
      $('#chris-underwood-container.inview').bind('inview', function(event, visible) {
          if (visible == true) {
              // element is now visible in the viewport
              document.getElementById('chris-underwood').play();
+             $('#chris-underwood-controls.play-pause').addClass('s-active');
+             $('#chris-underwood-controls.play-pause').children().attr('class', 'icon-pause-1'); 
          } else {
              // element has gone out of viewport
              document.getElementById('chris-underwood').pause();
+             $('#chris-underwood-controls.play-pause').removeClass('s-active');
+             $('#chris-underwood-controls.play-pause').children().attr('class', 'icon-play'); 
          }
      });
+
+      $('#chris-underwood-controls.play-pause').click(function() {
+
+        var state = $('#chris-underwood-controls.play-pause').attr('class');
+        if (state === 'play-pause') {
+            $('#chris-underwood-controls.play-pause').removeClass('s-active');
+            $('#chris-underwood-controls.play-pause').children().attr('class', 'icon-play');   
+            document.getElementById('chris-underwood').pause(); 
+        } else {
+            $('#chris-underwood-controls.play-pause').addClass('s-active');
+            $('#chris-underwood-controls.play-pause').children().attr('class', 'icon-pause-1');
+             document.getElementById('chris-underwood').play();   
+        }
+    });
+
      
      $('#florencio-abad-container.inview').bind('inview', function(event, visible) {
          if (visible == true) {
              // element is now visible in the viewport
              document.getElementById('florencio-abad').play();
              document.getElementById('chris-underwood').pause();
+             $('#florencio-abad-controls.play-pause').addClass('s-active');
+             $('#florencio-abad-controls.play-pause').children().attr('class', 'icon-pause-1'); 
          } else {
              // element has gone out of viewport
              document.getElementById('florencio-abad').pause();
+             $('#florencio-abad-controls.play-pause').removeClass('s-active');
+             $('#florencio-abad-controls.play-pause').children().attr('class', 'icon-play'); 
          }
      });
+
+      $('#florencio-abad-controls.play-pause').click(function() {
+
+        var state = $('#florencio-abad-controls.play-pause').attr('class');
+        if (state === 'play-pause') {
+            $('#florencio-abad-controls.play-pause').removeClass('s-active');
+            $('#florencio-abad-controls.play-pause').children().attr('class', 'icon-play');   
+            document.getElementById('florencio-abad').pause(); 
+        } else {
+            $('#florencio-abad-controls.play-pause').addClass('s-active');
+            $('#florencio-abad-controls.play-pause').children().attr('class', 'icon-pause-1');
+             document.getElementById('florencio-abad').play();   
+        }
+    });
+
 
     $('#stella-dawson-container.inview').bind('inview', function(event, visible) {
          if (visible == true) {
              // element is now visible in the viewport
              document.getElementById('stella-dawson').play();
+                $('#stella-dawson-controls.play-pause').addClass('s-active');
+            $('#stella-dawson-controls.play-pause').children().attr('class', 'icon-pause-1'); 
          } else {
              // element has gone out of viewport
              document.getElementById('stella-dawson').pause();
+               $('#stella-dawson-controls.play-pause').removeClass('s-active');
+            $('#stella-dawson-controls.play-pause').children().attr('class', 'icon-play'); 
          }
      });
 
     
+    $('#stella-dawson-controls.play-pause').click(function() {
+
+        var state = $('#stella-dawson-controls.play-pause').attr('class');
+        if (state === 'play-pause') {
+            $('#stella-dawson-controls.play-pause').removeClass('s-active');
+            $('#stella-dawson-controls.play-pause').children().attr('class', 'icon-play');   
+            document.getElementById('stella-dawson').pause(); 
+        } else {
+            $('#stella-dawson-controls.play-pause').addClass('s-active');
+            $('#stella-dawson-controls.play-pause').children().attr('class', 'icon-pause-1');
+             document.getElementById('stella-dawson').play();   
+        }
+    });
 
      $('#ellen-miller-2-container.inview').bind('inview', function(event, visible) {
          if (visible == true) {
              // element is now visible in the viewport
             document.getElementById('ellen-miller-2').play();
             document.getElementById('stella-dawson').pause();
+               $('#ellen-miller-2-controls.play-pause').addClass('s-active');
+            $('#ellen-miller-2-controls.play-pause').children().attr('class', 'icon-pause-1'); 
          } else {
              // element has gone out of viewport
              document.getElementById('ellen-miller-2').pause();
+               $('#ellen-miller-2-controls.play-pause').removeClass('s-active');
+            $('#ellen-miller-2-controls.play-pause').children().attr('class', 'icon-play'); 
          }
      });
+
+    $('#ellen-miller-2-controls.play-pause').click(function() {
+
+        var state = $('#ellen-miller-2-controls.play-pause').attr('class');
+        if (state === 'play-pause') {
+            $('#ellen-miller-2-controls.play-pause').removeClass('s-active');
+            $('#ellen-miller-2-controls.play-pause').children().attr('class', 'icon-play');   
+            document.getElementById('ellen-miller-2').pause(); 
+        } else {
+            $('#ellen-miller-2-controls.play-pause').addClass('s-active');
+            $('#ellen-miller-2-controls.play-pause').children().attr('class', 'icon-pause-1');
+             document.getElementById('ellen-miller-2').play();   
+        }
+    });
+
 
       $('#mexico-container.inview').bind('inview', function(event, visible) {
          if (visible == true) {
              // element is now visible in the viewport
-            document.getElementById('mexico').play();
-            console.log("hey mexi");
-             
+            document.getElementById('mexico').play(); 
          } else {
              // element has gone out of viewport
              document.getElementById('mexico').pause();
          }
      });
 
+    
+
      $('#felipe-estephan-container.inview').bind('inview', function(event, visible) {
          if (visible == true) {
              // element is now visible in the viewport
             document.getElementById('felipe-estephan').play();
+            $('#felipe-estephan-controls.play-pause').addClass('s-active');
+            $('#felipe-estephan-controls.play-pause').children().attr('class', 'icon-pause-1'); 
          } else {
              // element has gone out of viewport
              document.getElementById('felipe-estephan').pause();
+            $('#felipe-estephan-controls.play-pause').removeClass('s-active');
+            $('#felipe-estephan-controls.play-pause').children().attr('class', 'icon-play'); 
          }
      });
+
+    $('#felipe-estephan-controls.play-pause').click(function() {
+
+        var state = $('#felipe-estephan-controls.play-pause').attr('class');
+        if (state === 'play-pause') {
+            $('#felipe-estephan-controls.play-pause').removeClass('s-active');
+            $('#felipe-estephan-controls.play-pause').children().attr('class', 'icon-play');   
+            document.getElementById('felipe-estephan').pause(); 
+        } else {
+            $('#felipe-estephan-controls.play-pause').addClass('s-active');
+            $('#felipe-estephan-controls.play-pause').children().attr('class', 'icon-pause-1');
+             document.getElementById('felipe-estephan').play();   
+        }
+    });
+
 
      $('#eric-meerkamper-container.inview').bind('inview', function(event, visible) {
          if (visible == true) {
              // element is now visible in the viewport
             document.getElementById('eric-meerkamper').play();
+            $('#eric-meerkamper-controls.play-pause').addClass('s-active');
+            $('#eric-meerkamper-controls.play-pause').children().attr('class', 'icon-pause-1'); 
          } else {
              // element has gone out of viewport
              document.getElementById('eric-meerkamper').pause();
+            $('#eric-meerkamper-controls.play-pause').removeClass('s-active');
+            $('#eric-meerkamper-controls.play-pause').children().attr('class', 'icon-play'); 
          }
      });
+
+
+    $('#eric-meerkamper-controls.play-pause').click(function() {
+
+        var state = $('#eric-meerkamper-controls.play-pause').attr('class');
+        if (state === 'play-pause') {
+            $('#eric-meerkamper-controls.play-pause').removeClass('s-active');
+            $('#eric-meerkamper-controls.play-pause').children().attr('class', 'icon-play');   
+            document.getElementById('eric-meerkamper').pause(); 
+        } else {
+            $('#eric-meerkamper-controls.play-pause').addClass('s-active');
+            $('#eric-meerkamper-controls.play-pause').children().attr('class', 'icon-pause-1');
+             document.getElementById('eric-meerkamper').play();   
+        }
+    });
 
 
       $('#robert-hunja-container.inview').bind('inview', function(event, visible) {
@@ -375,64 +529,176 @@ function addClassToAllCountries(svg, cls) {
              // element is now visible in the viewport
             document.getElementById('robert-hunja').play();
             document.getElementById('eric-meerkamper').pause();
+               $('#robert-hunja-controls.play-pause').addClass('s-active');
+            $('#robert-hunja-controls.play-pause').children().attr('class', 'icon-pause-1'); 
          } else {
              // element has gone out of viewport
              document.getElementById('robert-hunja').pause();
+               $('#robert-hunja-controls.play-pause').removeClass('s-active');
+            $('#robert-hunja-controls.play-pause').children().attr('class', 'icon-play'); 
          }
      });
+
+    $('#robert-hunja-controls.play-pause').click(function() {
+
+        var state = $('#robert-hunja-controls.play-pause').attr('class');
+        if (state === 'play-pause') {
+            $('#robert-hunja-controls.play-pause').removeClass('s-active');
+            $('#robert-hunja-controls.play-pause').children().attr('class', 'icon-play');   
+            document.getElementById('robert-hunja').pause(); 
+        } else {
+            $('#robert-hunja-controls.play-pause').addClass('s-active');
+            $('#robert-hunja-controls.play-pause').children().attr('class', 'icon-pause-1');
+             document.getElementById('robert-hunja').play();   
+        }
+    });
 
     $('#chris-underwood-2-container.inview').bind('inview', function(event, visible) {
          if (visible == true) {
              // element is now visible in the viewport
             document.getElementById('chris-underwood-2').play();
+               $('#chris-underwood-2-controls.play-pause').addClass('s-active');
+            $('#chris-underwood-2-controls.play-pause').children().attr('class', 'icon-pause-1'); 
          } else {
              // element has gone out of viewport
              document.getElementById('chris-underwood-2').pause();
+               $('#chris-underwood-2-controls.play-pause').removeClass('s-active');
+            $('#chris-underwood-2-controls.play-pause').children().attr('class', 'icon-play'); 
          }
      });
+
+     $('#chris-underwood-2-controls.play-pause').click(function() {
+
+        var state = $('#chris-underwood-2-controls.play-pause').attr('class');
+        if (state === 'play-pause') {
+            $('#chris-underwood-2-controls.play-pause').removeClass('s-active');
+            $('#chris-underwood-2-controls.play-pause').children().attr('class', 'icon-play');   
+            document.getElementById('chris-underwood-2').pause(); 
+        } else {
+            $('#chris-underwood-2-controls.play-pause').addClass('s-active');
+            $('#chris-underwood-2-controls.play-pause').children().attr('class', 'icon-pause-1');
+             document.getElementById('chris-underwood-2').play();   
+        }
+    });
+
 
     $('#beauty-container.inview').bind('inview', function(event, visible) {
          if (visible == true) {
              // element is now visible in the viewport
             document.getElementById('beauty').play();
-             document.getElementById('chris-underwood-2').pause();
+            document.getElementById('chris-underwood-2').pause();
+            $('#beauty-controls.play-pause').addClass('s-active');
+            $('#beauty-controls.play-pause').children().attr('class', 'icon-pause-1'); 
          } else {
              // element has gone out of viewport
              document.getElementById('beauty').pause();
+             $('#beauty-controls.play-pause').removeClass('s-active');
+             $('#beauty-controls.play-pause').children().attr('class', 'icon-play'); 
          }
      });
 
+    $('#beauty-controls.play-pause').click(function() {
 
-    $('#linda-frey-container.inview').bind('inview', function(event, visible) {
+        var state = $('#beauty-controls.play-pause').attr('class');
+        if (state === 'play-pause') {
+            $('#beauty-controls.play-pause').removeClass('s-active');
+            $('#beauty-controls.play-pause').children().attr('class', 'icon-play');   
+            document.getElementById('beauty').pause(); 
+        } else {
+            $('#beauty-controls.play-pause').addClass('s-active');
+            $('#beauty-controls.play-pause').children().attr('class', 'icon-pause-1');
+             document.getElementById('beauty').play();   
+        }
+    });
+
+
+     $('#linda-frey-container.inview').bind('inview', function(event, visible) {
          if (visible == true) {
              // element is now visible in the viewport
             document.getElementById('linda-frey').play();
+               $('#linda-frey-controls.play-pause').addClass('s-active');
+            $('#linda-frey-controls.play-pause').children().attr('class', 'icon-pause-1'); 
          } else {
              // element has gone out of viewport
              document.getElementById('linda-frey').pause();
+               $('#linda-frey-controls.play-pause').removeClass('s-active');
+            $('#linda-frey-controls.play-pause').children().attr('class', 'icon-play'); 
          }
      });
 
-    $('#florencio-abad-2-container.inview').bind('inview', function(event, visible) {
+     $('#linda-frey-controls.play-pause').click(function() {
+
+        var state = $('#linda-frey-controls.play-pause').attr('class');
+        if (state === 'play-pause') {
+            $('#linda-frey-controls.play-pause').removeClass('s-active');
+            $('#linda-frey-controls.play-pause').children().attr('class', 'icon-play');   
+            document.getElementById('linda-frey').pause(); 
+        } else {
+            $('#linda-frey-controls.play-pause').addClass('s-active');
+            $('#linda-frey-controls.play-pause').children().attr('class', 'icon-pause-1');
+             document.getElementById('linda-frey').play();   
+        }
+    });
+
+
+     $('#florencio-abad-2-container.inview').bind('inview', function(event, visible) {
          if (visible == true) {
              // element is now visible in the viewport
             document.getElementById('florencio-abad-2').play();
+               $('#florencio-abad-2-controls.play-pause').addClass('s-active');
+            $('#florencio-abad-2-controls.play-pause').children().attr('class', 'icon-pause-1'); 
          } else {
              // element has gone out of viewport
              document.getElementById('florencio-abad-2').pause();
+               $('#florencio-abad-2-controls.play-pause').removeClass('s-active');
+            $('#florencio-abad-2-controls.play-pause').children().attr('class', 'icon-play'); 
          }
      });
+
+     $('#florencio-abad-2-controls.play-pause').click(function() {
+
+        var state = $('#florencio-abad-2-controls.play-pause').attr('class');
+        if (state === 'play-pause') {
+            $('#florencio-abad-2-controls.play-pause').removeClass('s-active');
+            $('#florencio-abad-2-controls.play-pause').children().attr('class', 'icon-play');   
+            document.getElementById('florencio-abad-2').pause(); 
+        } else {
+            $('#florencio-abad-2-controls.play-pause').addClass('s-active');
+            $('#florencio-abad-2-controls.play-pause').children().attr('class', 'icon-pause-1');
+             document.getElementById('florencio-abad-2').play();   
+        }
+    });
+
 
     $('#stella-dawson-2-container.inview').bind('inview', function(event, visible) {
          if (visible == true) {
              // element is now visible in the viewport
             document.getElementById('stella-dawson-2').play();
             document.getElementById('florencio-abad-2').pause();
+               $('#stella-dawson-2-controls.play-pause').addClass('s-active');
+            $('#stella-dawson-2-controls.play-pause').children().attr('class', 'icon-pause-1'); 
          } else {
              // element has gone out of viewport
              document.getElementById('stella-dawson-2').pause();
+               $('#stella-dawson-2-controls.play-pause').removeClass('s-active');
+            $('#stella-dawson-2-controls.play-pause').children().attr('class', 'icon-play'); 
          }
      });
+
+     $('#stella-dawson-2-controls.play-pause').click(function() {
+
+        var state = $('#stella-dawson-2-controls.play-pause').attr('class');
+        if (state === 'play-pause') {
+            $('#stella-dawson-2-controls.play-pause').removeClass('s-active');
+            $('#stella-dawson-2-controls.play-pause').children().attr('class', 'icon-play');   
+            document.getElementById('stella-dawson-2').pause(); 
+        } else {
+            $('#stella-dawson-2-controls.play-pause').addClass('s-active');
+            $('#stella-dawson-2-controls.play-pause').children().attr('class', 'icon-pause-1');
+             document.getElementById('stella-dawson-2').play();   
+        }
+    });
+
 
 
 

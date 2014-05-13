@@ -88,7 +88,7 @@
       var rightOffset = width + labelArea;
  
       var chart = d3.select("#mychart")
-        .append('svg')
+        .append('div')
         .attr('class', 'chart')
         .attr('width', labelArea + width + width)
         .attr('height', height);
@@ -162,9 +162,9 @@
 
        chart.on("click", function () {   
 
-          // chart.selectAll('#name10').transition()
-          //  .duration(1000)
-          //  .attr('y', 10);
+          chart.selectAll('#name10').transition()
+           .duration(1000)
+           .attr('y', 10);
 
             
           var mi = (chart.selectAll('#name10').attr("y"));

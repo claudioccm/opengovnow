@@ -251,9 +251,9 @@ p {
 
 .m-disclaimer-box {
 
-	background-color: $orange_10;
+	background-color: $gray_10;
 	padding: 15px 25px;
-	border: 1px solid $orange;
+	border: 1px solid $gray_70;
 	@include inner-shadow-disclaimer;
 
 	h3 {
@@ -261,7 +261,7 @@ p {
 		text-transform: uppercase;
 		text-align: left;
 		font-family: $serif;
-		color: $orange;
+		color: $og_green;
 	}
 
 	p {

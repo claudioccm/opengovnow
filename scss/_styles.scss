@@ -1,5 +1,3 @@
-
-
 #c-landing {
 	text-align: center;
 
@@ -43,4 +41,44 @@
 	border-top: 1px solid $og_green_70;
 	background: url(../images/splash-1.png) no-repeat center -100px;
 	@include inner-shadow-section-header;
+}
+
+.m-og-question {
+	h3 {
+		margin-bottom: 30px;
+	}
+
+	p {
+		font-size: 3rem;
+		text-align: center;
+		color: $og_green;
+		border: 1px solid $og_green;
+		background-color: $og_green_5;
+		cursor: pointer;
+	}
+
+	p:hover {
+		background-color: $og_green_15;
+		color: $orange;
+	}
+}
+
+#c-what-can-i-do-itens {
+	li {
+		list-style: none;
+		position: relative;
+
+	}
+
+	li:before {
+		content: "";
+		width: 0;
+		height: 0;
+		border-top: 8px solid transparent;
+		border-bottom: 8px solid transparent;
+		border-left: 8px solid $og_green;
+		position: absolute;
+		left: -17px;
+		top: 4px;
+	}
 }

@@ -1,0 +1,51 @@
+   .chart {
+     font-family: "Merriweather","Minion Pro",Georgia,"Times New Roman",sans-serif;
+      margin: 10px;
+      padding-top: 10px; 
+    }
+    
+    .chart .right {
+      stroke: white;
+      fill: #235466; 
+    }
+ 
+    .chart .left {
+      stroke: white;
+      fill: #ff6900; 
+    }
+ 
+    .chart rect:hover {
+      fill: #64707d; 
+
+    }
+    
+    .chart text {
+    
+      fill: white; 
+
+    }
+    
+    .chart text.name {
+      fill: black; 
+    };
+
+    .chart .viewall { 
+      fill: steelblue; 
+    }
+
+    .chart .viewone {
+      fill : gray ;
+    }
+
+    #explanation { 
+       
+        position: absolute;
+    }
+
+    .details-active { 
+      visibility: visible;
+    }
+
+    .details-hidden {
+      visibility: hidden;
+    }

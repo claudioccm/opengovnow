@@ -3,7 +3,43 @@
 
 	h3 {
 		margin-bottom: 30px;
-	}	
+	}
+
+	.graph-row-neg-1 {
+		background-color: $orange;
+	}
+
+	.graph-row-neg-2 {
+		background-color: $gray_10;
+	}
+
+	.graph-row-pos-1 {
+		background-color: $og_green;
+	}
+}
+
+#c-perception-graph {
+	height: 500px;
+
+	h3 {
+		margin-bottom: 30px;
+	}
+
+	.graph-row-neg-1 {
+		background-color: $orange;
+	}
+
+	.graph-row-neg-2 {
+		background-color: $orange_10;
+	}
+
+	.graph-row-pos-1 {
+		background-color: $og_green;
+	}
+
+	.graph-row-pos-2 {
+		background-color: $og_green_15;
+	}
 }
 
 .graph-row {
@@ -53,17 +89,12 @@
 		}
 
 		.graph-row-neg-1 {
-			background-color: $orange;
 			margin-right: 2px;
 			color: $white;
 		}
 
 		.graph-row-neg-1::after {
 			color: $white;
-		}
-
-		.graph-row-neg-2 {
-			background-color: $gray_10;
 		}
 		
 		.graph-row-neg-2::after {
@@ -76,7 +107,6 @@
 
 		> div {
 			float: left;
-			margin-left: 2px;
 			padding: 5px;
 
 			span {
@@ -91,10 +121,17 @@
 			}		
 		}
 
+		> div:first-of-type {
+			margin-left: 2px;
+		}
+
 
 		.graph-row-pos-1 {
-			background-color: $og_green;
 			color: $white;
+		}
+
+		.graph-row-pos-2 {
+			color: $gray_80;
 		}
 	}
 

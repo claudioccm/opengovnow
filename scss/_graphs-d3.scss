@@ -26,6 +26,7 @@
 
 	.graph-value-bar {
 		position: relative;
+		min-width: 25px;
 	}
 
 	.graph-value-bar::after {
@@ -50,8 +51,6 @@
 				color: $gray_40;
 			}
 		}
-
-		
 
 		.graph-row-neg-1 {
 			background-color: $orange;
@@ -118,6 +117,45 @@
 		@include slide;	
 	}
 	
+
+	.graph-row-country {
+		opacity: 1;
+	}
+}
+
+// Compare Area
+
+.graph-compare {
+	margin-bottom: 5px;
+
+	.graph-row {
+		// background-color: #eee;
+		padding-bottom: 5px;
+		
+
+		> div {
+			height: 25px;
+			overflow: visible;
+
+			span {
+				top: -20px;
+			}
+		}
+	}
+
+	.graph-row:first-of-type {
+		padding-top: 25px;
+
+		.graph-row-country {
+			padding-top: 25px;
+		}
+	}
+
+	.graph-row:hover {
+		> div {
+			padding-bottom: 10px;
+		}
+	}
 
 	.graph-row-country {
 		opacity: 1;

@@ -1,0 +1,125 @@
+#c-demand-graph {
+	height: 500px;
+
+	h3 {
+		margin-bottom: 30px;
+	}	
+}
+
+.graph-row {
+	margin: 0;
+	position: relative;
+	// background-color: #eee;
+	padding-bottom: 4px;
+	cursor: pointer;
+	overflow: hidden;
+	@include slide;
+
+	> div {
+		width: 50%;
+		overflow: hidden;
+		height: 7px;
+		display: inline-block;
+		float: left;
+		@include slide;
+	}
+
+	.graph-value-bar {
+		position: relative;
+	}
+
+	.graph-value-bar::after {
+		content:"%";
+		font-size: 10px;
+	}
+
+	.graph-row-neg {
+
+		> div {
+			float: right;
+			padding: 5px;
+			text-align: right;
+
+			> span {
+				position: absolute;
+				bottom: -20px;
+				right: 0;
+				width: 200px;
+				display: inline-block;
+				padding: 0 5px;
+				color: $gray_40;
+			}
+		}
+
+		
+
+		.graph-row-neg-1 {
+			background-color: $orange;
+			margin-right: 2px;
+			color: $white;
+		}
+
+		.graph-row-neg-1::after {
+			color: $white;
+		}
+
+		.graph-row-neg-2 {
+			background-color: $gray_10;
+		}
+		
+		.graph-row-neg-2::after {
+			color: $gray_80;
+		}
+
+	}
+	
+	.graph-row-pos {
+
+		> div {
+			float: left;
+			margin-left: 2px;
+			padding: 5px;
+
+			span {
+				position: absolute;
+				bottom: -20px;
+				left: 0;
+				width: 200px;
+				display: inline-block;
+				text-align: left;
+				padding: 0 5px;
+				color: $gray_40;
+			}		
+		}
+
+
+		.graph-row-pos-1 {
+			background-color: $og_green;
+			color: $white;
+		}
+	}
+
+	.graph-row-country {
+		position: absolute;
+		padding: 5px;
+		right: 0;
+		top: 0;
+		opacity: 0;
+	}
+}
+
+.graph-row:hover {
+	
+
+	> div {
+		padding-bottom: 50px;
+		height: 25px;
+		overflow: visible;
+		@include slide;	
+	}
+	
+
+	.graph-row-country {
+		opacity: 1;
+	}
+}

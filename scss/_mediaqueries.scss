@@ -23,6 +23,55 @@
 	.drop-cap:first-letter {
 		font-size: rem-calc(120);
 	}
+	
+	// Menu Module
+
+	.m-fixed-menu {
+		cursor: pointer;
+		position: fixed;
+		top: 15px;
+		left: 15px;
+		z-index: 1;
+		font-size: 21px;
+		color: $gray_40;
+		@include slide;
+
+		.m-menu-trigger, a {
+			display: block;
+			margin-bottom: 20px;
+		}
+
+		.m-menu-trigger {
+			margin-bottom: 40px;
+		}
+
+		a {
+			color: $gray_20;
+		}
+
+		a:hover {
+			background-color: transparent;
+			color: $og_green;
+		}
+	}
+
+	.m-menu-trigger:hover {
+		color: $og_green;
+	}
+
+	
+}
+
+@media #{$medium-up} { 
+	h1 { font-size: rem-calc(80); }
+	
+	#c-landing h2 {
+		margin-top: -50px;
+	}
+
+	.drop-cap:first-letter {
+		font-size: 7rem;
+	}
 
 	.m-video-answer {
 	
@@ -73,39 +122,6 @@
 	}
 }
 
-@media #{$medium-up} { 
-	h1 { font-size: rem-calc(80); }
-	
-	#c-landing h2 {
-		margin-top: -50px;
-	}
-
-	.drop-cap:first-letter {
-		font-size: 7rem;
-	}
-}
-
-@media #{$medium-only} { 
-
-	.m-video-answer:hover {
-			
-		.play-pause.s-active {
-			opacity: 1;
-			@include slide;
-
-			i {
-				left: 5px;
-			}
-		}
-	}
-
-	h1 { font-size: rem-calc(80); }
-
-	.drop-cap:first-letter {
-		font-size: 7rem;
-	}
-}
-
 @media #{$small-only} { 
 	h1 { font-size: rem-calc(36); }
 	h2 { font-size: rem-calc(24); }
@@ -123,5 +139,82 @@
 			margin-top: -30px;
 		}
 		h3 { font-size: rem-calc(18); }
+	}
+
+	.m-video-answer .controls {
+		position: absolute;
+		left: 160px / 400px * 100%;
+		top: 63px / 207px * 100%;
+
+
+		.play-pause i {
+			position: relative;
+			left: 10px;
+			top: 14px;
+		}
+	}
+
+	.m-video-answer .controls .play-pause.s-active i { left: 6px; }
+	
+	// Menu Trigger Medium and Small Screens
+
+	.m-fixed-menu {
+		position: relative;
+		z-index: 1;
+		font-size: 21px;
+		padding: 10px 20px;
+		color: $gray_40;
+		@include slide;
+
+		.m-menu-social-media {
+			position: absolute;
+			right: 20px;
+			top: 10px;
+		}
+
+		.m-menu-trigger, a {
+			display: inline-block;
+		}
+
+		a {
+			color: $gray_20;
+			float: right;
+		}
+	}
+
+	.m-menu-trigger:hover {
+		color: $og_green;
+	}
+
+}
+
+@media #{$medium-only} { 
+// Menu Trigger Medium and Small Screens
+
+	.m-fixed-menu {
+		position: relative;
+		z-index: 1;
+		font-size: 21px;
+		padding: 10px 20px;
+		color: $gray_40;
+		@include slide;
+
+		.m-menu-trigger, a {
+			display: inline-block;
+		}
+
+		.m-menu-social-media {
+			position: absolute;
+			right: 20px;
+			top: 10px;
+		}
+		
+		a {
+			color: $gray_20;
+		}
+	}
+
+	.m-menu-trigger:hover {
+		color: $og_green;
 	}
 }

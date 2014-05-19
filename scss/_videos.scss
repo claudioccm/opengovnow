@@ -13,6 +13,7 @@ video {
 		max-width: 620px;
 		border-bottom: 1px solid $gray_10;
 		border-top: 1px solid $gray_10;
+		// border: 1px solid $gray_10;
 	}
 
 }
@@ -42,9 +43,9 @@ video {
 	}
 
 	.controls {
-		position: absolute;
-		top: 42%;
-		left: 45%;
+		// position: absolute;
+		// top: 42%;
+		// left: 45%;
 		
 		.play-pause {
 			display: block;
@@ -55,7 +56,7 @@ video {
 			border: 1px solid $gray_20;	
 			cursor: pointer;
 			@include circle;
-			background-color: $white;
+			background-color: $white_60;
 
 			i {
 				position:relative;

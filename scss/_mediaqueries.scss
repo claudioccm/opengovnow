@@ -13,7 +13,7 @@
 // @media #{$xxlarge-up} { }
 // @media #{$xxlarge-only} { }
 
-@media #{$large-only} { 
+@media #{$large-up} { 
 	h1 { font-size: rem-calc(120); }
 	h2 { 
 		font-size: rem-calc(72); 
@@ -182,7 +182,11 @@
 		}
 	}
 
-	.m-menu-trigger:hover {
+	.m-menu-trigger:hover  {
+		color: $og_green;
+	}
+
+	.m-menu-social-media a:hover i {
 		color: $og_green;
 	}
 
@@ -193,6 +197,7 @@
 
 	.m-fixed-menu {
 		position: relative;
+		cursor: pointer;
 		z-index: 1;
 		font-size: 21px;
 		padding: 10px 20px;
@@ -215,6 +220,10 @@
 	}
 
 	.m-menu-trigger:hover {
+		color: $og_green;
+	}
+
+	.m-menu-social-media a:hover i {
 		color: $og_green;
 	}
 }

@@ -147,6 +147,24 @@ p {
 	max-width: 960px;
 }
 
+.m-progress-bar {
+	height: 3px;
+	background-color: transparent;
+	position: fixed;
+	z-index: 10;
+	border: 0;
+	width: 100%;
+
+	.m-progress-status {
+		width: 36%;
+		background-color: $og_green;
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 3px;
+	}
+}
+
 .m-menu {
 		position: fixed;
 		top: 0;

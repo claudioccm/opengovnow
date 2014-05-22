@@ -7,6 +7,7 @@
 .icon-up-dir:before { content: '\e812'; } /* '' */
 .icon-left-dir:before { content: '\e813'; } /* '' */
 .icon-right-dir:before { content: '\e814'; } /* '' */
+.icon-ccw:before { content: '\e803'; } /* '' */
 .icon-play:before { content: '\e816'; } /* '' */
 .icon-pause:before { content: '\e815'; } /* '' */
 .icon-signal:before { content: '\e817'; } /* '' */

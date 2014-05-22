@@ -38,11 +38,29 @@
 	padding-bottom: 0;
 }
 
-.m-section-header {
-	border-top: 1px solid $og_green_70;
-	background: url(../images/splash-1.png) no-repeat center -100px;
-	@include inner-shadow-section-header;
+#c-what-is-opengov {
+
+	.infographic-wrapper {
+		background-color: $orange;
+
+		p {
+		color: $white;
+		}
+
+		.drop-cap:first-letter {
+			background-color: $white_60;
+			color: $orange;
+		}
+	}
+	
+	
 }
+
+// .m-section-header {
+// 	border-top: 1px solid $og_green_70;
+// 	background: url(../images/splash-1.png) no-repeat center -100px;
+// 	@include inner-shadow-section-header;
+// }
 
 .m-og-question {
 	h3 {
@@ -77,7 +95,7 @@
 		height: 0;
 		border-top: 8px solid transparent;
 		border-bottom: 8px solid transparent;
-		border-left: 8px solid $og_green;
+		border-left: 8px solid $orange;
 		position: absolute;
 		left: -17px;
 		top: 4px;

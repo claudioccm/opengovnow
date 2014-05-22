@@ -19,24 +19,11 @@ video {
 }
 
 .animation-wrapper {
-	background-color: #074a5d;
+	background-color: #075066;
 	padding: 20px 0;
 }
 
-.m-video-answer.big {
-	margin: 10px auto 40px;
-	
-	video {
-		max-width: 960px;
-	}
-
-	.m-video-caption {
-		max-width: 960px;
-	}
-}
-
 .m-video-answer {
-	background: url(../images/splash-1.png) no-repeat center;
 	
 	.m-video-container {
 		position: relative;	
@@ -107,28 +94,32 @@ video {
 }
 
 #c-full-interviews {
+	position: relative;
+	
+	.full-interview .controls {
+		float: left;
 
-	.full-interview {
-		display: inline-block;
-	}
-
-	.full-controls {
-		position: absolute;
-		left: 5%;
-		bottom: 22%;
-		
 		span {
-			display: block;
-			font-size: 18px;
-			margin: 0 0 10px;
-			color: $gray_20;
-			cursor: pointer;
+
+			i {
+				color: $gray_20;
+			}
 		}
 
 		span:hover {
-			color: $og_green;
+			cursor: pointer;
+
+			i {
+				color: $orange;		
+			}
 		}
-	}	
+	}
+
+	.m-lower-third {
+		position: static;
+		width: 80%;
+		float:right;
+	}
 }
 
 #c-full-interviews.s-disabled {

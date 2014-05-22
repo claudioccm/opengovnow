@@ -133,18 +133,32 @@ p {
 }
 
 // Layout
+
+body {
+	background-color: $gray_3_solid;
+}
 .l-module {
-	padding: 10px 0 50px;
+	// padding: 10px 0 50px;
 	// background-color: $white;
 	// background-color: $gray_3;
 }
 
+.row-container {
+	background-color: $white;
+	padding: 20px 0;
+	// margin: 20px 0 40px;
+	border-top: 1px solid $gray_30;
+	border-bottom: 1px solid $gray_30;
+	@include inner-shadow-disclaimer;
+
+}
+
 .row {
 	position: relative;
-	padding: 0 20px;
+	padding: 20px;
+	max-width: 960px;
 	left: 0;
 	@include slide;
-	max-width: 960px;
 }
 
 .m-progress-bar {
@@ -166,58 +180,58 @@ p {
 }
 
 .m-menu {
-		position: fixed;
-		top: 0;
-		left: 0;
-		background-color: $gray_10_solid;
-		border-right: 1px solid $og_green;
-		-webkit-box-shadow: inset -3px -8px 8px rgba(0,0,0,0.2);
-		-moz-box-shadow: inset -3px -8px 8px rgba(0,0,0,0.2);
-		box-shadow: inset -3px -8px 8px rgba(0,0,0,0.2);
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: $gray_10_solid;
+	border-right: 1px solid $og_green;
+	-webkit-box-shadow: inset -3px -8px 8px rgba(0,0,0,0.2);
+	-moz-box-shadow: inset -3px -8px 8px rgba(0,0,0,0.2);
+	box-shadow: inset -3px -8px 8px rgba(0,0,0,0.2);
+	width: 280px;
+	max-width: 0;
+	overflow: hidden;
+	z-index: $z-modal;
+	@include slide;
+	height: 100%;
+	font-size: .8rem;
+	
+	h2 {
+		color: $gray_70;
+		font-size: 1.8rem;
+		text-align: left;
+		margin-left: 42px;
+		letter-spacing: 1px;
+	}
+
+	nav {
+		padding: 20px;
 		width: 280px;
-		max-width: 0;
-		overflow: hidden;
-		z-index: $z-modal;
-		@include slide;
-		height: 100%;
-		font-size: .8rem;
 		
-		h2 {
-			color: $gray_70;
-			font-size: 1.8rem;
-			text-align: left;
-			margin-left: 42px;
-			letter-spacing: 1px;
+		a {
+			color: $gray_85;
+			margin: 0 20px;
+			padding: 12px 7px;
+			display: block;
+			border-top: 1px solid $white;
+			border-bottom: 1px solid $gray_20;
 		}
 
-		nav {
-			padding: 20px;
-			width: 280px;
-			
-			a {
-				color: $gray_85;
-				margin: 0 20px;
-				padding: 12px 7px;
-				display: block;
-				border-top: 1px solid $white;
-				border-bottom: 1px solid $gray_20;
-			}
+		a:first-child {
+			border-top: 0 !important;
+		}
 
-			a:first-child {
-				border-top: 0 !important;
-			}
+		a:last-child {
+			border-bottom: 0;
+		}
 
-			a:last-child {
-				border-bottom: 0;
-			}
-
-			a:hover {
-				border-top: 1px solid $orange;
-				color: $white;
-				background-color: $orange;
-			}
+		a:hover {
+			border-top: 1px solid $orange;
+			color: $white;
+			background-color: $orange;
 		}
 	}
+}
 
 // Overlay Modal
 #overlay {
@@ -259,6 +273,7 @@ p {
 footer {
 	background-color: $gray_85;
 	color: $white;
+	margin-top: 40px;
 	padding: 20px 0;
 	color: $white_60;
 

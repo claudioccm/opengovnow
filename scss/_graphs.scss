@@ -60,3 +60,35 @@
 		}
 	}
 }
+#infographic-two-way-communication {
+	position: relative;
+
+	#graph-gov {
+		float: left;
+		width: 200px; 
+	}
+
+	#graph-people {
+		float: right;
+		width: 200px;
+	}
+
+	#graph-arrow-bottom, 
+	#graph-arrow-top {
+		width: 180px;
+		position: absolute;
+	}
+	
+	#graph-arrow-top {
+		top: 50px;
+		left: 520px;
+	}
+
+	#graph-arrow-bottom {
+		top: 120px;
+		left: 220px;
+		
+	}	
+}
+
+

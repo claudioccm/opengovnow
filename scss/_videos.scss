@@ -13,7 +13,6 @@ video {
 		max-width: 620px;
 		border-bottom: 1px solid $gray_10;
 		border-top: 1px solid $gray_10;
-		// border: 1px solid $gray_10;
 	}
 
 }
@@ -21,6 +20,16 @@ video {
 .animation-wrapper {
 	background-color: #075066;
 	padding: 20px 0;
+
+	.controls .play-pause {
+		background-color: transparent !important;
+		left: -40px !important;
+		bottom: 0 !important;
+	}
+
+	video {
+		background-color: #075066;
+	}
 }
 
 .m-video-answer {

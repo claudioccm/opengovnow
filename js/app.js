@@ -146,9 +146,9 @@ $(document).ready(function() {
 	});
 
     // Loads the Two-way-communication Graph
-    $(function(){
-      $("#infographic-two-way-communication").load("graphs/two-way-graph.svg");
-    });
+    // $(function(){
+    //   $("#infographic-two-way-communication").load("graphs/two-way-graph.svg");
+    // });
 
     // Loads teh 3 icons graphs
     $(function(){ $("#faucet-graph").load("graphs/faucet.svg"); });
@@ -267,9 +267,11 @@ function addClassToAllCountries(svg, cls) {
     $(svg).children('path, g').each(function() { this.classList.add(cls); });
 }
 
+
+// Functions for Video Controllers
+
  $(function() {
  
-
     $('#OGDef-container.inview').bind('inview', function(event, visible) {
         
          if (visible == true) {

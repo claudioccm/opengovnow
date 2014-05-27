@@ -63,6 +63,11 @@
 #infographic-two-way-communication {
 	position: relative;
 
+	.hide-for-large-up {
+		width: 80%;
+		margin: 0 auto;
+	}
+
 	#graph-gov {
 		float: left;
 		width: 200px; 
@@ -75,20 +80,289 @@
 
 	#graph-arrow-bottom, 
 	#graph-arrow-top {
-		width: 180px;
+		width: 120px;
+		height: 40px;
+		background-color: $white;
 		position: absolute;
 	}
-	
+
 	#graph-arrow-top {
 		top: 50px;
-		left: 520px;
+		// left: 520px;
+		-webkit-animation-duration: 2s;
+		-webkit-animation-name: moving-r2l;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-timing-function: linear;
+
+		-moz-animation-duration: 2s;
+		-moz-animation-name: moving-r2l;
+		-moz-animation-iteration-count: infinite;
+		-moz-animation-timing-function: linear;
+
+		-o-animation-duration: 2s;
+		-o-animation-name: moving-r2l;
+		-o-animation-iteration-count: infinite;
+		-o-animation-timing-function: linear;
+
+		animation-duration: 2s;
+		animation-name: moving-r2l;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
 	}
 
 	#graph-arrow-bottom {
 		top: 120px;
-		left: 220px;
-		
-	}	
+		// left: 220px;
+		-webkit-animation-duration: 2s;
+		-webkit-animation-name: moving-l2r;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-timing-function: linear;
+
+		-moz-animation-duration: 2s;
+		-moz-animation-name: moving-l2r;
+		-moz-animation-iteration-count: infinite;
+		-moz-animation-timing-function: linear;
+
+		-o-animation-duration: 2s;
+		-o-animation-name: moving-l2r;
+		-o-animation-iteration-count: infinite;
+		-o-animation-timing-function: linear;
+
+		animation-duration: 2s;
+		animation-name: moving-l2r;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+
+	#graph-arrow-bottom::after {
+		content: "";
+		width: 0;
+		height: 0;
+		border-left: 20px solid $white;
+		border-top: 20px solid transparent;
+		border-bottom: 20px solid transparent;
+		position: absolute;
+		right: -20px;
+	}
+
+	#graph-arrow-bottom::before {
+		content: "";
+		width: 0;
+		height: 0;
+		border-left: 20px solid $orange;
+		border-top: 20px solid transparent;
+		border-bottom: 20px solid transparent;
+		position: absolute;
+		left: 0;
+		z-index: 1;
+	}
+	
+	#graph-arrow-top::after {
+		content: "";
+		width: 0;
+		height: 0;
+		border-right: 20px solid $white;
+		border-top: 20px solid transparent;
+		border-bottom: 20px solid transparent;
+		position: absolute;
+		left: -20px;
+	}
+
+	#graph-arrow-top::before {
+		content: "";
+		width: 0;
+		height: 0;
+		border-right: 20px solid $orange;
+		border-top: 20px solid transparent;
+		border-bottom: 20px solid transparent;
+		position: absolute;
+		right: 0;
+		z-index: 1;
+
+	}
+
 }
 
+@-webkit-keyframes moving-r2l {
+  from {
+    left: 700px;
+  	width: 0px;
+  }
 
+  29% {
+  	left: 580px;
+  	width: 120px;
+  }
+
+  
+  71% {
+  	left: 240px;
+  	width: 120px;
+  }
+
+  to {
+    left: 240px;
+    width: 0;
+  }
+}
+
+@-webkit-keyframes moving-l2r {
+  from {
+    left: 240px;
+  	width: 0px;
+  }
+
+  29% {
+  	left: 240px;
+  	width: 120px;
+  }
+
+  
+  71% {
+  	left: 580px;
+  	width: 120px;
+  }
+
+  to {
+    left: 700px;
+    width: 0;
+  }
+}
+
+@-moz-keyframes moving-r2l {
+  from {
+    left: 700px;
+  	width: 0px;
+  }
+
+  29% {
+  	left: 580px;
+  	width: 120px;
+  }
+
+  
+  71% {
+  	left: 240px;
+  	width: 120px;
+  }
+
+  to {
+    left: 240px;
+    width: 0;
+  }
+}
+
+@-moz-keyframes moving-l2r {
+  from {
+    left: 240px;
+  	width: 0px;
+  }
+
+  29% {
+  	left: 240px;
+  	width: 120px;
+  }
+
+  
+  71% {
+  	left: 580px;
+  	width: 120px;
+  }
+
+  to {
+    left: 700px;
+    width: 0;
+  }
+}
+
+@-o-keyframes moving-r2l {
+  from {
+    left: 700px;
+  	width: 0px;
+  }
+
+  29% {
+  	left: 580px;
+  	width: 120px;
+  }
+
+  
+  71% {
+  	left: 240px;
+  	width: 120px;
+  }
+
+  to {
+    left: 240px;
+    width: 0;
+  }
+}
+
+@-o-keyframes moving-l2r {
+  from {
+    left: 240px;
+  	width: 0px;
+  }
+
+  29% {
+  	left: 240px;
+  	width: 120px;
+  }
+
+  
+  71% {
+  	left: 580px;
+  	width: 120px;
+  }
+
+  to {
+    left: 700px;
+    width: 0;
+  }
+}
+
+@keyframes moving-r2l {
+  from {
+    left: 700px;
+  	width: 0px;
+  }
+
+  29% {
+  	left: 580px;
+  	width: 120px;
+  }
+
+  
+  71% {
+  	left: 240px;
+  	width: 120px;
+  }
+
+  to {
+    left: 240px;
+    width: 0;
+  }
+}
+
+@keyframes moving-l2r {
+  from {
+    left: 240px;
+  	width: 0px;
+  }
+
+  29% {
+  	left: 240px;
+  	width: 120px;
+  }
+
+  
+  71% {
+  	left: 580px;
+  	width: 120px;
+  }
+
+  to {
+    left: 700px;
+    width: 0;
+  }
+}

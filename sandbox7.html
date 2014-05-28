@@ -6,7 +6,7 @@
     
     <title>#OpenGovNow - Alpha</title>
     
-    <link rel="stylesheet" href="bower_components/fontello-icons/css/fontello.css" />
+     <link rel="stylesheet" href="bower_components/fontello-icons/css/fontello.css" />
     <link rel="stylesheet" href="bower_components/imagereveal/css/jquery.imageReveal.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" type="text/css" href="css/beta-dataoverlay.css" />
@@ -17,124 +17,196 @@
      <meta property="og:image" content="http://openinggovernment.com/images/logo.png"/>
      <meta name="description” content=”Open is better. Check out how Open Government benefits you." />
      <meta name="title" content="Open Government"/>
+     <script type="text/javascript" src="js/d3.min.js"></script>
+      <script src="http://code.jquery.com/jquery-latest.min.js"  type="text/javascript"></script>
  
+    
+
 </head>
 <body>
-    <div class="m-fixed-menu">
-      <i class="m-menu-trigger icon-menu"></i>
-      <a href="https://www.facebook.com/dialog/feed?
-       app_id=695646317144824
-       &picture=http://openinggovernment.com/logo.png
-       &caption=opengovnow
-       &link=http://openinggovernment.com/ogn/index2
-       &redirect_uri=http://openinggovernment.com/" target="_blank"><i class="icon-facebook"></i></a>
-      <a href="https://twitter.com/intent/tweet?text=Open is better. Check out how Open Government benefits you&hashtags=opengovnow&url=http://www.openinggovernment.com/&via=opening_gov&related=goxitweet, opening_gov,opencontracting" target="_blank" ><i class="icon-twitter"></i></a>   
-      <a href="https://www.youtube.com/user/opencontracting" target="_blank"><i class="icon-youtube"></i></a>
-
-
-    </div>
-    <aside class="m-menu">
-      <h2>#opengovnow</h2>
-      <nav>
-        <a href="#c-what-is-opengov">What is Open Government?</a>
-        <a href="#c-why-should-i-care">Why Should I Care?</a>
-        <a href="#c-who-wants-it">Who Wants it?</a>
-        <a href="#c-what-can-i-do">What Can I do?</a>
-        <a href="#c-full-interviews">Full Interviews</a>
-        <a href="#c-datasets">Download Datasets</a>
-        <a href="#c-disclaimer">Survey Methodology</a>
-      </nav>
-    </aside>
-    
-<!-- ===== Basic Section Structure =====
   
-  <div id="c-#" class="l-module">
-    <section class="row">
-      <h2>What is Open Government?</h2>
-
-    </section>
-  </div>
-========================================-->
   <div id="c-what-is-opengov" class="l-module">
 
       <section class="row">
         <div id="c-perception-graph" class="large-12 medium-12 small-12">
           <h3>Do you want your government to be more open?</h3>
-          
-          <div class="graph-compare">
-            <div class="graph-row">
-              <span class="graph-row-country">Ghana</span>
-              <div class="graph-row-neg">  
-                <div class="graph-value-bar graph-row-neg-1" style="width: 60px;">15<span>Closed</span></div>
-                <div class="graph-value-bar graph-row-neg-2" style="width: 40px;">10<span>Somewhat Closed</span></div>
-              </div>
-              <div class="graph-row-pos">
-                <div class="graph-value-bar graph-row-pos-1" style="width: 200px;">50<span>Open</span></div><div class="graph-value-bar graph-row-pos-2" style="width: 100px;">25<span>Somewhat Open</span></div>
-              </div>
-            </div>
-
-            <div class="graph-row">
-            <span class="graph-row-country">Country 2</span>
-            <div class="graph-row-neg">  
-              <div class="graph-value-bar graph-row-neg-1" style="width: 120px;">30<span>Closed</span></div>
-              <div class="graph-value-bar graph-row-neg-2" style="width: 20px;">5<span>Somewhat Closed</span></div>
-            </div>
-            <div class="graph-row-pos">
-              <div class="graph-value-bar graph-row-pos-1" style="width: 140px;">35<span>Open</span></div>
-              <div class="graph-value-bar graph-row-pos-2" style="width: 120px;">30<span>Somewhat Open</span></div>
-            </div>
-          </div>
-          
-          </div>
-          
-          <div class="graph-row">
-            <span class="graph-row-country">Ghana</span>
-            <div class="graph-row-neg">  
-              <div class="graph-value-bar graph-row-neg-1" style="width: 60px;">15<span>Closed</span></div>
-              <div class="graph-value-bar graph-row-neg-2" style="width: 40px;">10<span>Somewhat Closed</span></div>
-            </div>
-            <div class="graph-row-pos">
-              <div class="graph-value-bar graph-row-pos-1" style="width: 140px;">35<span>Open</span></div>
-              <div class="graph-value-bar graph-row-pos-2" style="width: 120px;">30<span>Somewhat Open</span></div>
-            </div>
-          </div>
-
-          <div class="graph-row">
-            <span class="graph-row-country">Country 2</span>
-            <div class="graph-row-neg">  
-              <div class="graph-value-bar graph-row-neg-1" style="width: 120px;">30<span>Closed</span></div>
-              <div class="graph-value-bar graph-row-neg-2" style="width: 20px;">5<span>Somewhat Closed</span></div>
-            </div>
-            <div class="graph-row-pos">
-              <div class="graph-value-bar graph-row-pos-1" style="width: 100px;">25<span>Open</span></div>
-              <div class="graph-value-bar graph-row-pos-2" style="width: 160px;">40<span>Somewhat Open</span></div>
-            </div>
-          </div>
-
-          <div class="graph-row">
-            <span class="graph-row-country">Country 3</span>
-            <div class="graph-row-neg">  
-              <div class="graph-value-bar graph-row-neg-1" style="width: 100px;">25<span>Closed</span></div>
-              <div class="graph-value-bar graph-row-neg-2" style="width: 80px;">20<span>Somewhat Closed</span></div>
-            </div>
-            <div class="graph-row-pos">
-              <div class="graph-value-bar graph-row-pos-1" style="width: 180px;">45<span>Open</span></div>
-              <div class="graph-value-bar graph-row-pos-2" style="width: 40px;">10<span>Somewhat Open</span></div>
-            </div>
-          </div>
-
         </div>
       </section>
     </div>
 
-  <footer>
-    <section class="row">
-      <div class="large-12 small-12 column">
-        <p>The team would like to thank the creators of The Guardian <a href="http://www.theguardian.com/world/interactive/2013/nov/01/snowden-nsa-files-surveillance-revelations-decoded">“NSA Files Decoded”</a> feature for inspiring this work.</p>
-        <p>All of the elements of this site follow <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons license</a>, and are intended for future use and reuse.</p>
-      </div>
-    </section>
-  </footer>
+    <script type="text/javascript">
+                  
+              var countries;
+
+              $.ajax({
+                  'async': false,
+                  'type': "GET",
+                  'global': false,
+                  'url': "php/countries.php",
+                  'success': function (data) {
+                      countries = data.split(',');
+                  }
+              });
+    
+             
+              
+              d3.select("#c-perception-graph")
+                .append("div")
+                .attr("class", "")
+                .attr("id", "graph-compare");
+
+
+              var chart = d3.select('#graph-compare').selectAll('div').data(countries).enter();
+
+              chart.append("div")
+                    .attr("id", "graph-row")
+                    .attr("class", "graph-row")
+                    .attr("name", function(d)
+                      {
+                          return d;
+                      });
+             
+             var j;
+             j = -1;
+
+              var leftData;
+
+                   $.ajax({
+                        'async': false,
+                        'type': "POST",
+                        'global': false,
+                        'url': "php/leftData.php",
+                        'success': function (data) {
+                            leftData = data.split(',');
+
+                        }
+                    });
+
+
+              var rightData;
+
+                    $.ajax({
+                        'async': false,
+                        'type': "GET",
+                        'global': false,
+                        'url': "php/rightData.php",
+                        'success': function (data) {
+                            rightData = data.split(',');
+                        }
+                    });
+ 
+
+              d3.selectAll('#graph-row').each(function(d, i)
+              {
+                 
+                  linename = d3.select(this).attr("name");
+
+                  
+                    j++;
+                   
+                   
+                 
+                  d3.select(this)
+                    .append("span")
+                    .attr("class", "graph-row-country")
+                    .attr("id", "graph-row-country")
+                    .text(linename);
+
+
+                  d3.select("[name = '" + linename + "']").each(function(d, i)
+                  {
+                      d3.select(this)
+                        .append("div")
+                        .attr("class", "graph-row-neg")
+                        .attr("name", linename + "neg")
+                        .attr("id", "graph-row-neg");
+                  });
+
+
+                  d3.select("[name = '" + linename + "neg" + "']").each(function(d, i)
+                 
+                  {
+                      d3.select(this)
+                        .append("div")
+                        .attr("class", "graph-value-bar graph-row-neg-1")
+                        .attr("id", "graph-row-neg-1")
+                        .text(function(d)
+                            {
+                                return leftData[j];
+                            })
+                        .style("width", function(d)
+                            {
+                                return leftData[j] * 3 + "px";
+                            });
+                  });
+
+
+
+                  d3.select("[name = '" + linename + "neg" + "']").each(function(d, i)
+                  {
+                      d3.select(this)
+                        .append("div")
+                        .attr("class", "graph-value-bar graph-row-neg-2")
+                        .attr("id", "graph-row-neg-2")
+                        .text(function(d)
+                          {
+                              return leftData[j + 1];
+                          })
+                        .style("width", function(d)
+                          {
+                          return leftData[j + 1] * 3 + "px";
+                          });
+                  });
+
+
+                  d3.select("[name = '" + linename + "']").each(function(d, i)
+                  {
+                      d3.select(this)
+                        .append("div")
+                        .attr("class", "graph-row-pos")
+                        .attr("name", linename + "pos")
+                        .attr("id", "graph-row-pos");
+                  });
+
+
+                  d3.select("[name = '" + linename + "pos" + "']").each(function(d, i)
+                  {
+                      d3.select(this)
+                        .append("div")
+                        .attr("class", "graph-value-bar graph-row-pos-1")
+                        .attr("id", "graph-value-bar graph-row-pos-1")
+                        .text(function(d)
+                            {
+                                return rightData[j];
+                            })
+                        .style("width", function(d)
+                            {
+                                return rightData[j] * 3 + "px";
+                            });
+                  });
+
+
+
+                  d3.select("[name = '" + linename + "pos" + "']").each(function(d, i)
+                  {
+                      d3.select(this)
+                        .append("div")
+                        .attr("class", "graph-value-bar graph-row-pos-2")
+                        .attr("id", "graph-value-bar graph-row-pos-2")
+                        .text(function(d)
+                            {
+                                return rightData[j+1];
+                            })
+                        .style("width", function(d)
+                            {
+                                return rightData[j + 1] * 3 + "px";
+                            });
+                  });
+              });
+      
+    </script>
+ 
+
   <div id="overlay"></div>
   
   <div class="dataoverlay dataoverlay-slidedown">
@@ -142,7 +214,7 @@
         <div class="chart"></div> 
     </div>
 
-  <script src="http://code.jquery.com/jquery-latest.min.js"  type="text/javascript"></script>
+ 
   <script src="bower_components/imagereveal/js/jquery.imageReveal.js"></script>
   <script src="bower_components/foundation/js/foundation.min.js"></script>
   <script src="bower_components/d3/d3.js"></script>
@@ -153,27 +225,9 @@
   <script src="js/jquery.inview.js"></script>
   <script src="js/socialmedia.js"></script>
   <script src="js/beta-dataoverlay.js"></script>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
 
 
-  <script>
-
-      var data = [40, 120, 150];
-
-      var x = d3.scale.linear().domain([0, d3.max(data)]).range(["0px", "200px"]);
-
-      d3.select(".chart")
-        .selectAll("div")
-        .data(data)
-        .enter()
-        .append('div')
-        .style('height', function(d) { return d * 2 + "px"; }) //function(d) { return d * 2 + "px"; })
-        .style("width", "30px") 
-        .append('div') 
-        .attr('class', 'legend')
-        .text(function(d) { return d; })
- 
-  </script>
+  
 
 </body>
 </html>

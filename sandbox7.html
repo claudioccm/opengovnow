@@ -67,7 +67,7 @@
                       });
              
              var j;
-             j = -1;
+             j = 0;
 
               var leftData;
 
@@ -78,7 +78,7 @@
                         'url': "php/leftData.php",
                         'success': function (data) {
                             leftData = data.split(',');
-
+                            console.log (leftData);
                         }
                     });
 
@@ -102,7 +102,7 @@
                   linename = d3.select(this).attr("name");
 
                   
-                    j++;
+                 
                    
                    
                  
@@ -202,6 +202,9 @@
                                 return rightData[j + 1] * 3 + "px";
                             });
                   });
+
+                     j = j + 2;
+
               });
       
     </script>

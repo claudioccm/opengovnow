@@ -3,7 +3,7 @@
 
 	require_once ("dbog.php");
 
-	$i=0; $q=mysql_query('select chart4b, chart4c from results order by countryname');
+	$i=0; $q=mysql_query('select chart3a, chart3b from results order by countryname');
 	 
 	if ( ! $q ) {
 	echo mysql_error();
@@ -13,7 +13,7 @@
  $data =  ""; 
   while($row=mysql_fetch_array($q)){
  
-  $data= $data .  intval($row['chart4b'] + $row['chart4c'])  . "," ;
+  $data= $data .  intval($row['chart3a']) . "," .  intval($row['chart3b'])  . "," ;
 
       $i++;
 

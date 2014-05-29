@@ -30,6 +30,7 @@
       <section class="row">
         <div id="c-perception-graph" class="large-12 medium-12 small-12">
           <h3>Do you want your government to be more open?</h3>
+           <span id="graph-top"></span>
         </div>
       </section>
     </div>
@@ -129,7 +130,7 @@
                       d3.select(this)
                         .append("div")
                         .attr("class", "graph-value-bar graph-row-neg-1")
-                        .attr("id", "graph-row-neg-1")
+                        .attr("id", linename + "-graph-row-neg-1")
                         .text(function(d)
                             {
                                 return leftData[j];
@@ -147,7 +148,7 @@
                       d3.select(this)
                         .append("div")
                         .attr("class", "graph-value-bar graph-row-neg-2")
-                        .attr("id", "graph-row-neg-2")
+                        .attr("id", linename + "-graph-row-neg-2")
                         .text(function(d)
                           {
                               return leftData[j + 1];
@@ -174,7 +175,7 @@
                       d3.select(this)
                         .append("div")
                         .attr("class", "graph-value-bar graph-row-pos-1")
-                        .attr("id", "graph-value-bar graph-row-pos-1")
+                        .attr("id", linename + "-graph-row-pos-1")
                         .text(function(d)
                             {
                                 return rightData[j];
@@ -192,7 +193,7 @@
                       d3.select(this)
                         .append("div")
                         .attr("class", "graph-value-bar graph-row-pos-2")
-                        .attr("id", "graph-value-bar graph-row-pos-2")
+                        .attr("id", linename +  "-graph-row-pos-2")
                         .text(function(d)
                             {
                                 return rightData[j+1];
@@ -206,6 +207,91 @@
                      j = j + 2;
 
               });
+
+
+var barline = d3.selectAll("#graph-row")
+
+barline.on("click", click);
+function click(d) 
+{
+  console.log(d);
+
+  var w1 = d3.select("[id = '" + d + "-graph-row-neg-1" + "']").style("width");
+  var w2 = d3.select("[id = '" + d + "-graph-row-neg-2" + "']").style("width");
+  var w3 = d3.select("[id = '" + d + "-graph-row-pos-1" + "']").style("width");
+  var w4 = d3.select("[id = '" + d + "-graph-row-pos-2" + "']").style("width");
+
+  console.log (w1);
+   console.log (w2);
+    console.log (w3);
+     console.log (w4);
+
+  d3.select("[name = '" + d +  "']").remove();
+  var bartop = d3.select('#graph-top')
+  
+  bartop.append("div")
+        .attr("class", "graph-compare")
+        .append("div")
+        .attr("class", "graph-row")
+         .attr("name", d)
+         .style("padding-top", "0px")
+        .append("span")
+        .attr("class", "graph-row-country")
+             .style("padding-top", "0px")
+        .text(d);
+
+  d3.select("[name = '" + d +  "']")
+        .append("div")
+        .attr("class", "graph-row-neg")
+         .attr("name", d + "-graph-row-neg");
+
+  tempname = d + "-graph-row-neg" ; 
+
+ d3.select("[name = '" + tempname +  "']")
+        .append("div")
+         .attr("class", "graph-row-neg-1")
+         .text (w1.replace("px", "")/3 + "%")
+
+         .style("width", w1);
+
+   d3.select("[name = '" + tempname +  "']")    
+          .append("div")
+           .attr("class", "graph-row-neg-2")
+           .text (w2.replace("px", "")/3 + "%")
+            .style("width", w2);
+           
+           
+d3.select("[name = '" + d +  "']")
+ .append("div")
+            .attr("class", "graph-row-pos")
+            .attr("name", d + "-graph-row-pos");
+
+  tempname = d + "-graph-row-pos" ; 
+
+      d3.select("[name = '" + tempname +  "']")
+             .append("div")
+              .attr("class", "graph-row-pos-1")
+              .text(w3.replace("px", "")/3 + "%")
+              .style("width", w3);
+
+       d3.select("[name = '" + tempname +  "']")             
+                .append("div")
+                  .attr("class", "graph-row-pos-2")
+                  .text(w4.replace("px", "")/3 + "%")
+                   .style("width", w4);
+
+// #graph-compare class = #graph-compare
+// graph-row
+// graph-row-country
+// graph-row-neg
+//  graph-row-neg-1
+//  graph-row-neg-2
+//  graph-row-pos
+// graph-row-pos-1
+// graph-row-pos-2
+
+
+}
       
     </script>
  

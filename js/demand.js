@@ -9,14 +9,7 @@ var countries;
           countries = data.split(',');
       }
   });
-
  
-  
-  // d3.select("#c-perception-graph")
-  //   .append("div")
-  //   .attr("class", "")
-  //   .attr("id", "graph-compare");
-
 
   var chart = d3.select('#c-perception-graph').selectAll('div').data(countries).enter();
 
@@ -34,7 +27,7 @@ var countries;
 
        $.ajax({
             'async': false,
-            'type': "POST",
+            'type': "GET",
             'global': false,
             'url': "php/leftData.php",
             'success': function (data) {
@@ -196,8 +189,8 @@ function click(d)
   
   bartop.append("div")
         .attr("class", "graph-row")
-         .style ("padding-top", "5px")
-         .attr("name", d)
+        .style ("padding-top", "5px")
+        .attr("name", d)
         .append("span")
         .attr("class", "graph-row-country")
         .text(d);
@@ -205,42 +198,39 @@ function click(d)
   d3.select("[name = '" + d +  "']")
         .append("div")
         .attr("class", "graph-row-neg")
-         .attr("name", d + "-graph-row-neg");
+        .attr("name", d + "-graph-row-neg");
 
   tempname = d + "-graph-row-neg" ; 
 
   d3.select("[name = '" + tempname +  "']")
-        .append("div")
+         .append("div")
          .attr("class", "graph-row-neg-1")
          .text (w1.replace("px", "")/3 + "%")
          .style("width", w1);
 
   d3.select("[name = '" + tempname +  "']")    
           .append("div")
-           .attr("class", "graph-row-neg-2")
-           .text (w2.replace("px", "")/3 + "%")
-            .style("width", w2);
+          .attr("class", "graph-row-neg-2")
+          .text (w2.replace("px", "")/3 + "%")
+          .style("width", w2);
            
            
   d3.select("[name = '" + d +  "']")
-           .append("div")
-            .attr("class", "graph-row-pos")
-            .attr("name", d + "-graph-row-pos");
+          .append("div")
+          .attr("class", "graph-row-pos")
+          .attr("name", d + "-graph-row-pos");
 
   tempname = d + "-graph-row-pos" ; 
 
       d3.select("[name = '" + tempname +  "']")
-             .append("div")
-              .attr("class", "graph-row-pos-1")
-              .text(w3.replace("px", "")/3 + "%")
-              .style("width", w3);
+          .append("div")
+          .attr("class", "graph-row-pos-1")
+          .text(w3.replace("px", "")/3 + "%")
+          .style("width", w3);
 
        d3.select("[name = '" + tempname +  "']")             
-                .append("div")
-                  .attr("class", "graph-row-pos-2")
-                  .text(w4.replace("px", "")/3 + "%")
-                   .style("width", w4);
-
- 
-
+          .append("div")
+          .attr("class", "graph-row-pos-2")
+          .text(w4.replace("px", "")/3 + "%")
+          .style("width", w4);
 }

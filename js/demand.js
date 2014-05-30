@@ -58,7 +58,6 @@ var countries;
       d3.select(this)
         .append("span")
         .attr("class", "graph-row-country")
-        .attr("id", "graph-row-country")
         .text(linename);
 
 

@@ -187,7 +187,6 @@ function click(d)
   
   bartop.append("div")
         .attr("class", "graph-row")
-        .style ("padding-top", "5px")
         .attr("name", d)
         .append("span")
         .attr("class", "graph-row-country")

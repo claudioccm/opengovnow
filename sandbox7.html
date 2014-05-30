@@ -214,17 +214,14 @@ var barline = d3.selectAll("#graph-row")
 barline.on("click", click);
 function click(d) 
 {
-  console.log(d);
+  
 
   var w1 = d3.select("[id = '" + d + "-graph-row-neg-1" + "']").style("width");
   var w2 = d3.select("[id = '" + d + "-graph-row-neg-2" + "']").style("width");
   var w3 = d3.select("[id = '" + d + "-graph-row-pos-1" + "']").style("width");
   var w4 = d3.select("[id = '" + d + "-graph-row-pos-2" + "']").style("width");
 
-  console.log (w1);
-   console.log (w2);
-    console.log (w3);
-     console.log (w4);
+ 
 
   d3.select("[name = '" + d +  "']").remove();
   var bartop = d3.select('#graph-top')

@@ -42,7 +42,7 @@
 	margin: 0;
 	position: relative;
 	// background-color: #eee;
-	padding-bottom: 4px;
+	padding-bottom: 6px;
 	cursor: pointer;
 	overflow: hidden;
 	@include slide;
@@ -70,8 +70,9 @@
 
 		> div {
 			float: right;
-			padding: 5px;
+			padding: 8px 8px 8px 0;
 			text-align: right;
+			font-size: 14px;
 
 			> span {
 				position: absolute;
@@ -103,7 +104,8 @@
 
 		> div {
 			float: left;
-			padding: 5px;
+			padding: 8px;
+			font-size: 14px;
 
 			span {
 				position: absolute;
@@ -134,9 +136,12 @@
 	.graph-row-country {
 		position: absolute;
 		padding: 5px;
-		right: 0;
+		right: 80px;
 		top: 0;
-		opacity: 0;
+		// opacity: 0;
+		font-size: 14px;
+		font-size: 10px;
+		margin-top: -4px;
 	}
 }
 
@@ -144,7 +149,7 @@
 	
 
 	> div {
-		padding-bottom: 50px;
+		padding-bottom: 30px;
 		height: 25px;
 		overflow: visible;
 		@include slide;	
@@ -153,6 +158,8 @@
 
 	.graph-row-country {
 		opacity: 1;
+		font-size: 16px;
+		margin-top: 0;
 	}
 }
 
@@ -192,9 +199,14 @@
 
 	.graph-row-country {
 		opacity: 1;
+		font-size: 16px;
+		margin-top: 0;
 	}
 }
 
+.graph-compare:last-of-type {
+	margin-bottom: 25px;
+}
 
 /////////////////////////////////////////////////////////////////////////////////
 // Full Graphs for Survey ///////////////////////////////////////////////////////

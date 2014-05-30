@@ -1,7 +1,7 @@
 <? 
  
   $og_host = "localhost";
-  $og_user = "root";
+  $og_user = "opengovcm";
   $og_pass = "mar7aba";
   $og_databaseName = "opengovnow";
   $og_tableName = "results";

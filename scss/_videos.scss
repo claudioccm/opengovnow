@@ -18,8 +18,9 @@ video {
 }
 
 .animation-wrapper {
-	background-color: #075066;
+	background-color: #014b67;
 	padding: 20px 0;
+	border: 0;
 
 	.controls .play-pause {
 		background-color: transparent !important;
@@ -27,8 +28,17 @@ video {
 		bottom: 0 !important;
 	}
 
+	.m-video-answer {
+		height: 348px;
+		overflow: hidden;
+	}
+
 	video {
-		background-color: #075066;
+		background-color: #014b67;
+	}
+
+	#mexico {
+		margin-top: -2px;
 	}
 }
 

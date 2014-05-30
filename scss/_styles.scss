@@ -84,6 +84,46 @@
 }
 
 #c-what-can-i-do-itens {
+	.og-resource-wrap {
+		margin: 12px auto;
+		max-height: 220px;
+		max-width: 220px;
+		position: relative;
+		border: 1px solid $gray_10;
+		overflow: hidden;
+		display: block;
+	}
+
+	.og-resource-text {
+		position: absolute;
+		top: 220px;
+		height: 220px;
+		width: 220px;
+		padding: 10px;
+		background-color: $orange;
+		font-size: 2rem;
+		font-family: $sans-serif;
+		line-height: 2.3rem;
+		color: $white;
+		vertical-align: bottom;
+		@include slide;
+	}
+
+	.og-resource-image {
+		height: 220px;
+		width: 220px;
+	}
+
+	.og-resource-wrap:hover .og-resource-text {
+		top: 0;
+		@include slide;
+	}
+
+	.ogp-irm {
+		font-size: 1.3rem;
+		line-height: 1.7rem;
+	}
+
 	li {
 		list-style: none;
 		position: relative;
@@ -101,4 +141,6 @@
 		left: -17px;
 		top: 4px;
 	}
+
+
 }

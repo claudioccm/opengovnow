@@ -66,8 +66,7 @@ var countries;
           d3.select(this)
             .append("div")
             .attr("class", "graph-row-neg")
-            .attr("name", linename + "neg")
-            .attr("id", "graph-row-neg");
+            .attr("name", linename + "neg");
       });
 
 

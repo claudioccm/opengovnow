@@ -206,13 +206,19 @@ function click(d)
          .append("div")
          .attr("class", "graph-row-neg-1")
          .text (w1.replace("px", "")/3 + "%")
-         .style("width", w1);
+         .style("width", w1)
+         .append("span")
+         .attr("class","value-legend")
+         .text("Closed");
 
   d3.select("[name = '" + tempname +  "']")    
           .append("div")
           .attr("class", "graph-row-neg-2")
           .text (w2.replace("px", "")/3 + "%")
-          .style("width", w2);
+          .style("width", w2)
+          .append("span")
+          .attr("class","value-legend")
+          .text("Somehow Closed");
            
            
   d3.select("[name = '" + d +  "']")
@@ -226,11 +232,17 @@ function click(d)
           .append("div")
           .attr("class", "graph-row-pos-1")
           .text(w3.replace("px", "")/3 + "%")
-          .style("width", w3);
+          .style("width", w3)
+          .append("span")
+          .attr("class","value-legend")
+          .text("Open");
 
        d3.select("[name = '" + tempname +  "']")             
           .append("div")
           .attr("class", "graph-row-pos-2")
           .text(w4.replace("px", "")/3 + "%")
-          .style("width", w4);
+          .style("width", w4)
+          .append("span")
+         .attr("class","value-legend")
+         .text("Somewhat Open");
 }

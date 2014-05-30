@@ -20,19 +20,7 @@
  
 </head>
 <body>
-    <div class="m-fixed-menu">
-      <i class="m-menu-trigger icon-menu"></i>
-      <a href="https://www.facebook.com/dialog/feed?
-       app_id=695646317144824
-       &picture=http://openinggovernment.com/logo.png
-       &caption=opengovnow
-       &link=http://openinggovernment.com/ogn/index2
-       &redirect_uri=http://openinggovernment.com/" target="_blank"><i class="icon-facebook"></i></a>
-      <a href="https://twitter.com/intent/tweet?text=Open is better. Check out how Open Government benefits you&hashtags=opengovnow&url=http://www.openinggovernment.com/&via=opening_gov&related=goxitweet, opening_gov,opencontracting" target="_blank" ><i class="icon-twitter"></i></a>   
-      <a href="https://www.youtube.com/user/opencontracting" target="_blank"><i class="icon-youtube"></i></a>
-
-
-    </div>
+     
     <aside class="m-menu">
       <h2>#opengovnow</h2>
       <nav>
@@ -59,29 +47,25 @@
 
       <section class="row">
         <div class="large-3 medium-3 column">
-          <select name="" id="">
-            <option value="">Country 1</option>
-            <option value="">Country 2</option>
-            <option value="">Country 3</option>
-            <option value="">Country 4</option>
+          <select name="country-left" id="country-left">
           </select>
         </div>
 
         <div class="large-6 medium-6 column">
-          <select name="" id="">
-            <option value="">Question 1</option>
-            <option value="">Question 2</option>
-            <option value="">Question 3</option>
-            <option value="">Question 4</option>
+          <select name="question" id="question">
+            <option value="q1">How open is your government?</option>
+            <option value="q2">Would you like your government to be more open?</option>
+            <option value="q3">Would you be more likely to pay your taxes if your government were more open?</option>
+            <option value="q4">Would you trust your government more if it were more open?</option>
+            <option value="q5">Would you trust businesses more if businesses were more open?</option>
+            <option value="q6">Would you like to have more information about your government?</option>
+            <option value="q7"> Should citizens have a say in government spending and contracting?</option>
+            <option value="q8">Do you think if your government were more open, it would be more effective?</option>
           </select>
         </div>
 
         <div class="large-3 medium-3 column">
-          <select name="" id="">
-            <option value="">Country 1</option>
-            <option value="">Country 2</option>
-            <option value="">Country 3</option>
-            <option value="">Country 4</option>
+          <select name="country-right" id="country-right">
           </select>
         </div>
       </section>
@@ -118,7 +102,7 @@
         <div class="chart"></div> 
     </div>
 
-  <script src="http://code.jquery.com/jquery-latest.min.js"  type="text/javascript"></script>
+  <script src="js/jquery-latest.min.js"  type="text/javascript"></script>
   <script src="bower_components/imagereveal/js/jquery.imageReveal.js"></script>
   <script src="bower_components/foundation/js/foundation.min.js"></script>
   <script src="bower_components/d3/d3.js"></script>
@@ -129,25 +113,135 @@
   <script src="js/jquery.inview.js"></script>
   <script src="js/socialmedia.js"></script>
   <script src="js/beta-dataoverlay.js"></script>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
+ <script src="js/d3.v3.min.js"></script>
 
+<script type="text/javascript">
+
+$( document ).ready(function() {
+
+  GenerateCountries();
+
+});
+
+
+$("#country-left").add("#country-right").add("#question").change(function() {
+  construct();
+});
+
+function GenerateCountries() {
+
+  var countries;
+
+    $.ajax({
+        'async': false,
+        'type': "GET",
+        'global': false,
+        'url': "php/countries.php",
+        'success': function (data) {
+            countries = data.split(',');
+        }
+    });  
+
+    console.log(countries);  
+    var countryLeft = document.getElementById('country-left');  
+    var countryRight = document.getElementById('country-right');  
+    for(var i = 0; i < countries.length; i++) 
+    {
+       var opt = document.createElement('option');
+       opt.innerHTML = countries[i];
+       opt.value = countries[i];
+       countryRight.appendChild(opt);
+    }
+
+     for(var i = 0; i < countries.length; i++) 
+    {
+       var opt = document.createElement('option');
+       opt.innerHTML = countries[i];
+       opt.value = countries[i];
+       countryLeft.appendChild(opt);
+    }
+}
+
+function construct() { 
+
+  var strCountryLeft = $("#country-left").val();
+
+  var strCountryRight = $("#country-right").val();
+
+  var strq = "";
+
+    switch($("#question").val()) {
+      case "q1":
+          strq = "chart1a, chart1b, chart1c, chart1d";
+          break;
+      case "q2":
+          strq = "chart4a, chart4b, chart4c";
+          break;
+      case "q3":
+          strq = "chart5a, chart5b, chart5c";
+          break; 
+      case "q4":
+          strq = "chart6a, chart6b, chart6c";
+          break;    
+      case "q5":
+          strq = "chart7a, chart7b, chart7c";
+          break;  
+      case "q6":
+          strq = "chart8a, chart8b, chart8c";
+          break;    
+      case "q7":
+          strq = "chart9a, chart9b, chart9c";
+          break;                 
+      default:
+          strq = "chart1a, chart1b, chart1c, chart1d";
+      }
+
+  var strQueryLeft = "Select " + strq + " from results where countryname = '" + strCountryLeft + "'";
+ 
+  var strQueryRight = "Select " + strq + " from results where countryname = '" + strCountryRight + "'";
+     
+  console.log(strQueryRight) ;
+  console.log(strQueryLeft);
+
+$.ajax({
+    type: 'POST',
+    data: { leftdata: strQueryLeft,
+            rightdata: strQueryRight,
+        },
+    url: 'php/Compare.php',
+    dataType: 'json',
+    async: false,
+
+    success: function(result){
+       console.log("tst");
+    },
+
+    error: function(){
+         console.log("tst");
+    }
+  });
+
+
+}
+
+</script>
 
   <script>
 
-      var data = [40, 120, 150];
+      // var data = [40, 120, 150];
 
-      var x = d3.scale.linear().domain([0, d3.max(data)]).range(["0px", "200px"]);
+      // var x = d3.scale.linear().domain([0, d3.max(data)]).range(["0px", "200px"]);
 
-      d3.select(".chart")
-        .selectAll("div")
-        .data(data)
-        .enter()
-        .append('div')
-        .style('height', function(d) { return d * 2 + "px"; }) //function(d) { return d * 2 + "px"; })
-        .style("width", "30px") 
-        .append('div') 
-        .attr('class', 'legend')
-        .text(function(d) { return d; })
+      // d3.select(".chart")
+      //   .selectAll("div")
+      //   .data(data)
+      //   .enter()
+      //   .append('div')
+      //   .style('height', function(d) { return d * 2 + "px"; }) //function(d) { return d * 2 + "px"; })
+      //   .style("width", "30px") 
+      //   .append('div') 
+      //   .attr('class', 'legend')
+      //   .text(function(d) { return d; })
  
   </script>
 

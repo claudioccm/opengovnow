@@ -150,7 +150,7 @@ $(document).ready(function() {
     //   $("#infographic-two-way-communication").load("graphs/two-way-graph.svg");
     // });
 
-    // Loads teh 3 icons graphs
+    // Loads the 3 icons graphs
     $(function(){ $("#faucet-graph").load("graphs/faucet.svg"); });
     $(function(){ $("#road-graph").load("graphs/road.svg"); });
     $(function(){ $("#school-graph").load("graphs/school.svg"); });
@@ -700,9 +700,4 @@ function addClassToAllCountries(svg, cls) {
              document.getElementById('stella-dawson-2').play();   
         }
     });
-
-
-
-
- });
-
+});

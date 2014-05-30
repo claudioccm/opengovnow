@@ -48,8 +48,6 @@
                       countries = data.split(',');
                   }
               });
-    
-             
               
               d3.select("#c-perception-graph")
                 .append("div")
@@ -101,18 +99,12 @@
               {
                  
                   linename = d3.select(this).attr("name");
-
-                  
-                 
-                   
-                   
-                 
+                             
                   d3.select(this)
                     .append("span")
                     .attr("class", "graph-row-country")
                     .attr("id", "graph-row-country")
                     .text(linename);
-
 
                   d3.select("[name = '" + linename + "']").each(function(d, i)
                   {
@@ -122,7 +114,6 @@
                         .attr("name", linename + "neg")
                         .attr("id", "graph-row-neg");
                   });
-
 
                   d3.select("[name = '" + linename + "neg" + "']").each(function(d, i)
                  
@@ -140,8 +131,6 @@
                                 return leftData[j] * 3 + "px";
                             });
                   });
-
-
 
                   d3.select("[name = '" + linename + "neg" + "']").each(function(d, i)
                   {

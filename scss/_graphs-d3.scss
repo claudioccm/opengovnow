@@ -76,7 +76,7 @@
 
 			> span {
 				position: absolute;
-				bottom: -20px;
+				top: -20px;
 				right: 0;
 				width: 200px;
 				display: inline-block;
@@ -109,7 +109,7 @@
 
 			span {
 				position: absolute;
-				bottom: -20px;
+				top: -20px;
 				left: 0;
 				width: 200px;
 				display: inline-block;
@@ -136,18 +136,18 @@
 	.graph-row-country {
 		position: absolute;
 		padding: 5px;
-		right: 80px;
+		right: 60px;
 		top: 0;
 		// opacity: 0;
 		font-size: 14px;
 		font-size: 10px;
 		margin-top: -4px;
+		color: $gray_80;
 	}
 }
 
 .graph-row:hover {
 	
-
 	> div {
 		padding-bottom: 30px;
 		height: 25px;
@@ -163,16 +163,40 @@
 	}
 }
 
+#graph-compare:empty ~ .show-legend {
+	padding-top: 20px;
+	padding-bottom: 0;
+	margin-bottom: 5px;
+	
+	.graph-row-country {
+		padding-top: 30px;
+	}
+
+	.graph-row-pos-1, 
+	.graph-row-pos-2, 
+	.graph-row-neg-1, 
+	.graph-row-neg-2 {
+		position: relative;
+	}
+
+	> div {
+		overflow: visible;
+
+		span {
+			top: -20px;
+		}
+	}
+}
+
 // Compare Area
 
 .graph-compare {
-	margin-bottom: 5px;
+	margin-bottom: 25px;
 
 	.graph-row {
 		// background-color: #eee;
-		padding-bottom: 5px;
+		padding-bottom: 10px;
 		
-
 		> div {
 			height: 25px;
 			overflow: visible;
@@ -180,14 +204,6 @@
 			span {
 				top: -20px;
 			}
-		}
-	}
-
-	.graph-row:first-of-type {
-		padding-top: 25px;
-
-		.graph-row-country {
-			padding-top: 25px;
 		}
 	}
 
@@ -202,7 +218,33 @@
 		font-size: 16px;
 		margin-top: 0;
 	}
+
+	.graph-row:first-of-type {
+		padding-top: 20px;
+		padding-bottom: 0;
+		margin-bottom: 5px;
+	
+		.graph-row-country {
+			margin-top: 12px;
+		}
+
+		.graph-row-pos-1, 
+		.graph-row-pos-2, 
+		.graph-row-neg-1, 
+		.graph-row-neg-2 {
+			position: relative;
+		}
+
+		> div {
+			overflow: visible;
+
+			span {
+				top: -20px;
+			}
+		}
+	}
 }
+
 
 .graph-compare:last-of-type {
 	margin-bottom: 25px;

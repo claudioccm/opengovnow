@@ -109,7 +109,7 @@ var countries;
               })
              .append("span")
             .attr("class","value-legend")
-            .text("Closed")
+            .text("Somewhat Closed")
             ;
       });
 
@@ -140,7 +140,7 @@ var countries;
                 })
             .append("span")
             .attr("class","value-legend")
-            .text("Closed")
+            .text("Open")
             ;
       });
 
@@ -162,7 +162,7 @@ var countries;
                 })
             .append("span")
             .attr("class","value-legend")
-            .text("Closed")
+            .text("Somewhat Open")
             ;
       });
 
@@ -215,7 +215,7 @@ function click(d)
           .style("width", w2)
           .append("span")
           .attr("class","value-legend")
-          .text("Somehow Closed");
+          .text("Somewhat Closed");
            
            
   d3.select("[name = '" + d +  "']")
@@ -240,6 +240,11 @@ function click(d)
           .text(w4.replace("px", "")/3 + "%")
           .style("width", w4)
           .append("span")
-         .attr("class","value-legend")
-         .text("Somewhat Open");
+          .attr("class","value-legend")
+          .text("Somewhat Open");
 }
+
+// Checks if the #graph-compare area is empty to properly show/hide the legends.
+if ($('#graph-compare').is(':empty')){
+    $('#graph-compare').next().addClass('show-legend');
+  };

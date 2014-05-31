@@ -180,9 +180,13 @@
 		z-index: 1;
 
 	}
-
 }
 
+#animated-two-way-graph {
+	width: 100%;
+}
+
+// width: 600px / 920px * 100%;
 @-webkit-keyframes moving-r2l {
   from {
     left: 700px;

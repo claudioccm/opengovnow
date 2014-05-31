@@ -17,7 +17,63 @@
      <meta property="og:image" content="http://openinggovernment.com/images/logo.png"/>
      <meta name="description” content=”Open is better. Check out how Open Government benefits you." />
      <meta name="title" content="Open Government"/>
+    <style type="text/css">
+     
  
+.compare-chart  {
+  background-color: #004b67;
+  text-align: center;
+  padding: 4px;
+  margin: 2px;
+  color: white;
+  display:inline-block;
+  width: 40px;
+  position: relative;
+  
+}
+ 
+.legend {
+  vertical-align: bottom;
+  position: absolute;
+  bottom: 3px;
+  width: 100%;
+  text-indent: -6px;
+  text-shadow: 0 0 2px rgba(0,0,0,0.9);
+
+}
+
+.legend:after {
+  content: '%';
+  font-size: .7em;
+  font-weight: bold;
+  text-shadow: 0 0 2px rgba(0,0,0,0.9);
+
+}
+
+.legend:before  {
+  content:'';
+  text-transform: uppercase;
+  transform: rotate(270deg);
+  transform-origin: top left;
+  -webkit-transform: rotate(270deg);
+  -webkit-transform-origin: top left;
+  width: 200px;
+  /*height: 30px;*/
+  position:absolute;
+  text-shadow: 0 0 2px rgba(0,0,0,0.9);
+  bottom: -35px;
+  padding: 11px 0 3px 35px;
+  /*background-color: rgba(0,0,0,0.1);*/
+  left: -4px;
+  color: #fff;
+  z-index: 1;
+  opacity: .6;
+  text-align: left;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+    </style>
 </head>
 <body>
      
@@ -72,29 +128,20 @@
       <section class="row">
         <h3>This is the question text</h3>
         <div class="large-5 medium-6 column compare-countries left">
-          <h4>Country on Left</h4>
-          <p>Here we insert the exact same D3 bar chart used on the previous website. But we will render 1 graph for each of 2 countries selected the by the dropdowns above.</p>
-          <p>This feature only shows on large screens.</p>
+          <h4 class="country-name-left"></h4>
+          <div id="graph-left"></div>
         </div>
         <div class="large-2 column show-for-large-only">
           
         </div>
         <div class="large-5 medium-6 column compare-countries right">
-          <h4>Country on Right</h4>
-          <p>Here we insert the exact same D3 bar chart used on the previous website. But we will render 1 graph for each of 2 countries selected the by the dropdowns above.</p>
-          <p>This feature only shows on large screens.</p>
+          <h4 class="country-name-right"></h4>
+          <div id="graph-right"></div>
         </div>
       </section>
     </div>
 
-  <footer>
-    <section class="row">
-      <div class="large-12 small-12 column">
-        <p>The team would like to thank the creators of The Guardian <a href="http://www.theguardian.com/world/interactive/2013/nov/01/snowden-nsa-files-surveillance-revelations-decoded">“NSA Files Decoded”</a> feature for inspiring this work.</p>
-        <p>All of the elements of this site follow <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons license</a>, and are intended for future use and reuse.</p>
-      </div>
-    </section>
-  </footer>
+  
   <div id="overlay"></div>
   
   <div class="dataoverlay dataoverlay-slidedown">
@@ -141,10 +188,12 @@ function GenerateCountries() {
             countries = data.split(',');
         }
     });  
-
-    console.log(countries);  
+ 
     var countryLeft = document.getElementById('country-left');  
-    var countryRight = document.getElementById('country-right');  
+    var countryRight = document.getElementById('country-right'); 
+
+  
+
     for(var i = 0; i < countries.length; i++) 
     {
        var opt = document.createElement('option');
@@ -165,85 +214,105 @@ function GenerateCountries() {
 function construct() { 
 
   var strCountryLeft = $("#country-left").val();
-
   var strCountryRight = $("#country-right").val();
+
+  $(".country-name-left").text(strCountryLeft);
+  $(".country-name-right").text(strCountryRight);
 
   var strq = "";
 
     switch($("#question").val()) {
       case "q1":
-          strq = "chart1a, chart1b, chart1c, chart1d";
+          strq = "chart3a as col1, chart3b as col2 , chart3c as col3, chart3d  as col4";
           break;
       case "q2":
-          strq = "chart4a, chart4b, chart4c";
+          strq = "chart4a as col1, chart4b as col2, chart4c as col3";
           break;
       case "q3":
-          strq = "chart5a, chart5b, chart5c";
+          strq = "chart5a as col1, chart5b as col2, chart5c as col3";
           break; 
       case "q4":
-          strq = "chart6a, chart6b, chart6c";
+          strq = "chart6a as col1, chart6b as col2, chart6c as col3";
           break;    
       case "q5":
-          strq = "chart7a, chart7b, chart7c";
+          strq = "chart7a as col1, chart7b as col2, chart7c as col3";
           break;  
       case "q6":
-          strq = "chart8a, chart8b, chart8c";
+          strq = "chart8a as col1, chart8b as col2, chart8c as col3";
           break;    
       case "q7":
-          strq = "chart9a, chart9b, chart9c";
+          strq = "chart9a as col1, chart9b as col2, chart9c as col3";
           break;                 
       default:
-          strq = "chart1a, chart1b, chart1c, chart1d";
+          strq = "chart1a as col1, chart1b as col2, chart1c as col3, chart1d as col4";
       }
 
   var strQueryLeft = "Select " + strq + " from results where countryname = '" + strCountryLeft + "'";
  
+  console.log(strQueryLeft);
+  
+
   var strQueryRight = "Select " + strq + " from results where countryname = '" + strCountryRight + "'";
      
-  console.log(strQueryRight) ;
-  console.log(strQueryLeft);
+  console.log(strQueryRight);
+     
+  d3.selectAll('.compare-chart').remove()  
 
 $.ajax({
     type: 'POST',
-    data: { leftdata: strQueryLeft,
-            rightdata: strQueryRight,
+    data: { leftquery: strQueryLeft
         },
-    url: 'php/Compare.php',
-    dataType: 'json',
+    dataType: 'json',    
+    url: 'php/CompareLeft.php',
     async: false,
-
     success: function(result){
-       console.log("tst");
-    },
+     var x = d3.scale.linear()
+               .domain([0, 100])
+               .range([0, 250]);
+      $.each(result.lefties, function(index, element) {
+          if (element != null) { 
+            d3.select("#graph-left")
+              .append("div")
+              .attr("class", "compare-chart")
+              .style("height", x(parseInt(element)) + "px")
+              .append("div")
+              .attr('class', 'legend')
+              .text(parseInt(element));
+              }
+        });
+    }, 
+  });
 
-    error: function(){
-         console.log("tst");
-    }
+$.ajax({
+    type: 'POST',
+    data: { rightquery: strQueryRight },
+    dataType: 'json',    
+    url: 'php/CompareRight.php',
+    async: false,
+    success: function(result){
+      console.log(result)
+     var x = d3.scale.linear()
+               .domain([0, 100])
+               .range([0, 250]);
+      $.each(result.righties, function(index, element) {
+          if (element != null) { 
+            d3.select("#graph-right")
+              .append("div")
+              .attr("class", "compare-chart")
+              .style("height", x(parseInt(element)) + "px")
+              .append("div")
+              .attr('class', 'legend')
+              .text(parseInt(element));
+              }
+        });
+    }, 
   });
 
 
 }
 
 </script>
-
-  <script>
-
-      // var data = [40, 120, 150];
-
-      // var x = d3.scale.linear().domain([0, d3.max(data)]).range(["0px", "200px"]);
-
-      // d3.select(".chart")
-      //   .selectAll("div")
-      //   .data(data)
-      //   .enter()
-      //   .append('div')
-      //   .style('height', function(d) { return d * 2 + "px"; }) //function(d) { return d * 2 + "px"; })
-      //   .style("width", "30px") 
-      //   .append('div') 
-      //   .attr('class', 'legend')
-      //   .text(function(d) { return d; })
  
-  </script>
 
 </body>
 </html>

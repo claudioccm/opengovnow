@@ -53,7 +53,7 @@ var countries;
   d3.selectAll('.graph-row').each(function(d, i)
   {
      
-      linename = d3.select(this).attr("name");
+      linename =  d3.select(this).attr("name");
 
       d3.select(this)
         .append("span")

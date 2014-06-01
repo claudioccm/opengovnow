@@ -61,76 +61,14 @@
         <div id="c-demand-graph" class="large-12 medium-12 small-12">
           <h3>Do you want your government to be more open?</h3>
           
-          <div class="graph-compare">
-            <div class="graph-row">
-              <span class="graph-row-country">Ghana</span>
-              <div class="graph-row-neg">  
-                <div class="graph-value-bar graph-row-neg-1" style="width: 60px;">15<span>No</span></div>
-                <div class="graph-value-bar graph-row-neg-2" style="width: 40px;">10<span>I don't know | I don't care</span></div>
-              </div>
-              <div class="graph-row-pos">
-                <div class="graph-value-bar graph-row-pos-1" style="width: 300px;">75<span>Yes</span></div>
-              </div>
-            </div>
+            <div id="graph-compare" class="graph-compare"></div>
 
-            <div class="graph-row">
-            <span class="graph-row-country">Country 2</span>
-            <div class="graph-row-neg">  
-              <div class="graph-value-bar graph-row-neg-1" style="width: 120px;">30<span>No</span></div>
-              <div class="graph-value-bar graph-row-neg-2" style="width: 20px;">5<span>I don't know | I don't care</span></div>
-            </div>
-            <div class="graph-row-pos">
-              <div class="graph-value-bar graph-row-pos-1" style="width: 260px;">65<span>Yes</span></div>
-            </div>
-          </div>
-          
-          </div>
-          
-          <div class="graph-row">
-            <span class="graph-row-country">Ghana</span>
-            <div class="graph-row-neg">  
-              <div class="graph-value-bar graph-row-neg-1" style="width: 60px;">15<span>No</span></div>
-              <div class="graph-value-bar graph-row-neg-2" style="width: 40px;">10<span>I don't know | I don't care</span></div>
-            </div>
-            <div class="graph-row-pos">
-              <div class="graph-value-bar graph-row-pos-1" style="width: 300px;">75<span>Yes</span></div>
-            </div>
-          </div>
-
-          <div class="graph-row">
-            <span class="graph-row-country">Country 2</span>
-            <div class="graph-row-neg">  
-              <div class="graph-value-bar graph-row-neg-1" style="width: 120px;">30<span>No</span></div>
-              <div class="graph-value-bar graph-row-neg-2" style="width: 20px;">5<span>I don't know | I don't care</span></div>
-            </div>
-            <div class="graph-row-pos">
-              <div class="graph-value-bar graph-row-pos-1" style="width: 260px;">65<span>Yes</span></div>
-            </div>
-          </div>
-
-          <div class="graph-row">
-            <span class="graph-row-country">Country 3</span>
-            <div class="graph-row-neg">  
-              <div class="graph-value-bar graph-row-neg-1" style="width: 100px;">25<span>No</span></div>
-              <div class="graph-value-bar graph-row-neg-2" style="width: 80px;">20<span>I don't know | I don't care</span></div>
-            </div>
-            <div class="graph-row-pos">
-              <div class="graph-value-bar graph-row-pos-1" style="width: 220px;">55<span>Yes</span></div>
-            </div>
-          </div>
-
+ 
         </div>
       </section>
     </div>
 
-  <footer>
-    <section class="row">
-      <div class="large-12 small-12 column">
-        <p>The team would like to thank the creators of The Guardian <a href="http://www.theguardian.com/world/interactive/2013/nov/01/snowden-nsa-files-surveillance-revelations-decoded">“NSA Files Decoded”</a> feature for inspiring this work.</p>
-        <p>All of the elements of this site follow <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons license</a>, and are intended for future use and reuse.</p>
-      </div>
-    </section>
-  </footer>
+  
   <div id="overlay"></div>
   
   <div class="dataoverlay dataoverlay-slidedown">
@@ -138,7 +76,7 @@
         <div class="chart"></div> 
     </div>
 
-  <script src="http://code.jquery.com/jquery-latest.min.js"  type="text/javascript"></script>
+  <script src="js/jquery-latest.min.js"  type="text/javascript"></script>
   <script src="bower_components/imagereveal/js/jquery.imageReveal.js"></script>
   <script src="bower_components/foundation/js/foundation.min.js"></script>
   <script src="bower_components/d3/d3.js"></script>
@@ -149,27 +87,9 @@
   <script src="js/jquery.inview.js"></script>
   <script src="js/socialmedia.js"></script>
   <script src="js/beta-dataoverlay.js"></script>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
-
-
-  <script>
-
-      var data = [40, 120, 150];
-
-      var x = d3.scale.linear().domain([0, d3.max(data)]).range(["0px", "200px"]);
-
-      d3.select(".chart")
-        .selectAll("div")
-        .data(data)
-        .enter()
-        .append('div')
-        .style('height', function(d) { return d * 2 + "px"; }) //function(d) { return d * 2 + "px"; })
-        .style("width", "30px") 
-        .append('div') 
-        .attr('class', 'legend')
-        .text(function(d) { return d; })
+  <script src="js/d3.v3.min.js"></script>
+  <script src="js/demand.js"></script>
  
-  </script>
 
 </body>
 </html>

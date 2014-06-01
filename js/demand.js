@@ -11,7 +11,7 @@ var countries;
   });
  
 
-  var chart = d3.select('#c-perception-graph').selectAll('div').data(countries).enter();
+  var chart = d3.select('#c-demand-graph').selectAll('div').data(countries).enter();
 
   chart.append("div")
         .attr("class", "graph-row")
@@ -22,6 +22,7 @@ var countries;
  
  var j;
  j = 0;
+ k = 0;
 
   var leftData;
 
@@ -29,7 +30,7 @@ var countries;
             'async': false,
             'type': "GET",
             'global': false,
-            'url': "php/leftData.php",
+            'url': "php/leftData-demand.php",
             'success': function (data) {
                 leftData = data.split(',');
           
@@ -43,7 +44,7 @@ var countries;
             'async': false,
             'type': "GET",
             'global': false,
-            'url': "php/rightData.php",
+            'url': "php/rightData-demand.php",
             'success': function (data) {
                 rightData = data.split(',');
             }
@@ -53,7 +54,7 @@ var countries;
   d3.selectAll('.graph-row').each(function(d, i)
   {
      
-      linename = d3.select(this).attr("name");
+      linename =  d3.select(this).attr("name");
 
       d3.select(this)
         .append("span")
@@ -124,41 +125,23 @@ var countries;
       });
 
 
+ 
+
+
+
       d3.select("[name = '" + linename + "pos" + "']").each(function(d, i)
       {
           d3.select(this)
             .append("div")
             .attr("class", "graph-value-bar graph-row-pos-1")
-            .attr("id", linename + "-graph-row-pos-1")
+            .attr("id", linename +  "-graph-row-pos-1")
             .text(function(d)
                 {
-                    return rightData[j];
+                    return rightData[k];
                 })
             .style("width", function(d)
                 {
-                    return rightData[j] * 3 + "px";
-                })
-            .append("span")
-            .attr("class","value-legend")
-            .text("Open")
-            ;
-      });
-
-
-
-      d3.select("[name = '" + linename + "pos" + "']").each(function(d, i)
-      {
-          d3.select(this)
-            .append("div")
-            .attr("class", "graph-value-bar graph-row-pos-2")
-            .attr("id", linename +  "-graph-row-pos-2")
-            .text(function(d)
-                {
-                    return rightData[j+1];
-                })
-            .style("width", function(d)
-                {
-                    return rightData[j + 1] * 3 + "px";
+                    return rightData[k] * 3 + "px";
                 })
             .append("span")
             .attr("class","value-legend")
@@ -167,6 +150,7 @@ var countries;
       });
 
          j = j + 2;
+         k = k+1;
 
   });
 
@@ -179,8 +163,8 @@ function click(d)
 
   var w1 = d3.select("[id = '" + d + "-graph-row-neg-1" + "']").style("width");
   var w2 = d3.select("[id = '" + d + "-graph-row-neg-2" + "']").style("width");
-  var w3 = d3.select("[id = '" + d + "-graph-row-pos-1" + "']").style("width");
-  var w4 = d3.select("[id = '" + d + "-graph-row-pos-2" + "']").style("width");
+ 
+  var w4 = d3.select("[id = '" + d + "-graph-row-pos-1" + "']").style("width");
 
   d3.select("[name = '" + d +  "']").remove();
   var bartop = d3.select('#graph-compare')
@@ -224,19 +208,11 @@ function click(d)
           .attr("name", d + "-graph-row-pos");
 
   tempname = d + "-graph-row-pos" ; 
-
-      d3.select("[name = '" + tempname +  "']")
-          .append("div")
-          .attr("class", "graph-row-pos-1")
-          .text(w3.replace("px", "")/3 + "%")
-          .style("width", w3)
-          .append("span")
-          .attr("class","value-legend")
-          .text("Open");
+ 
 
        d3.select("[name = '" + tempname +  "']")             
           .append("div")
-          .attr("class", "graph-row-pos-2")
+          .attr("class", "graph-row-pos-1")
           .text(w4.replace("px", "")/3 + "%")
           .style("width", w4)
           .append("span")

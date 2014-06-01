@@ -163,13 +163,14 @@
 	}
 }
 
-#graph-compare:empty ~ .show-legend {
+#graph-compare-1:empty ~ .show-legend,
+#graph-compare-2:empty ~ .show-legend {
 	padding-top: 20px;
 	padding-bottom: 0;
 	margin-bottom: 5px;
 	
 	.graph-row-country {
-		padding-top: 30px;
+		padding-top: 22px;
 	}
 
 	.graph-row-pos-1, 

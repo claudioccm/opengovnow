@@ -14,13 +14,13 @@
   while($row=mysql_fetch_array($q)){
  
   
-   $data= $data .  intval($row['chart3c']) . "," .  intval($row['chart3d'])  . "," ;
+   $data= $data .  intval($row['chart3d']) . "," .  intval($row['chart3c'])  . "," ;
 
       $i++;
 
  }
  
-
+	 $data = substr($data, 0, -1);
      echo($data);
 
 ?>

@@ -11,7 +11,9 @@ var countries;
   });
  
 
-  var chart = d3.select('#c-perception-graph').selectAll('div').data(countries).enter();
+ console.log(countries);
+
+  var chart = d3.select('#c-perception-graph').selectAll().data(countries).enter();
 
   chart.append("div")
         .attr("class", "graph-row")
@@ -32,7 +34,7 @@ var countries;
             'url': "php/leftData.php",
             'success': function (data) {
                 leftData = data.split(',');
-          
+                
             }
         });
 
@@ -48,7 +50,7 @@ var countries;
                 rightData = data.split(',');
             }
         });
-
+console.log (rightData);
 
   d3.selectAll('.graph-row').each(function(d, i)
   {

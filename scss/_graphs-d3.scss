@@ -3,15 +3,15 @@
 		margin-bottom: 30px;
 	}
 
-	.graph-row-neg-1 {
+	.demand-graph-row-neg-1 {
 		background-color: $orange;
 	}
 
-	.graph-row-neg-2 {
+	.demand-graph-row-neg-2 {
 		background-color: $gray_10;
 	}
 
-	.graph-row-pos-1 {
+	.demand-graph-row-pos-1 {
 		background-color: $og_green;
 	}
 }
@@ -38,7 +38,8 @@
 	}
 }
 
-.graph-row {
+.graph-row,
+.demand-graph-row {
 	margin: 0;
 	position: relative;
 	// background-color: #eee;
@@ -56,17 +57,20 @@
 		@include slide;
 	}
 
-	.graph-value-bar {
+	.graph-value-bar,
+	.demand-graph-value-bar {
 		position: relative;
 		min-width: 25px;
 	}
 
-	.graph-value-bar::after {
+	.graph-value-bar::after,
+	.demand-graph-value-bar::after {
 		content:"%";
 		font-size: 10px;
 	}
 
-	.graph-row-neg {
+	.graph-row-neg,
+	.demand-graph-row-neg {
 
 		> div {
 			float: right;
@@ -85,22 +89,26 @@
 			}
 		}
 
-		.graph-row-neg-1 {
+		.graph-row-neg-1,
+		.demand-graph-row-neg-1 {
 			margin-right: 2px;
 			color: $white;
 		}
 
-		.graph-row-neg-1::after {
+		.graph-row-neg-1::after,
+		.demand-graph-row-neg-1::after {
 			color: $white;
 		}
 		
-		.graph-row-neg-2::after {
+		.graph-row-neg-2::after,
+		.demand-graph-row-neg-2::after {
 			color: $gray_80;
 		}
 
 	}
 	
-	.graph-row-pos {
+	.graph-row-pos,
+	.demand-graph-row-pos {
 
 		> div {
 			float: left;
@@ -133,7 +141,8 @@
 		}
 	}
 
-	.graph-row-country {
+	.graph-row-country,
+	.demand-graph-row-country {
 		position: absolute;
 		padding: 5px;
 		right: 60px;
@@ -146,7 +155,8 @@
 	}
 }
 
-.graph-row:hover {
+.graph-row:hover,
+.demand-graph-row:hover {
 	
 	> div {
 		padding-bottom: 30px;
@@ -156,7 +166,8 @@
 	}
 	
 
-	.graph-row-country {
+	.graph-row-country,
+	.demand-graph-row-country {
 		opacity: 1;
 		font-size: 16px;
 		margin-top: 0;
@@ -169,14 +180,19 @@
 	padding-bottom: 0;
 	margin-bottom: 5px;
 	
-	.graph-row-country {
+	.graph-row-country,
+	.demand-graph-row-country {
 		padding-top: 22px;
 	}
 
 	.graph-row-pos-1, 
 	.graph-row-pos-2, 
 	.graph-row-neg-1, 
-	.graph-row-neg-2 {
+	.graph-row-neg-2,
+	.demand-graph-row-pos-1, 
+	.demand-graph-row-pos-2, 
+	.demand-graph-row-neg-1, 
+	.demand-graph-row-neg-2 {
 		position: relative;
 	}
 
@@ -191,10 +207,12 @@
 
 // Compare Area
 
-.graph-compare {
+.graph-compare,
+.demand-graph-compare {
 	margin-bottom: 25px;
 
-	.graph-row {
+	.graph-row,
+	.demand-graph-row {
 		// background-color: #eee;
 		padding-bottom: 10px;
 		
@@ -208,31 +226,39 @@
 		}
 	}
 
-	.graph-row:hover {
+	.graph-row:hover,
+	.demand-graph-row:hover {
 		> div {
 			padding-bottom: 10px;
 		}
 	}
 
-	.graph-row-country {
+	.graph-row-country,
+	.demand-graph-row-country {
 		opacity: 1;
 		font-size: 16px;
 		margin-top: 0;
 	}
 
-	.graph-row:first-of-type {
+	.graph-row:first-of-type,
+	.demand-graph-row:first-of-type {
 		padding-top: 20px;
 		padding-bottom: 0;
 		margin-bottom: 5px;
 	
-		.graph-row-country {
+		.graph-row-country,
+		.demand-graph-row-country {
 			margin-top: 12px;
 		}
 
 		.graph-row-pos-1, 
 		.graph-row-pos-2, 
 		.graph-row-neg-1, 
-		.graph-row-neg-2 {
+		.graph-row-neg-2,
+		.demand-graph-row-pos-1, 
+		.demand-graph-row-pos-2, 
+		.demand-graph-row-neg-1, 
+		.demand-graph-row-neg-2 {
 			position: relative;
 		}
 
@@ -247,7 +273,8 @@
 }
 
 
-.graph-compare:last-of-type {
+.graph-compare:last-of-type,
+.demand-graph-compare:last-of-type {
 	margin-bottom: 25px;
 }
 

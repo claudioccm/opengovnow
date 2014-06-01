@@ -10,8 +10,8 @@ var countries;
       }
   });
  
-
-  var chart = d3.select('#c-demand-graph').selectAll('div').data(countries).enter();
+console.log(countries);
+  var chart = d3.select('#c-demand-graph').selectAll().data(countries).enter();
 
   chart.append("div")
         .attr("class", "graph-row")
@@ -88,7 +88,7 @@ var countries;
                 })
             .append("span")
             .attr("class","value-legend")
-            .text("Closed")
+            .text("No")
             ;
       });
 
@@ -110,7 +110,7 @@ var countries;
               })
              .append("span")
             .attr("class","value-legend")
-            .text("Somewhat Closed")
+            .text("I don't know")
             ;
       });
 
@@ -145,7 +145,7 @@ var countries;
                 })
             .append("span")
             .attr("class","value-legend")
-            .text("Somewhat Open")
+            .text("Yes")
             ;
       });
 
@@ -163,7 +163,6 @@ function click(d)
 
   var w1 = d3.select("[id = '" + d + "-graph-row-neg-1" + "']").style("width");
   var w2 = d3.select("[id = '" + d + "-graph-row-neg-2" + "']").style("width");
- 
   var w4 = d3.select("[id = '" + d + "-graph-row-pos-1" + "']").style("width");
 
   d3.select("[name = '" + d +  "']").remove();
@@ -190,7 +189,7 @@ function click(d)
          .style("width", w1)
          .append("span")
          .attr("class","value-legend")
-         .text("Closed");
+         .text("No");
 
   d3.select("[name = '" + tempname +  "']")    
           .append("div")
@@ -199,7 +198,7 @@ function click(d)
           .style("width", w2)
           .append("span")
           .attr("class","value-legend")
-          .text("Somewhat Closed");
+          .text("I don't know");
            
            
   d3.select("[name = '" + d +  "']")
@@ -217,7 +216,7 @@ function click(d)
           .style("width", w4)
           .append("span")
           .attr("class","value-legend")
-          .text("Somewhat Open");
+          .text("Yes");
 }
 
 // Checks if the #graph-compare area is empty to properly show/hide the legends.

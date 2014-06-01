@@ -19,7 +19,7 @@
 
  }
  
-
+	 $data = substr($data, 0, -1);
      echo($data);
 
 ?>

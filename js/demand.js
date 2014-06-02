@@ -14,10 +14,10 @@ console.log(countries);
   var chart = d3.select('#c-demand-graph').selectAll().data(countries).enter();
 
   chart.append("div")
-        .attr("class", "demand-graph-row")
+        .attr("class", "graph-row")
         .attr("name", function(d)
           {
-              return d;
+              return "mir" + d;
           });
  
  var j;
@@ -51,14 +51,14 @@ console.log(countries);
         });
 
 
-  d3.selectAll('.demand-graph-row').each(function(d, i)
+  d3.select("#c-demand-graph").selectAll('.graph-row').each(function(d, i)
   {
      
       linename =  d3.select(this).attr("name");
 
       d3.select(this)
         .append("span")
-        .attr("class", "demand-graph-row-country")
+        .attr("class", "graph-row-country")
         .text(linename);
 
 
@@ -66,7 +66,7 @@ console.log(countries);
       {
           d3.select(this)
             .append("div")
-            .attr("class", "demand-graph-row-neg")
+            .attr("class", "graph-row-neg")
             .attr("name", linename + "neg");
       });
 
@@ -76,7 +76,7 @@ console.log(countries);
       {
           d3.select(this)
             .append("div")
-            .attr("class", "demand-graph-value-bar demand-graph-row-neg-1")
+            .attr("class", "graph-value-bar graph-row-neg-1")
             .attr("id", linename + "-graph-row-neg-1")
             .text(function(d)
                 {
@@ -87,7 +87,7 @@ console.log(countries);
                     return leftData[j] * 3 + "px";
                 })
             .append("span")
-            .attr("class","demand-value-legend")
+            .attr("class","value-legend")
             .text("No")
             ;
       });
@@ -98,7 +98,7 @@ console.log(countries);
       {
           d3.select(this)
             .append("div")
-            .attr("class", "demand-graph-value-bar demand-graph-row-neg-2")
+            .attr("class", "graph-value-bar graph-row-neg-2")
             .attr("id", linename + "-graph-row-neg-2")
             .text(function(d)
               {
@@ -109,7 +109,7 @@ console.log(countries);
               return leftData[j + 1] * 3 + "px";
               })
              .append("span")
-            .attr("class","demand-value-legend")
+            .attr("class","value-legend")
             .text("I don't know")
             ;
       });
@@ -119,9 +119,9 @@ console.log(countries);
       {
           d3.select(this)
             .append("div")
-            .attr("class", "demand-graph-row-pos")
+            .attr("class", "graph-row-pos")
             .attr("name", linename + "pos")
-            .attr("id", "demand-graph-row-pos");
+            .attr("id", "graph-row-pos");
       });
 
 
@@ -133,7 +133,7 @@ console.log(countries);
       {
           d3.select(this)
             .append("div")
-            .attr("class", "demand-graph-value-bar demand-graph-row-pos-1")
+            .attr("class", "graph-value-bar graph-row-pos-1")
             .attr("id", linename +  "-graph-row-pos-1")
             .text(function(d)
                 {
@@ -144,7 +144,7 @@ console.log(countries);
                     return rightData[k] * 3 + "px";
                 })
             .append("span")
-            .attr("class","demand-value-legend")
+            .attr("class","value-legend")
             .text("Yes")
             ;
       });
@@ -155,7 +155,7 @@ console.log(countries);
   });
 
 
-var barline = d3.selectAll(".demand-graph-row")
+var barline = d3.selectAll(".graph-row")
 
 barline.on("click", click);
 function click(d) 
@@ -166,44 +166,44 @@ function click(d)
   var w4 = d3.select("[id = '" + d + "-graph-row-pos-1" + "']").style("width");
 
   d3.select("[name = '" + d +  "']").remove();
-  var bartop = d3.select('#graph-compare-2')
+  var bartop = d3.select('#graph-compare')
   
   bartop.append("div")
-        .attr("class", "demand-graph-row")
+        .attr("class", "graph-row")
         .attr("name", d)
         .append("span")
-        .attr("class", "demand-graph-row-country")
+        .attr("class", "graph-row-country")
         .text(d);
 
   d3.select("[name = '" + d +  "']")
         .append("div")
-        .attr("class", "demand-graph-row-neg")
+        .attr("class", "graph-row-neg")
         .attr("name", d + "-graph-row-neg");
 
   tempname = d + "-graph-row-neg" ; 
 
   d3.select("[name = '" + tempname +  "']")
          .append("div")
-         .attr("class", "demand-graph-row-neg-1")
+         .attr("class", "graph-row-neg-1")
          .text (w1.replace("px", "")/3 + "%")
          .style("width", w1)
          .append("span")
-         .attr("class","demand-value-legend")
+         .attr("class","value-legend")
          .text("No");
 
   d3.select("[name = '" + tempname +  "']")    
           .append("div")
-          .attr("class", "demand-graph-row-neg-2")
+          .attr("class", "graph-row-neg-2")
           .text (w2.replace("px", "")/3 + "%")
           .style("width", w2)
           .append("span")
-          .attr("class","demand-value-legend")
+          .attr("class","value-legend")
           .text("I don't know");
            
            
   d3.select("[name = '" + d +  "']")
           .append("div")
-          .attr("class", "demand-graph-row-pos")
+          .attr("class", "graph-row-pos")
           .attr("name", d + "-graph-row-pos");
 
   tempname = d + "-graph-row-pos" ; 
@@ -211,15 +211,15 @@ function click(d)
 
        d3.select("[name = '" + tempname +  "']")             
           .append("div")
-          .attr("class", "demand-graph-row-pos-1")
+          .attr("class", "graph-row-pos-1")
           .text(w4.replace("px", "")/3 + "%")
           .style("width", w4)
           .append("span")
-          .attr("class","demand-value-legend")
+          .attr("class","value-legend")
           .text("Yes");
 }
 
 // Checks if the #graph-compare area is empty to properly show/hide the legends.
-if ($('.graph-compare').is(':empty')){
-    $('.graph-compare').next().addClass('demand-show-legend');
+if ($('#graph-compare').is(':empty')){
+    $('#graph-compare').next().addClass('show-legend');
   };

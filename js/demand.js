@@ -123,8 +123,7 @@ var countries;
           d3.select(this)
             .append("div")
             .attr("class", "graph-row-pos")
-            .attr("name", linename + "pos")
-            .attr("id", "graph-row-pos");
+            .attr("name", linename + "pos");
       });
 
 
@@ -163,27 +162,29 @@ var barline = d3.selectAll(".demand-graph-row")
 barline.on("click", click);
 function click(d) 
 {
+  console.log(d);
 
-  var w1 = d3.select("[id = '" + d + "-graph-row-neg-1" + "']").style("width");
-  var w2 = d3.select("[id = '" + d + "-graph-row-neg-2" + "']").style("width");
-  var w4 = d3.select("[id = '" + d + "-graph-row-pos-1" + "']").style("width");
+  var w1 = d3.select("[id = '" + d + "-demand-graph-row-neg-1" + "']").style("width");
+  var w2 = d3.select("[id = '" + d + "-demand-graph-row-neg-2" + "']").style("width");
+  var w4 = d3.select("[id = '" + d + "-demand-graph-row-pos-1" + "']").style("width");
+console.log(w1);
 
-  d3.select("[name = '" + d +  "']").remove();
+  d3.select("[name = '" + d +  "-demand']").remove();
   var bartop = d3.select('#graph-compare-2')
   
   bartop.append("div")
         .attr("class", "demand-graph-row")
-        .attr("name", d)
+        .attr("name", d + "-demand")
         .append("span")
         .attr("class", "graph-row-country")
         .text(d);
 
-  d3.select("[name = '" + d +  "']")
+  d3.select("[name = '" + d +  "-demand']")
         .append("div")
         .attr("class", "graph-row-neg")
-        .attr("name", d + "-graph-row-neg");
+        .attr("name", d + "-demandneg");
 
-  tempname = d + "-graph-row-neg" ; 
+  tempname = d + "-demandneg" ; 
 
   d3.select("[name = '" + tempname +  "']")
          .append("div")
@@ -204,12 +205,12 @@ function click(d)
           .text("I don't know");
            
            
-  d3.select("[name = '" + d +  "']")
+  d3.select("[name = '" + d +  "-demand']")
           .append("div")
           .attr("class", "graph-row-pos")
-          .attr("name", d + "-graph-row-pos");
+          .attr("name", d + "-demandpos");
 
-  tempname = d + "-graph-row-pos" ; 
+  tempname = d + "-demandpos" ; 
  
 
        d3.select("[name = '" + tempname +  "']")             

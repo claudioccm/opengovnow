@@ -166,7 +166,7 @@ function click(d)
   var w4 = d3.select("[id = '" + d + "-graph-row-pos-1" + "']").style("width");
 
   d3.select("[name = '" + d +  "']").remove();
-  var bartop = d3.select('#graph-compare')
+  var bartop = d3.select('#graph-compare-2')
   
   bartop.append("div")
         .attr("class", "graph-row")

@@ -10,14 +10,16 @@ var countries;
       }
   });
  
-console.log(countries);
+
   var chart = d3.select('#c-demand-graph').selectAll().data(countries).enter();
+ 
 
   chart.append("div")
         .attr("class", "demand-graph-row")
         .attr("name", function(d)
           {
-              return "mir" + d;
+             
+              return  d + "-demand";
           });
  
  var j;
@@ -55,11 +57,12 @@ console.log(countries);
   {
      
       linename =  d3.select(this).attr("name");
+      
 
       d3.select(this)
         .append("span")
         .attr("class", "graph-row-country")
-        .text(linename);
+        .text(linename.replace("-demand", ""));
 
 
       d3.select("[name = '" + linename + "']").each(function(d, i)

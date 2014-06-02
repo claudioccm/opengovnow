@@ -14,7 +14,7 @@ console.log(countries);
   var chart = d3.select('#c-demand-graph').selectAll().data(countries).enter();
 
   chart.append("div")
-        .attr("class", "graph-row")
+        .attr("class", "demand-graph-row")
         .attr("name", function(d)
           {
               return "mir" + d;
@@ -51,7 +51,7 @@ console.log(countries);
         });
 
 
-  d3.select("#c-demand-graph").selectAll('.graph-row').each(function(d, i)
+  d3.select("#c-demand-graph").selectAll('.demand-graph-row').each(function(d, i)
   {
      
       linename =  d3.select(this).attr("name");
@@ -155,7 +155,7 @@ console.log(countries);
   });
 
 
-var barline = d3.selectAll(".graph-row")
+var barline = d3.selectAll(".demand-graph-row")
 
 barline.on("click", click);
 function click(d) 
@@ -169,7 +169,7 @@ function click(d)
   var bartop = d3.select('#graph-compare-2')
   
   bartop.append("div")
-        .attr("class", "graph-row")
+        .attr("class", "demand-graph-row")
         .attr("name", d)
         .append("span")
         .attr("class", "graph-row-country")

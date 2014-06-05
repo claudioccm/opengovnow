@@ -76,6 +76,8 @@ $(document).ready(function() {
 		}
 	);
 
+
+
 	// Counter
 
 	(function($) {
@@ -266,6 +268,47 @@ function addClassToCountries(svg, countries, cls) {
 function addClassToAllCountries(svg, cls) {
     $(svg).children('path, g').each(function() { this.classList.add(cls); });
 }
+
+
+// Yes/No Question
+
+$('.m-og-answer').hide();
+
+$('.m-og-question p').click(function(){
+       $('.m-og-answer').show();
+       $("#fullname").focus();
+       $("#answer").val(event.target.id.replace('m-og-answer-',''));
+    });
+
+
+$('#og-question-form').submit(function(e){
+
+        e.preventDefault();
+        var form = $(this);
+        var post_url = 'php/og-question.php';
+        var post_data = form.serialize();
+     
+        $.ajax({
+            type: 'POST',
+            url: post_url, 
+            data: post_data,
+            success: function(msg) {
+                
+            if (msg.indexOf("ok") >= 0) {
+                $('#note').text ("Thank you for sharing your opinion with us");
+                $('#og-question-form').hide();
+              }
+            else
+            {
+                $('#note').text ("hmm...it looks like we could not receive your info, please get in touch on @opening_gov");
+                $('#og-question-form').hide(); 
+            }
+              
+            }
+        });
+    });
+
+ 
 
 
 // Functions for Video Controllers

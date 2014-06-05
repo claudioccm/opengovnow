@@ -551,15 +551,37 @@
       </section>
     </div>
 
-    <!--<section class="row m-og-question">
+    <section class="row m-og-question">
       <h3>Would you like your Government to be more Open?</h3>
       <div class="large-6 medium-6 small-6 column">
-        <p>Yes</p>
+        <p id="m-og-answer-yes">Yes</p>
       </div>
       <div class="large-6 medium-6 small-6 column">
-        <p>No</p>
+        <p id="m-og-answer-no">No</p>
       </div>
-    </section>-->
+    </section>
+
+    <section class="row m-og-answer">
+      <h3 id="note">Let your voice be heard</h3>
+      <div class="large-6 medium-6 small-6 column">
+        <form id="og-question-form">  
+          <p>
+            <label for="name">Full Name </label>
+            <input id="fullname" name="fullname" type="text" required placeholder="Tell us who you are" tabindex="1" >
+          </p>
+          
+          <p>
+            <label for="email">Your Email </label>
+            <input type="email" name="email" required placeholder="Enter a valid email address" tabindex="2">
+          </p>
+
+          <p>
+            <input id="answer" name="answer" type="hidden" value="" >
+            <input class="button" type="submit" value="share opinion" tabindex="3" /> 
+          </p>
+        </form>
+      </div>
+    </section>
 
     <div class="row-container">
       <section class="row">

@@ -52,9 +52,20 @@
 			background-color: $white_60;
 			color: $orange;
 		}
+	}	
+}
+
+#og-question-form {
+	
+
+	.button {
+		padding-top: 0.5rem; 
+		padding-bottom: 0.6rem;
+		background-color: $og_green;
 	}
-	
-	
+	.button:hover {
+		background-color: $orange;
+	}
 }
 
 // .m-section-header {
@@ -101,9 +112,9 @@
 		width: 220px;
 		padding: 10px;
 		background-color: $orange;
-		font-size: 2rem;
+		font-size: 1.3rem;
 		font-family: $sans-serif;
-		line-height: 2.3rem;
+		line-height: 1.7rem;
 		color: $white;
 		vertical-align: bottom;
 		@include slide;
@@ -141,6 +152,59 @@
 		left: -17px;
 		top: 4px;
 	}
+}
 
+#c-contact {
+	text-align: center;
+	padding-top: 30px;
+	margin-bottom: 50px;
+
+	a {
+		display: inline-block;
+		background-color: $og_green_40;
+		@include circle;
+		width: 160px;
+		height: 160px;
+		padding: 30px;
+		margin: 20px;
+
+
+		i {
+			font-size: 5rem;
+			color: $white;
+			position: relative;
+			top: 10px;
+			left: -5px;
+		}
+
+	}
+
+	a:hover {
+		background-color: $orange;
+
+		i {
+			color: $white;
+		}	
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

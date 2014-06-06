@@ -2,6 +2,7 @@
 
 $og_green: rgba(35, 84, 102, 1);
 $og_green_70: rgba(35, 84, 102, .7);
+$og_green_40: rgba(35, 84, 102, .4);
 $og_green_15: rgba(35, 84, 102, .15);
 $og_green_5: rgba(35, 84, 102, .05);
 $white: rgba(255,255,255,1);
@@ -48,6 +49,13 @@ $z-overlay: 999;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
 }
+
+@mixin rounded {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
 
 @mixin drop-shadow {
 	-webkit-box-shadow: 0 0 6px $gray_40;
@@ -273,7 +281,7 @@ body {
 footer {
 	background-color: $gray_85;
 	color: $white;
-	margin-top: 40px;
+	// margin-top: 40px;
 	padding: 20px 0;
 	color: $white_60;
 

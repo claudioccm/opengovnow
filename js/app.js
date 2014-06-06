@@ -22,10 +22,10 @@ $(document).ready(function() {
 	});
 
 	// Hides Overlay, and offset menu when menu item is clicked
-	$('.m-menu nav a').click(function(){
+	$('.menu-item').click(function(){
 		$('.m-menu').removeClass('s-active');
 		$('.row').removeClass('s-active');
-		$('.m-menu-trigger').removeClass('s-active');
+		$('.m-fixed-menu').removeClass('s-active');
 		$('#overlay').hide();
 	});
 

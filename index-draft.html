@@ -179,7 +179,7 @@
 
     <div id="c-why-should-i-care" class="l-module m-section-header">
       <section class="row">
-        <h2>Why should I Care?</h2>
+        <h2>Why should I care?</h2>
         
         <div id="faucet-graph" class="column large-4 medium-4 small-4">
           Faucet
@@ -238,7 +238,7 @@
       </div>
 
       <section class="row">
-        <div id="c-open-closed-gov" class="inview imageReveal m-switcher show-for-large-only">
+        <div id="c-open-closed-gov" class="inview imageReveal m-switcher show-for-medium-up">
           <img src="images/headlines-open.jpg" title="Open Gov">
           <img src="images/headlines-closed.jpg" title="Closed Gov">
         </div>
@@ -287,7 +287,7 @@
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
     <div id="c-who-wants-it" class="l-module m-section-header">
       <section class="row show-for-medium-up">
-        <h2>Who Wants It?</h2>
+        <h2>Who wants it?</h2>
         <div id="m-ticker" class="m-ticker inview">
           <div id="map-container"></div>
           <h2 class="timer"></h2>
@@ -436,7 +436,38 @@
       <section class="row m-og-question">
         <h2>What can I do?</h2>  
       </section>
-      
+
+      <section class="row m-og-question">
+        <h3>Would you like your Government to be more Open?</h3>
+        <div class="large-6 medium-6 small-6 column">
+          <p id="m-og-answer-yes">Yes</p>
+        </div>
+        <div class="large-6 medium-6 small-6 column">
+          <p id="m-og-answer-no">No</p>
+        </div>
+        <div class="row m-og-answer">
+          <h3 id="note">Let your voice be heard</h3>
+          <div>
+            <form id="og-question-form">  
+              
+              <div class="large-5 medium-5 small-12 column">
+                <input id="fullname"  name="fullname" type="text" required placeholder="Full Name" tabindex="1" >
+              </div>
+              
+              <div class="large-5 medium-5 small-12 column">
+                <input type="email" name="email" required placeholder="Email" tabindex="2">
+              </div>
+
+              <div class="large-2 medium-2 small-12 column">
+                <input id="answer" name="answer" type="hidden" value="" >
+                <input class="button expand" type="submit" value="Share Opinion" tabindex="3" /> 
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </section>
+
       <div class="row-container">
         <section class="row">
           <div class="m-video-answer">
@@ -456,154 +487,125 @@
           </div>
         </section>
       </div>
-      
-      <div id="c-what-can-i-do-itens" class="l-module">
-        <h2>What can I do?</h2>
 
+      <section class="row">
+        <p>The Open Government movement asserts the idea that governance is everyone’s business, given the decisions that governments make and their very real consequences to the everyday lives of citizens. This idea has gathered momentum and taken on the global stage: governments around the world and civil society are coming together through the Open Government Partnership to co-create solutions to ensure better future for all. Through this platform, there is now a space for you to help shape the future of your community. There are a host of other opportunities for you to be involved in the Open Government agenda.</p>
+      </section>
+
+      <div class="row-container">
         <section class="row">
-          <div class="column large-4 medium-6 small-12">
-            <a href="http://www.opengovpartnership.org/" target="_blank" class="og-resource-wrap">
-              <div class="og-resource-text">
-                See if your country has signed up to the Open Government Partnership and what its commitments are.  
+          <div class="m-video-answer">
+            <div class="m-video-container">
+              <video id="linda-frey" poster="images/posters/linda.jpg">
+                <source data-src="videos/linda-frey.webm" type="video/ogg"></source>
+                <source data-src="videos/linda-frey.appleuniversal.mp4" type="video/ogg"></source>
+              </video>
+              <div class="controls">
+                  <span id="linda-frey-controls" class="play-pause"><i class="icon-play"></i></span>
+                </div>
+              <div id="linda-frey-container" class="m-lower-third inview">
+                <p class="m-lower-third-name">Linda Frey</p>
+                <p class="m-lower-third-job">Executive Director, Open Government Partnership Support Unit</p>
               </div>
-              <div class="og-resource-image">
-                <img src="images/buttons/open-government-partnership.png" alt="">
-              </div>
-            </a>
-          </div>
-          <div class="column large-4 medium-6 small-12">
-            <a href="http://www.open-contracting.org/" target="_blank" class="og-resource-wrap">
-              <div class="og-resource-text">
-                If you’re interested about public contracts, learn more about Open Contracting  
-              </div>
-              <div class="og-resource-image">
-                <img src="images/buttons/open-contracting.png" alt="">
-              </div>
-            </a>
-          </div>
-          <div class="column large-4 medium-6 small-12">
-            <a href="https://www.facebook.com/DigtlEngagement" target="_blank" class="og-resource-wrap">
-              <div class="og-resource-text">
-                Citizen engagement is crucial to development. Learn more about how technology can help!
-              </div>
-              <div class="og-resource-image">
-                <img src="images/buttons/digital-engagement.png" alt="">
-              </div>
-            </a>
-          </div>
-          <div class="column large-4 medium-6 small-12">
-            <a href="http://registries.opencorporates.com/" target="_blank" class="og-resource-wrap">
-              <div class="og-resource-text">
-                Openness in the private sector is integral to Open Government. Check out the availability of corporate registries in some countries.
-              </div>
-              <div class="og-resource-image">
-                <img src="images/buttons/open-company-data-index.png" alt="">
-              </div>
-            </a>
-          </div>
-          <div class="column large-4 medium-6 small-12">
-            <a href="http://www.opengovpartnership.org/independent-reporting-mechanism" target="_blank" class="og-resource-wrap">
-              <div class="og-resource-text ogp-irm">
-                See how countries who committed to the OGP are doing with their action plans!
-              </div>
-              <div class="og-resource-image">
-                <img src="images/buttons/independent-reporting-mechanism.png" alt="">
-              </div>
-            </a>
-          </div>
-          <div class="column large-4 medium-6 small-12">
-            <a href="http://riwi.com/" target="_blank" class="og-resource-wrap">
-              <div class="og-resource-text">
-                Find out more about the company behind the survey methodology.
-              </div>
-              <div class="og-resource-image">
-                <img src="images/buttons/riwi.png" alt="">
-              </div>
-            </a>
-          </div>
-          <div class="column large-4 medium-6 small-12">
-            <a href="http://wbi.worldbank.org/boost/" target="_blank" class="og-resource-wrap">
-              <div class="og-resource-text">
-                Learn more about openness in budgeting and view budget data of some countries
-              </div>
-              <div class="og-resource-image">
-                <img src="images/buttons/boost.png" alt="">
-              </div>
-            </a>
-          </div>
-          <div class="column large-4 medium-6 small-12">
-            <a href="http://www.opengovguide.com/" target="_blank" class="og-resource-wrap">
-              <div class="og-resource-text">
-                View the Open Government Guide and explore the topics that interest you most.
-              </div>
-              <div class="og-resource-image">
-                <img src="images/buttons/open-gov-guide.png" alt="">
-              </div>
-            </a>
-          </div>
-          <div class="column large-4 medium-6 small-12">
-            <a href="http://schoolofdata.org/" target="_blank" class="og-resource-wrap">
-              <div class="og-resource-text">
-                Interested about open data? Build your own skills now.
-              </div>
-              <div class="og-resource-image">
-                <img src="images/buttons/school-of-data.png" alt="">
-              </div>
-            </a>
+            </div>
           </div>
         </section>
       </div>
 
-      <div class="row-container">
-      <section class="row">
-        <div class="m-video-answer">
-          <div class="m-video-container">
-            <video id="linda-frey" poster="images/posters/linda.jpg">
-              <source data-src="videos/linda-frey.webm" type="video/ogg"></source>
-              <source data-src="videos/linda-frey.appleuniversal.mp4" type="video/ogg"></source>
-            </video>
-            <div class="controls">
-                <span id="linda-frey-controls" class="play-pause"><i class="icon-play"></i></span>
-              </div>
-            <div id="linda-frey-container" class="m-lower-third inview">
-              <p class="m-lower-third-name">Linda Frey</p>
-              <p class="m-lower-third-job">Executive Director, Open Government Partnership Support Unit</p>
+      <section id="c-what-can-i-do-itens" class="row ">
+        <div class="column large-4 medium-6 small-12">
+          <a href="http://www.opengovpartnership.org/" target="_blank" class="og-resource-wrap">
+            <div class="og-resource-text">
+              See if your country has signed up to the Open Government Partnership and what its commitments are.  
             </div>
-          </div>
+            <div class="og-resource-image">
+              <img src="images/buttons/open-government-partnership.png" alt="">
+            </div>
+          </a>
+        </div>
+        <div class="column large-4 medium-6 small-12">
+          <a href="http://www.open-contracting.org/" target="_blank" class="og-resource-wrap">
+            <div class="og-resource-text">
+              If you’re interested about public contracts, learn more about Open Contracting  
+            </div>
+            <div class="og-resource-image">
+              <img src="images/buttons/open-contracting.png" alt="">
+            </div>
+          </a>
+        </div>
+        <div class="column large-4 medium-6 small-12">
+          <a href="https://www.facebook.com/DigtlEngagement" target="_blank" class="og-resource-wrap">
+            <div class="og-resource-text">
+              Citizen engagement is crucial to development. Learn more about how technology can help!
+            </div>
+            <div class="og-resource-image">
+              <img src="images/buttons/digital-engagement.png" alt="">
+            </div>
+          </a>
+        </div>
+        <div class="column large-4 medium-6 small-12">
+          <a href="http://registries.opencorporates.com/" target="_blank" class="og-resource-wrap">
+            <div class="og-resource-text">
+              Openness in the private sector is integral to Open Government. Check out the availability of corporate registries in some countries.
+            </div>
+            <div class="og-resource-image">
+              <img src="images/buttons/open-company-data-index.png" alt="">
+            </div>
+          </a>
+        </div>
+        <div class="column large-4 medium-6 small-12">
+          <a href="http://www.opengovpartnership.org/independent-reporting-mechanism" target="_blank" class="og-resource-wrap">
+            <div class="og-resource-text ogp-irm">
+              See how countries who committed to the OGP are doing with their action plans!
+            </div>
+            <div class="og-resource-image">
+              <img src="images/buttons/independent-reporting-mechanism.png" alt="">
+            </div>
+          </a>
+        </div>
+        <div class="column large-4 medium-6 small-12">
+          <a href="http://riwi.com/" target="_blank" class="og-resource-wrap">
+            <div class="og-resource-text">
+              Find out more about the company behind the survey methodology.
+            </div>
+            <div class="og-resource-image">
+              <img src="images/buttons/riwi.png" alt="">
+            </div>
+          </a>
+        </div>
+        <div class="column large-4 medium-6 small-12">
+          <a href="http://wbi.worldbank.org/boost/" target="_blank" class="og-resource-wrap">
+            <div class="og-resource-text">
+              Learn more about openness in budgeting and view budget data of some countries
+            </div>
+            <div class="og-resource-image">
+              <img src="images/buttons/boost.png" alt="">
+            </div>
+          </a>
+        </div>
+        <div class="column large-4 medium-6 small-12">
+          <a href="http://www.opengovguide.com/" target="_blank" class="og-resource-wrap">
+            <div class="og-resource-text">
+              View the Open Government Guide and explore the topics that interest you most.
+            </div>
+            <div class="og-resource-image">
+              <img src="images/buttons/open-gov-guide.png" alt="">
+            </div>
+          </a>
+        </div>
+        <div class="column large-4 medium-6 small-12">
+          <a href="http://schoolofdata.org/" target="_blank" class="og-resource-wrap">
+            <div class="og-resource-text">
+              Interested about open data? Build your own skills now.
+            </div>
+            <div class="og-resource-image">
+              <img src="images/buttons/school-of-data.png" alt="">
+            </div>
+          </a>
         </div>
       </section>
     </div>
-
-    <section class="row m-og-question">
-      <h3>Would you like your Government to be more Open?</h3>
-      <div class="large-6 medium-6 small-6 column">
-        <p id="m-og-answer-yes">Yes</p>
-      </div>
-      <div class="large-6 medium-6 small-6 column">
-        <p id="m-og-answer-no">No</p>
-      </div>
-      <div class="row m-og-answer">
-        <h3 id="note">Let your voice be heard</h3>
-        <div>
-          <form id="og-question-form">  
-            
-            <div class="large-5 medium-5 small-12 column">
-              <input id="fullname"  name="fullname" type="text" required placeholder="Full Name" tabindex="1" >
-            </div>
-            
-            <div class="large-5 medium-5 small-12 column">
-              <input type="email" name="email" required placeholder="Email" tabindex="2">
-            </div>
-
-            <div class="large-2 medium-2 small-12 column">
-              <input id="answer" name="answer" type="hidden" value="" >
-              <input class="button expand" type="submit" value="Share Opinion" tabindex="3" /> 
-            </div>
-
-          </form>
-        </div>
-      </div>
-    </section>
+      
     <div class="row-container">
       <section class="row">
         <div class="m-video-answer">
@@ -622,45 +624,12 @@
           </div>
         </div>
       </section>
-    </div>      
-      <section id="twitterstream" class="row m-twitter-stream">
-        <h2>Join the #OpenGovNow Conversation</h2>
-        <div class="column large-7 medium-12 small-12 small-centered">
-          <a class="twitter-timeline" href="https://twitter.com/search?q=%23opengovnow" data-widget-id="474848918837002240">Tweets about "#opengovnow"</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        </div>
 
-        
-
-
-        <!--   <div id ="twstream">
-        <div class="m-twitter-stream-item large-6 medium-12 small-12 column">
-          <img src="images/sample-twitter-pic.png" alt="Twitter Username" class="twitter-pic">
-          <p class="tweet-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, nihil, porro, temporibus nobis quibusdam ratione quod cumque nem doloremque ipsum.</p>
-          <a href="#" class="twitter-name">Twitter Username</a>
-          <i class="icon-share"></i> <!-- This activates the Share this part feature for re-tweeting
-        </div>
-        <div class="m-twitter-stream-item large-6 medium-12 small-12 column">
-          <img src="images/sample-twitter-pic.png" alt="Twitter Username" class="twitter-pic">
-          <p class="tweet-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, nihil, porro, temporibus nobis quibusdam ratione quod cumque nem doloremque ipsum.</p>
-          <a href="#" class="twitter-name">Twitter Username</a>
-          <i class="icon-share"></i> <!-- This activates the Share this part feature for re-tweeting
-        </div>
-        <div class="m-twitter-stream-item large-6 medium-12 small-12 column">
-          <img src="images/sample-twitter-pic.png" alt="Twitter Username" class="twitter-pic">
-          <p class="tweet-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, nihil, porro, temporibus nobis quibusdam ratione quod cumque nem doloremque ipsum.</p>
-          <a href="#" class="twitter-name">Twitter Username</a>
-          <i class="icon-share"></i> <!-- This activates the Share this part feature for re-tweeting
-        </div>
-        <div class="m-twitter-stream-item large-6 medium-12 small-12 column">
-          <img src="images/sample-twitter-pic.png" alt="Twitter Username" class="twitter-pic">
-          <p class="tweet-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, nihil, porro, temporibus nobis quibusdam ratione quod cumque nem doloremque ipsum.</p>
-          <a href="#" class="twitter-name">Twitter Username</a>
-          <i class="icon-share"></i> <!-- This activates the Share this part feature for re-tweeting
-        </div>
-      </div>-->
-
+      <section class="row">
+        <p>In our society, different groups play different roles. However, when it comes to governments and ensuring its efficiency, we all have a role to play. To learn more about your government’s commitment to openness, and to find out more about how openness affects you, there are few better places to start than your local government: it is where the interface, the transactions and collaborations, between governments and citizens mostly take place.</p>
       </section>
+
+    </div>
        <div class="row-container">
         <section class="row">
           <div class="m-video-answer">
@@ -680,6 +649,17 @@
           </div>
         </section>
       </div>
+
+      <section id="twitterstream" class="row m-twitter-stream">
+        <h2>Join the conversation</h2>
+        <h3>Join the growing global movement calling <br>for Open Government by using #OpenGovNow</h3>
+        <br>
+        <div class="column large-7 medium-12 small-12 small-centered">
+          <a class="twitter-timeline" href="https://twitter.com/search?q=%23opengovnow" data-widget-id="474848918837002240">Tweets about "#opengovnow"</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+
+      </section>
     </div>
 
     <div id="c-contact" class="l-module">
@@ -700,7 +680,7 @@
 
       <div id="c-datasets" class="l-module hide-for-small-only">
         <section id="trigger-dataoverlay" class="row">
-          <h3>Download the Datasets</h3>
+          <h3>Download the datasets</h3>
           <ul  class="large-4 small-12 column">
             <li><strong>All</strong><i class="icon-download-1"></i></li>
             <li><a href="data/Albania.zip">Albania<i class="icon-download-1"></i></a></li>
@@ -803,22 +783,20 @@
 
     <div id="c-disclaimer" class="l-module">
       <section class="row m-disclaimer-box">
-        <h3>Additional Information on the Survey Methodology</h3>
+        <h3>Additional information on the survey methodology</h3>
         <p>A nano-survey is an Internet-based technology that extends a brief survey to a random sampling of respondents, and which was developed by the RIWI Corporation based on its patented random domain intercept technology (RDIT™). It geo-targets Web users who mistype a non-trademarked URL or input a non-existent URL address into their browsers' direct navigation or 'address bar. Targeted users are then asked to answer a set of questions with real-time reflex responses, which are more informative than traditionally collected responses.</p>
         <p>It is important to note that all respondents had Internet access, which, especially in developing nations, is typically a more urban public. The survey team is fully aware of the constraints of the methodology and potential biases of the data collected, as it might not have reached communities where internet access is limited. However, as access to the internet continues to grow, this methodology will be able to include a wider set of voices.</p>
         <p>We acknowledge the limitations of this new online survey and methodology, and we look forward to collaborating with other individuals and organizations to conduct more in-depth and targeted analysis and supplement our findings. To learn more about the methodology, visit the following studies:</p>
         <p><a href="http://riwi.com/index.php/methodology/">Learn more about RDIT™ and the nano-survey methodology.</a></p>
-        <p><a href="http://riwi.com/wp-content/uploads/2014/02/GRITCPR2013_SeemanIng.pdf">View the GRIT Consumer Participation in Research report on RIWI's methodology</a></p>
-        <p>View the GRIT Consumer Participation in Research report on RIWI's methodology, as well as its benefits and limitations.</p>
+        <p><a href="http://riwi.com/wp-content/uploads/2014/02/GRITCPR2013_SeemanIng.pdf">View the GRIT Consumer Participation in Research report on RIWI's methodology, as well as its benefits and limitations.</a></p>
       </section>
     </div>
    </div>
   <footer>
     <section class="row">
       <div class="large-12 small-12 column">
-        <p>This feature is a joint initiative of the RIWI Corporation, the Open Government Partnership (OGP) Support Unit, and the Open Government practice of the World Bank.</p>
-        <p>The team would like to thank the creators of The Guardian <a href="http://www.theguardian.com/world/interactive/2013/nov/01/snowden-nsa-files-surveillance-revelations-decoded">“NSA Files Decoded”</a> feature for inspiring this work.</p>
-        <p>All of the elements of this site follow <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons license</a>, and are intended for future use and reuse.</p>
+        <p>This site and its contents are a result of contributions from a wide range of collaborators, most notably, the World Bank's Open Government Practice, the RIWI Corporation, and the Open Government Partnership (OGP) Support Unit</p>
+        <p>The team would like to thank the creators of <a href="http://www.theguardian.com/world/interactive/2013/nov/01/snowden-nsa-files-surveillance-revelations-decoded">The Guardian “NSA Files Decoded”</a> feature for serving as one of the key sources of initial inspiration for this work.</p>
       </div>
     </section>
   </footer>

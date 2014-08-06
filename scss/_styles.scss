@@ -189,6 +189,26 @@
 
 }
 
+#ie-box {
+	display: none;
+	margin-top: 20px;
+
+	.row {
+		border: 1px solid $orange;
+		background-color: $orange_10;
+		padding-top: 15px;
+	}
+
+	h3 {
+		text-align: left;
+		margin-top: 0;
+	}
+
+	p {
+		margin-bottom: 0;
+		font-size: .9rem;
+	}
+}
 
 
 

@@ -24,6 +24,12 @@
     <!-- <div class="m-progress-bar">
       <span class="m-progress-status"></span>
     </div> -->
+
+    <div data-alert class="alert-box">
+         <h4> demo purposes only, keep private </h4>
+        <a href="#" class="close">&times;</a>
+    </div>
+
     <div id="ie-box" class="l-module">
       <section class="row">
         <h3>We're sorry</h3>
@@ -841,6 +847,13 @@
   ga('send', 'pageview');
 
 </script>
+
+<script>
+  if (sessionStorage.getItem("logged") == 'yes') {} else {
+      window.location.replace("index.html");
+  }
+</script>
+ 
 
 </body>
 </html>

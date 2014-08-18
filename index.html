@@ -109,13 +109,26 @@
 </script>
 
 <script>
+
+$("#pass").keypress(function(e) { 
+  var code = e.keyCode || e.which;
+  if(code == '13'){
+     redir();
+     console.log("enter");
+    }
+});
+
  $("#preview").click(function() {
-     if ($("#pass").val() == 'opengovnow') {
+    redir();
+ }); 
+
+function redir() { 
+ if ($("#pass").val() == 'opengovnow') {
          sessionStorage.setItem("logged", "yes");
          console.log(sessionStorage.getItem("logged"));
          window.location.replace("index-draft.html");
      }
- }); 
+ }
 </script>
 
 </body>

@@ -210,9 +210,16 @@
 	}
 }
 
-
-
-
+#beta-flag {
+	position: absolute;
+	min-width: 108px;
+	font-size: 16px;
+	top: -1px;
+	left: 45px;
+	padding: 4px 10px;
+	background-color: $og_green_15;
+	color: $og_green;
+}
 
 
 

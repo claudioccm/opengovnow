@@ -224,9 +224,16 @@
 		}
 	}
 
-	#beta-flag {
+	#beta-flag,
+	#report-bug {
+		min-width: 113px;
 		top: 8px;
 		left: 55px;
+	}
+
+	#report-bug {
+		top: 8px;
+		left: 175px;
 	}
 
 	.m-menu-trigger:hover {

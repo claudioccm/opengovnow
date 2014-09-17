@@ -144,6 +144,8 @@ p {
 
 body {
 	background-color: $gray_3_solid;
+	max-width: 100%;
+	overflow-x: hidden;
 }
 .l-module {
 	// padding: 10px 0 50px;

@@ -154,6 +154,11 @@
 		}
 	}
 
+	#beta-flag {
+		top: 8px;
+		left: 55px;
+	}
+
 	.m-video-answer .controls .play-pause.s-active i { left: 6px; }
 	
 	// Menu Trigger Medium and Small Screens
@@ -219,11 +224,21 @@
 		}
 	}
 
+	#beta-flag {
+		top: 8px;
+		left: 55px;
+	}
+
 	.m-menu-trigger:hover {
 		color: $og_green;
 	}
 
 	.m-menu-social-media a:hover i {
 		color: $og_green;
+	}
+
+	video {
+		height: 352px;
+		width: 620px;
 	}
 }

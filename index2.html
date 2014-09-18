@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <title>#OpenGovNow - Alpha</title>
+    <title>#OpenGovNow - Beta</title>
     
     <link rel="stylesheet" href="bower_components/fontello-icons/css/fontello.css" />
     <link rel="stylesheet" href="bower_components/imagereveal/css/jquery.imageReveal.css" />
@@ -64,18 +64,22 @@
       <section class="row">
         <h1>#OpenGovNow</h1>
         <img src="images/logo2.png" alt="">
-        <h2>Coming Soon</h2>   
-      </section>
+        <h2>Coming Soon</h2>      
+          <div class="row">
+             <div class="small-6 small-centered columns"><input  type="password" id="pass" placeholder="enter your key to preview"> </input></div>
+              <div class="small-6 small-centered columns"> <button id="preview">preview</button> </div>
+          </div>     
+        </section> 
     </div>
 
-      <footer style="position: absolute; bottom: 0; width: 100%;">
+<!--   <footer style="position: absolute; bottom: 0; width: 100%;">
     <section class="row">
       <div class="large-12 small-12 column">
         <p>The team would like to thank the creators of The Guardian <a href="http://www.theguardian.com/world/interactive/2013/nov/01/snowden-nsa-files-surveillance-revelations-decoded">“NSA Files Decoded”</a> feature for inspiring this work.</p>
         <p>All of the elements of this site follow <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons license</a>, and are intended for future use and reuse.</p>
       </div>
     </section>
-  </footer>
+  </footer> -->
   <div id="overlay"></div>
   
   <script src="js/jquery-latest.min.js"  type="text/javascript"></script>
@@ -102,6 +106,29 @@
   ga('create', 'UA-2291163-22', 'openinggovernemnt.com');
   ga('send', 'pageview');
 
+</script>
+
+<script>
+
+$("#pass").keypress(function(e) { 
+  var code = e.keyCode || e.which;
+  if(code == '13'){
+     redir();
+     console.log("enter");
+    }
+});
+
+ $("#preview").click(function() {
+    redir();
+ }); 
+
+function redir() { 
+ if ($("#pass").val() == 'opengovnow') {
+         sessionStorage.setItem("logged", "yes");
+         console.log(sessionStorage.getItem("logged"));
+         window.location.replace("index-draft.html");
+     }
+ }
 </script>
 
 </body>

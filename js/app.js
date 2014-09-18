@@ -498,6 +498,36 @@ $('#og-question-form').submit(function(e){
     });
 
 
+  $('#indonesia-container.inview').bind('inview', function(event, visible) {
+         if (visible == true) {
+             // element is now visible in the viewport
+            document.getElementById('indonesia').play();
+            document.getElementById('indonesia').pause();
+               $('#indonesia-controls.play-pause').addClass('s-active');
+            $('#indonesia-controls.play-pause').children().attr('class', 'icon-pause-1'); 
+         } else {
+             // element has gone out of viewport
+             document.getElementById('ellen-miller-2').pause();
+               $('#indonesia-controls.play-pause').removeClass('s-active');
+            $('#indonesia-controls.play-pause').children().attr('class', 'icon-play'); 
+         }
+     });
+
+    $('#indonesia-controls.play-pause').click(function() {
+
+        var state = $('#indonesia-controls.play-pause').attr('class');
+        if (state === 'play-pause') {
+            $('#indonesia-controls.play-pause').removeClass('s-active');
+            $('#indonesiacontrols.play-pause').children().attr('class', 'icon-play');   
+            document.getElementById('ellen-miller-2').pause(); 
+        } else {
+            $('#indonesia-controls.play-pause').addClass('s-active');
+            $('#indonesia-controls.play-pause').children().attr('class', 'icon-pause-1');
+             document.getElementById('indonesia').play();   
+        }
+    });
+
+
       $('#mexico-container.inview').bind('inview', function(event, visible) {
          if (visible == true) {
              // element is now visible in the viewport

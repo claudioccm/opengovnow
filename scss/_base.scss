@@ -243,6 +243,37 @@ body {
 	}
 }
 
+#beta-flag,
+#report-bug {
+	display: block;
+	margin: 5px 0;
+	min-width: 135px;
+	font-size: 16px;
+	top: 180px;
+	left: 5px;
+	padding: 4px 10px;
+	background-color: $og_green_15;
+	color: $og_green;
+}
+
+#beta-flag {
+	margin-top: 10px;
+}
+
+#report-bug {
+	top: 210px;
+	left: 5px;
+	padding-right: 5px;
+
+	.icon-bug {
+		margin-left: 3px;
+	}
+}
+
+.m-menu-social-media span:hover {
+	color: $og_green;
+}
+
 // Overlay Modal
 #overlay {
 	background-color: transparent;

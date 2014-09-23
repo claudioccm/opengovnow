@@ -44,6 +44,16 @@ $(document).ready(function() {
         
     });
 
+    $('#mute-all').click(function() {
+        var state = $(this).children().attr('class');
+
+        if (state === 'icon-volume-off') {
+            $(this).children().attr('class', 'icon-volume-up');    
+        } else {
+            $(this).children().attr('class', 'icon-volume-off');    
+        }
+    });
+
 	// Smooth Scrolling Function
 	$(function() {
 		$('a[href*=#]:not([href=#])').click(function() {

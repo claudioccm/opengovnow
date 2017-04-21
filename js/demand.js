@@ -4,22 +4,27 @@ var countries;
       'async': false,
       'type': "GET",
       'global': false,
-      'url': "php/countries.php",
-      'success': function (data) {
-          countries = data.split(',');
+      'url': "csv/countries.csv",
+    
+       success: function (data) {
+          countries = data.split("\n");
+          
       }
   });
  
 
-  var chart = d3.select('#c-demand-graph').selectAll().data(countries).enter();
+
+
+var chart = d3.select('#c-demand-graph').selectAll().data(countries).enter();
  
+
 
   chart.append("div")
         .attr("class", "demand-graph-row")
-        .attr("name", function(d)
+        .attr("name", function(data)
           {
-             
-              return  d + "-demand";
+          
+              return  data + "-demand";
           });
  
  var j;
@@ -32,10 +37,15 @@ var countries;
             'async': false,
             'type': "GET",
             'global': false,
-            'url': "php/leftData-demand.php",
-            'success': function (data) {
-                leftData = data.split(',');
-          
+            'url': "csv/leftdata.csv",
+            
+            success: function (data) {
+
+              leftData = data.replace(/(?:\r\n|\r|\n)/g, ',');
+
+
+              leftData = leftData.split(',');
+              console.log(leftData);
             }
         });
 
@@ -46,11 +56,14 @@ var countries;
             'async': false,
             'type': "GET",
             'global': false,
-            'url': "php/rightData-demand.php",
-            'success': function (data) {
-                rightData = data.split(',');
+           'url': "csv/rightdata.csv",
+            
+            success: function (data) {
+                rightData = data.split("\n");
+               
             }
         });
+
 
 
   d3.select("#c-demand-graph").selectAll('.demand-graph-row').each(function(d, i)
@@ -58,6 +71,7 @@ var countries;
      
       linename =  d3.select(this).attr("name");
       
+    //  console.log(linename);
 
       d3.select(this)
         .append("span")
@@ -88,6 +102,7 @@ var countries;
             .style("width", function(d)
                 {
                     return leftData[j] * 3 + "px";
+
                 })
             .append("span")
             .attr("class","value-legend")
@@ -131,6 +146,7 @@ var countries;
 
 
 
+
       d3.select("[name = '" + linename + "pos" + "']").each(function(d, i)
       {
           d3.select(this)
@@ -156,13 +172,13 @@ var countries;
 
   });
 
-
+ 
 var barline = d3.selectAll(".demand-graph-row")
 
 barline.on("click", click);
 function click(d) 
 {
-  console.log(d);
+  //console.log(d);
 
   var w1 = d3.select("[id = '" + d + "-demand-graph-row-neg-1" + "']").style("width");
   var w2 = d3.select("[id = '" + d + "-demand-graph-row-neg-2" + "']").style("width");
@@ -226,4 +242,4 @@ console.log(w1);
 // Checks if the #graph-compare area is empty to properly show/hide the legends.
 if ($('#graph-compare').is(':empty')){
     $('#graph-compare').next().addClass('show-legend');
-  };
+ };
